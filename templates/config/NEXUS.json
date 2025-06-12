@@ -1,0 +1,42 @@
+{
+  "pris_version": "1.0",
+  "nexus_level": "9",
+  "inception_date": null,
+  "last_baseline": null,
+  "project_name": null,
+  "working_directory": null,
+  "status": "uninitialized",
+  "phases_completed": [],
+  "current_phase": null,
+  "blade_runner": null,
+  "parameters": {
+    "project_name": null,
+    "working_directory": null
+  },
+  "memories": {
+    "implanted": [],
+    "real": []
+  },
+  "integrations": {
+    "github": {
+      "enabled": false,
+      "repo": null,
+      "use_for": ["issues", "reviews", "projects"]
+    },
+    "linear": {
+      "enabled": false,
+      "workspace": null,
+      "use_for": ["issues", "sprints"]
+    }
+  },
+  "cells": {
+    "interlinked": true,
+    "count": 0,
+    "health": "baseline"
+  },
+  "metadata": {
+    "created_by": "PRIS-baseline",
+    "last_updated": null,
+    "retirement_date": null
+  }
+}
