@@ -68,15 +68,90 @@ git clone --recurse-submodules https://github.com/your-username/your-project.git
     └── retirements/   # Completed work
 ```
 
-## Updating PRIS
+## Maintaining PRIS
+
+### Updating PRIS in Your Projects
+
+When new PRIS updates are available, update your project's submodule:
 
 ```bash
-# Update PRIS to latest version
+# Update to latest PRIS version
 cd your-project
 git submodule update --remote .pris
 git add .pris
 git commit -m "Update PRIS to latest version"
+git push
 ```
+
+### Contributing to PRIS
+
+To make changes to PRIS itself:
+
+```bash
+# 1. Clone PRIS directly (not as a submodule)
+cd ~/Dev
+git clone https://github.com/benpchandler/pris.git
+cd pris
+
+# 2. Make your changes
+# Edit commands, add features, fix bugs, etc.
+
+# 3. Commit and push
+git add .
+git commit -m "Add: New feature to deckard command"
+git push origin main
+```
+
+### Updating Multiple Projects
+
+Create a script to update PRIS across all your projects:
+
+```bash
+#!/bin/bash
+# update-pris-everywhere.sh
+
+PROJECTS=(
+    ~/Dev/project1
+    ~/Dev/project2
+    ~/Dev/project3
+)
+
+for project in "${PROJECTS[@]}"; do
+    echo "Updating PRIS in $project..."
+    cd "$project"
+    git submodule update --remote .pris
+    git add .pris
+    git commit -m "Update PRIS to latest version"
+    git push
+done
+```
+
+### Version Management
+
+Tag important PRIS releases:
+
+```bash
+cd ~/Dev/pris
+git tag -a v1.0.0 -m "First stable release"
+git push origin v1.0.0
+```
+
+Pin a project to a specific PRIS version:
+
+```bash
+cd your-project/.pris
+git checkout v1.0.0
+cd ..
+git add .pris
+git commit -m "Pin PRIS to v1.0.0"
+```
+
+### Best Practices
+
+1. **Test Updates**: Always test PRIS updates in a non-critical project first
+2. **Version Notes**: Document breaking changes in PRIS releases
+3. **Gradual Rollout**: Update projects one at a time, not all at once
+4. **Automation**: Add PRIS update checks to your CI/CD pipeline
 
 ## Development Philosophy
 
