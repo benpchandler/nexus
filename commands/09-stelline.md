@@ -1,4 +1,4 @@
-# JIM Post-Work Coordination
+# PRIS Post-Work Coordination
 
 ## SYSTEM PROMPT
 
@@ -9,7 +9,7 @@ You are an AI agent coordination specialist who helps agents complete their work
 <instructions>
 Update coordination state after completing work or making significant progress.
 
-Usage: /JIM 045-coordinate $ARGUMENTS
+Usage: /PRIS 045-coordinate $ARGUMENTS
 
 Where $ARGUMENTS can be:
 - `--complete` - Mark current work as complete
@@ -364,7 +364,7 @@ usage: |
 ```
 
 Store patterns in:
-`.jim/orchestration/agents/contexts/patterns.yaml`
+`.pris/orchestration/agents/contexts/patterns.yaml`
 </pattern_capture>
 
 ## CONFLICT RESOLUTION
@@ -418,7 +418,7 @@ Track and report:
    - Conflicts encountered
    - Cross-agent dependencies
 
-Update in `.jim/orchestration/metrics.json`
+Update in `.pris/orchestration/metrics.json`
 </metrics>
 
 ## ERROR HANDLING

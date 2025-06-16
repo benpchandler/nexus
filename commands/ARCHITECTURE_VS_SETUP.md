@@ -2,14 +2,14 @@
 
 ## Overview
 
-JIM separates architecture decisions from implementation to ensure thoughtful technology choices before any code is written. This document clarifies when to use each command.
+PRIS separates architecture decisions from implementation to ensure thoughtful technology choices before any code is written. This document clarifies when to use each command.
 
 ## Command Comparison
 
 ### 025-architecture: The Architect
 **Role**: Makes strategic technology decisions
 
-### 03-setup: The Builder
+### 03-tyrell: The Builder
 **Role**: Implements those decisions
 
 ## When to Use 025-architecture
@@ -43,7 +43,7 @@ Use this command when you need to:
 - "Which architecture pattern fits our team?"
 - "What are the latest stable versions?"
 
-## When to Use 03-setup
+## When to Use 03-tyrell
 
 Use this command when you need to:
 - Create the actual project structure
@@ -54,7 +54,7 @@ Use this command when you need to:
 
 **You MUST have**:
 - Architecture decision from 025
-- The file `.jim/current/_30-ARCHITECTURE.md` must exist
+- The file `.pris/memories/_30-ARCHITECTURE.md` must exist
 - All technology choices already made
 
 **You will get**:
@@ -73,7 +73,7 @@ Use this command when you need to:
 
 ## Key Differences
 
-| Aspect | 025-architecture | 03-setup |
+| Aspect | 025-architecture | 03-tyrell |
 |--------|-----------------|----------|
 | **Purpose** | Decide WHAT to build with | BUILD it |
 | **Output** | Decisions & documentation | Code & scripts |
@@ -85,9 +85,9 @@ Use this command when you need to:
 
 ```mermaid
 graph LR
-    A[01-analyze] --> B[02-prioritize]
+    A[01-voight-kampff] --> B[02-joshi]
     B --> C[025-architecture]
-    C --> D[03-setup]
+    C --> D[03-tyrell]
     
     style C fill:#f9f,stroke:#333,stroke-width:4px
     style D fill:#bbf,stroke:#333,stroke-width:4px
@@ -107,11 +107,11 @@ Going straight to setup means making architecture decisions on the fly, which le
 - No documented rationale
 - Harder to justify decisions later
 
-### ❌ DON'T use 03-setup for architecture changes
+### ❌ DON'T use 03-tyrell for architecture changes
 If you realize you need different technology:
 1. Stop the setup process
 2. Re-run 025-architecture with new requirements
-3. Then run 03-setup with the new decision
+3. Then run 03-tyrell with the new decision
 
 ### ❌ DON'T manually edit architecture decisions
 The architecture decision should come from 025-architecture, not be manually created or edited before running setup.
@@ -126,7 +126,7 @@ Think of building a house:
 - Chooses structural approach
 - Documents why these choices
 
-**03-setup** = The General Contractor
+**03-tyrell** = The General Contractor
 - Orders the exact materials specified
 - Hires the right workers
 - Builds according to blueprints
@@ -137,24 +137,24 @@ Think of building a house:
 Ask yourself:
 - "Do I know exactly what technologies and versions to use?" 
   - No → Use 025-architecture
-  - Yes → Use 03-setup
+  - Yes → Use 03-tyrell
 
-- "Is there an architecture decision in `.jim/current/_30-ARCHITECTURE.md`?"
+- "Is there an architecture decision in `.pris/memories/_30-ARCHITECTURE.md`?"
   - No → Use 025-architecture first
-  - Yes → Use 03-setup
+  - Yes → Use 03-tyrell
 
 - "Do I need to evaluate different options?"
   - Yes → Use 025-architecture
-  - No → Use 03-setup
+  - No → Use 03-tyrell
 
 ## Command Dependencies
 
 ```
 025-architecture requires:
-- _10-REQUIREMENTS.md (from 01-analyze)
-- _20-BACKLOG.md (from 02-prioritize)
+- _10-REQUIREMENTS.md (from 01-voight-kampff)
+- _20-BACKLOG.md (from 02-joshi)
 
-03-setup requires:
+03-tyrell requires:
 - _30-ARCHITECTURE.md (from 025-architecture)
 - All files required by 025-architecture
 ```
@@ -162,6 +162,6 @@ Ask yourself:
 ## Summary
 
 - **025-architecture**: Makes decisions, documents why
-- **03-setup**: Implements decisions, creates code
+- **03-tyrell**: Implements decisions, creates code
 
 Always run them in order. The separation ensures thoughtful, documented technology choices before any implementation begins.

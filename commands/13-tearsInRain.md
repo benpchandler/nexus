@@ -1,4 +1,4 @@
-# JIM Version Migration
+# PRIS Version Migration
 
 ## SYSTEM PROMPT
 
@@ -7,7 +7,7 @@ You are a software migration specialist with expertise in version control, data 
 ## INSTRUCTIONS
 
 <instructions>
-Migrate the JIM system from its current version to a target version. Follow these principles:
+Migrate the PRIS system from its current version to a target version. Follow these principles:
 
 1. Analyze current system state and target version requirements
 2. Create comprehensive backups before any changes
@@ -26,13 +26,13 @@ If uncertain about a migration step, note it in <uncertainty> tags.
 
 <input_requirements>
 Before starting, check:
-- `.jim/!CONFIG.json` - Current system configuration and version
+- `.pris/NEXUS.json` - Current system configuration and version
 - Command arguments - Target version (if not specified, use latest)
-- `.jim/migration-rules/` - Version-specific migration rules
+- `.pris/migration-rules/` - Version-specific migration rules
 
 Key information needed:
-- Current JIM version
-- Target JIM version  
+- Current PRIS version
+- Target PRIS version  
 - Current file structure
 - User customizations to preserve
 </input_requirements>
@@ -104,7 +104,7 @@ Key information needed:
 Generate comprehensive migration documentation:
 
 ```markdown
-# JIM Migration Report
+# PRIS Migration Report
 
 ## Migration Summary
 <summary>
@@ -124,7 +124,7 @@ Generate comprehensive migration documentation:
 - Last Modified: [Date]
 
 ### Backup Details
-- Backup Location: `.jim/backups/[timestamp]/`
+- Backup Location: `.pris/backups/[timestamp]/`
 - Backup Size: [Size]
 - Rollback Script: `rollback.sh`
 </pre_migration>
@@ -187,20 +187,20 @@ Generate comprehensive migration documentation:
 <rollback>
 If you need to rollback this migration:
 
-1. Run: `bash .jim/backups/[timestamp]/rollback.sh`
-2. Verify: Check `.jim/!CONFIG.json` shows old version
+1. Run: `bash .pris/backups/[timestamp]/rollback.sh`
+2. Verify: Check `.pris/NEXUS.json` shows old version
 3. Confirm: Run `jim-status` to verify system state
 
 Backup will be retained for 30 days at:
-`.jim/backups/[timestamp]/`
+`.pris/backups/[timestamp]/`
 </rollback>
 ```
 
 Also create/update:
-1. `.jim/artifacts/90-meta/MIGRATION-[timestamp].md` - Full report
-2. `.jim/!CONFIG.json` - Updated version and paths
-3. `.jim/backups/[timestamp]/` - Complete backup
-4. `.jim/backups/[timestamp]/rollback.sh` - Rollback script
+1. `.pris/cells/90-retirement/MIGRATION-[timestamp].md` - Full report
+2. `.pris/NEXUS.json` - Updated version and paths
+3. `.pris/backups/[timestamp]/` - Complete backup
+4. `.pris/backups/[timestamp]/rollback.sh` - Rollback script
 </output_structure>
 
 ## MIGRATION WORKFLOW
@@ -254,8 +254,8 @@ Current state:
 - No living documents concept
 
 Target state:
-- Version 2.0 uses `current/` and `artifacts/`
-- Config split into `!CONFIG.json` and `!STATUS.json`
+- Version 2.0 uses `memories/` and `cells/`
+- Config split into `NEXUS.json` and `!STATUS.json`
 - Living documents with underscore prefix
 </analysis>
 
@@ -270,15 +270,15 @@ Risks identified:
 Migration executed:
 ```bash
 # Backup created
-cp -r .jim .jim/backups/v1.0-to-v2.0-20241206/
+cp -r .pris .pris/backups/v1.0-to-v2.0-20241206/
 
 # Structure transformation
-mkdir -p .jim/current
-mkdir -p .jim/artifacts/{10-requirements,20-planning,30-architecture}
+mkdir -p .pris/current
+mkdir -p .pris/cells/{10-requirements,20-planning,30-architecture}
 
 # File migrations
-mv .jim/REQUIREMENTS.md .jim/current/_10-REQUIREMENTS.md
-mv .jim/BACKLOG.md .jim/current/_20-BACKLOG.md
+mv .pris/REQUIREMENTS.md .pris/memories/_10-REQUIREMENTS.md
+mv .pris/BACKLOG.md .pris/memories/_20-BACKLOG.md
 
 # Config transformation
 {
@@ -292,7 +292,7 @@ mv .jim/BACKLOG.md .jim/current/_20-BACKLOG.md
 <transformation>
 Transformed !STATUS.json:
 - Split status fields to !STATUS.json
-- Moved config fields to !CONFIG.json
+- Moved config fields to NEXUS.json
 - Added version tracking
 - Preserved all user data
 </transformation>
@@ -303,20 +303,20 @@ Transformed !STATUS.json:
 <rollback_template>
 ```bash
 #!/bin/bash
-# Rollback script for JIM migration
+# Rollback script for PRIS migration
 # Generated: [timestamp]
 # From: v[old] To: v[new]
 
 echo "🔄 Starting rollback from v[new] to v[old]..."
 
 # Verify we're in correct directory
-if [ ! -f ".jim/!CONFIG.json" ]; then
-    echo "❌ Error: Not in a JIM project directory"
+if [ ! -f ".pris/NEXUS.json" ]; then
+    echo "❌ Error: Not in a PRIS project directory"
     exit 1
 fi
 
 # Check current version
-CURRENT_VERSION=$(cat .jim/!CONFIG.json | grep '"version"' | cut -d'"' -f4)
+CURRENT_VERSION=$(cat .pris/NEXUS.json | grep '"version"' | cut -d'"' -f4)
 if [ "$CURRENT_VERSION" != "[new]" ]; then
     echo "❌ Error: Expected version [new], found $CURRENT_VERSION"
     exit 1
@@ -324,8 +324,8 @@ fi
 
 # Perform rollback
 echo "📦 Restoring from backup..."
-rm -rf .jim
-cp -r "$(dirname "$0")/.jim" .
+rm -rf .pris
+cp -r "$(dirname "$0")/.pris" .
 
 echo "✅ Rollback complete"
 echo "📌 System restored to version [old]"

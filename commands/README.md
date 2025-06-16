@@ -1,20 +1,20 @@
-# JIM (Just-in-time Implementation Manager) - Operations Manual
+# PRIS (Polymorphic Reality Implementation System) - Operations Manual
 
 ## Overview
 
-**JIM** is an advanced AI-powered system that manages the complete software development lifecycle from requirements gathering to deployment. It functions as a team of specialized AI agents, each expert in their domain, working together to deliver production-ready software through systematic, best-practice approaches.
+**PRIS** is an advanced AI-powered system that manages the complete software development lifecycle from requirements gathering to deployment. It functions as a team of specialized AI agents, each expert in their domain, working together to deliver production-ready software through systematic, best-practice approaches.
 
 ## What's New
 
 ### Parallel AI Agent Development (NEW!)
-JIM now supports orchestrated parallel development with multiple AI agents working simultaneously:
+PRIS now supports orchestrated parallel development with multiple AI agents working simultaneously:
 - **Agent Orchestration**: Multiple Claude Code instances working in parallel
 - **Architectural Boundaries**: Prevents merge conflicts through clear work contracts
 - **Smart Coordination**: Agents communicate through AGENT_NOTES.md files
 - **GitHub Integration**: Work tracked through issues with contract labels
 
 ### Enhanced Prompt Engineering
-All JIM commands have been enhanced with Anthropic's latest prompt engineering best practices:
+All PRIS commands have been enhanced with Anthropic's latest prompt engineering best practices:
 - Clear role definitions using natural language
 - Step-by-step thinking with XML tags for better reasoning
 - Structured output formats for consistency
@@ -23,26 +23,26 @@ All JIM commands have been enhanced with Anthropic's latest prompt engineering b
 
 ## Prerequisites
 
-JIM only requires the `.jim` directory structure to operate. Project-specific tools are determined during the architecture phase based on requirements.
+PRIS only requires the `.pris` directory structure to operate. Project-specific tools are determined during the architecture phase based on requirements.
 
-For the setup phase (03-setup), the generated script will check for required tools based on the chosen architecture.
+For the setup phase (03-tyrell), the generated script will check for required tools based on the chosen architecture.
 
 ## Workflow Overview
 
 ```mermaid
 graph TD
-    A[00-init: Initialize JIM] --> B[01-analyze: Gather Requirements]
-    B --> C[02-prioritize: Create Backlog]
+    A[00-init: Initialize PRIS] --> B[01-voight-kampff: Gather Requirements]
+    B --> C[02-joshi: Create Backlog]
     C --> D[025-architecture: Select Architecture]
-    D --> E[03-setup: Generate Setup Script]
+    D --> E[03-tyrell: Generate Setup Script]
     
     E --> F{Parallel Development?}
     F -->|Yes| G[030-orchestrate: Setup GitHub]
-    F -->|No| H[04-implement: Single Agent]
+    F -->|No| H[04-sebastian: Single Agent]
     
     G --> I[035-decompose: Break Down Epics]
     I --> J[040-sync: Agents Claim Work]
-    J --> K[04-implement: Parallel Work]
+    J --> K[04-sebastian: Parallel Work]
     K --> L[045-coordinate: Update Status]
     L --> J
     
@@ -57,23 +57,23 @@ graph TD
 
 ## Command Structure
 
-JIM operates through a series of specialized commands, each handling a specific phase of development:
+PRIS operates through a series of specialized commands, each handling a specific phase of development:
 
 ### Core Development Flow
 
 #### `00-init.md`: System Initialization
-- **Purpose:** Initialize the JIM tracking system
+- **Purpose:** Initialize the PRIS tracking system
 - **Role:** System initialization specialist
-- **Creates:** `.jim` directory structure and configuration files
+- **Creates:** `.pris` directory structure and configuration files
 - **Note:** Does NOT check for development tools - that happens later
 
-#### `01-analyze.md`: Requirements Analysis
+#### `01-voight-kampff.md`: Requirements Analysis
 - **Purpose:** Gather comprehensive system requirements through structured interview
 - **Role:** Expert Systems Analyst
 - **Creates:** System Requirements Document with user stories, data models, and acceptance criteria
 - **Type:** Interactive - requires human input
 
-#### `02-prioritize.md`: Product Backlog Prioritization
+#### `02-joshi.md`: Product Backlog Prioritization
 - **Purpose:** Transform requirements into prioritized, actionable backlog
 - **Role:** Expert Product Owner and Strategic Planner
 - **Creates:** Prioritized backlog with MVP definition and roadmap
@@ -87,13 +87,13 @@ JIM operates through a series of specialized commands, each handling a specific 
 - **Type:** Autonomous - reads requirements and priorities
 - **When:** After requirements are clear, BEFORE any setup
 
-#### `03-setup.md`: Project Setup Implementation
+#### `03-tyrell.md`: Project Setup Implementation
 - **Purpose:** Implement the selected architecture with setup scripts
 - **Role:** DevOps Engineer and Implementation Specialist
 - **Creates:** Executable setup script and project structure
 - **Type:** Autonomous - reads architecture decision from 025
 
-#### `04-implement.md`: Feature Implementation
+#### `04-sebastian.md`: Feature Implementation
 - **Purpose:** Generate complete, tested code for specific features
 - **Role:** Expert Full-Stack Developer
 - **Creates:** Implementation package with code, tests, and PR details
@@ -112,28 +112,28 @@ JIM operates through a series of specialized commands, each handling a specific 
 - **Role:** AI Development Orchestration Specialist
 - **Creates:** Labels, issue templates, project boards, and coordination structure
 - **Type:** Autonomous - run once per project
-- **Usage:** `/JIM 030-orchestrate setup`
+- **Usage:** `/PRIS 030-orchestrate setup`
 
 #### `035-decompose.md`: Epic Decomposition
 - **Purpose:** Break down epics into architecturally-clean work contracts
 - **Role:** Expert Software Architect (decomposition specialist)
 - **Creates:** GitHub issues with clear boundaries and interface contracts
 - **Type:** Autonomous - requires epic ID
-- **Usage:** `/JIM 035-decompose FEAT-001`
+- **Usage:** `/PRIS 035-decompose FEAT-001`
 
 #### `040-sync.md`: Agent Sync & Work Claim
 - **Purpose:** Synchronize agent state and claim work from available pool
 - **Role:** AI Agent Coordination Specialist
 - **Creates:** Work assignments and conflict detection
 - **Type:** Interactive - requires agent identification
-- **Usage:** `/JIM 040-sync --claim`
+- **Usage:** `/PRIS 040-sync --claim`
 
 #### `045-coordinate.md`: Post-Work Coordination
 - **Purpose:** Update coordination state after completing work
 - **Role:** AI Agent Coordination Specialist
 - **Creates:** AGENT_NOTES updates, handoff packages, completion reports
 - **Type:** Autonomous - requires active work
-- **Usage:** `/JIM 045-coordinate --complete`
+- **Usage:** `/PRIS 045-coordinate --complete`
 
 ### Utility Commands
 
@@ -145,31 +145,31 @@ JIM operates through a series of specialized commands, each handling a specific 
 
 
 #### `90-migrate.md`: Version Migration
-- **Purpose:** Migrate JIM system between versions safely
+- **Purpose:** Migrate PRIS system between versions safely
 - **Role:** Software Migration Specialist
 - **Creates:** Migration report, backups, and rollback scripts
 - **Type:** Autonomous - handles version upgrades
 
 ## File Structure
 
-JIM uses a structured file system within `.jim/`:
+PRIS uses a structured file system within `.pris/`:
 
 ```
-.jim/
-├── !CONFIG.json          # System configuration (! prefix for sort priority)
-├── mission.log           # Operation log
-├── current/              # Living documents (continuously updated)
+.pris/
+├── NEXUS.json          # System configuration (! prefix for sort priority)
+├── inception.log           # Operation log
+├── memories/              # Living documents (continuously updated)
 │   ├── _10-REQUIREMENTS.md   # Current requirements
 │   ├── _20-BACKLOG.md        # Current backlog
 │   ├── _30-ARCHITECTURE.md   # Current architecture
 │   ├── _21-SPRINTS.md        # Sprint planning
 │   └── _40-ISSUES.md         # Known issues
-├── artifacts/            # Historical records
-│   ├── 10-requirements/  # Requirements snapshots
-│   ├── 20-planning/      # Planning artifacts
-│   ├── 30-architecture/  # Architecture decisions
-│   ├── 40-implementation/# Implementation records
-│   └── 50-reviews/       # Review history
+├── cells/            # Historical records
+│   ├── 10-vk-results/  # Requirements snapshots
+│   ├── 20-assignments/      # Planning artifacts
+│   ├── 30-blueprints/  # Architecture decisions
+│   ├── 40-construction/# Implementation records
+│   └── 50-investigations/       # Review history
 └── orchestration/        # Parallel AI coordination (NEW!)
     ├── agents/           # Agent management
     │   ├── agent-status.json    # Current assignments
@@ -193,16 +193,16 @@ Distributed throughout the codebase in key directories:
 
 1. **Setup Phase** (Run once):
    ```bash
-   /JIM 030-orchestrate setup  # Creates GitHub labels, project board
-   /JIM 035-decompose FEAT-001 # Breaks epic into work contracts
+   /PRIS 030-orchestrate setup  # Creates GitHub labels, project board
+   /PRIS 035-decompose FEAT-001 # Breaks epic into work contracts
    ```
 
 2. **Agent Work Loop** (Each agent repeats):
    ```bash
-   /JIM 040-sync --status      # See what's available
-   /JIM 040-sync --claim       # Claim next work
-   /JIM 04-implement <number>  # Do the work
-   /JIM 045-coordinate --complete  # Mark done & share updates
+   /PRIS 040-sync --status      # See what's available
+   /PRIS 040-sync --claim       # Claim next work
+   /PRIS 04-sebastian <number>  # Do the work
+   /PRIS 045-coordinate --complete  # Mark done & share updates
    ```
 
 3. **Multiple Agents** (In separate terminals):
@@ -214,16 +214,16 @@ Distributed throughout the codebase in key directories:
 ## Usage Examples
 
 ```bash
-# 1. Initialize JIM system
+# 1. Initialize PRIS system
 # Use 00-init.md prompt with Claude
-# This creates the .jim directory structure
+# This creates the .pris directory structure
 
 # 2. Gather requirements (interactive)
-# Use 01-analyze.md prompt
+# Use 01-voight-kampff.md prompt
 # Claude will interview you about your project needs
 
 # 3. Prioritize features (interactive)  
-# Use 02-prioritize.md prompt
+# Use 02-joshi.md prompt
 # Claude will help define MVP and create backlog
 
 # 4. Select architecture pattern
@@ -231,14 +231,14 @@ Distributed throughout the codebase in key directories:
 # Claude will analyze requirements and select optimal architecture
 
 # 5. Generate setup script
-# Use 03-setup.md prompt
+# Use 03-tyrell.md prompt
 # Claude will implement the selected architecture
 
 # 6. Run the generated setup script
 ./setup.sh my-project-name
 
 # 7. Implement a feature
-# Use 04-implement.md prompt with ticket ID
+# Use 04-sebastian.md prompt with ticket ID
 # Example: Implement FEAT-001 from backlog
 
 # 8. Review code changes
@@ -251,34 +251,34 @@ Distributed throughout the codebase in key directories:
 ```bash
 # 1. One-time setup: Initialize orchestration
 # Use 030-orchestrate.md prompt
-/JIM 030-orchestrate setup
+/PRIS 030-orchestrate setup
 
 # 2. Break down an epic into work contracts
 # Use 035-decompose.md prompt
-/JIM 035-decompose FEAT-001-auth
+/PRIS 035-decompose FEAT-001-auth
 
 # 3. In multiple terminal windows (e.g., zellij):
 # Each agent claims and works on contracts independently
 
 # Terminal 1 - Agent 1:
-/JIM 040-sync --claim
+/PRIS 040-sync --claim
 # Claims #101 [SHARED] Auth types
-/JIM 04-implement 101
-/JIM 045-coordinate --complete
+/PRIS 04-sebastian 101
+/PRIS 045-coordinate --complete
 
 # Terminal 2 - Agent 2:
-/JIM 040-sync --status
+/PRIS 040-sync --status
 # Waits for #101 to complete, then:
-/JIM 040-sync --claim 103
+/PRIS 040-sync --claim 103
 # Claims #103 [FRONTEND] Auth UI
-/JIM 04-implement 103
-/JIM 045-coordinate --complete
+/PRIS 04-sebastian 103
+/PRIS 045-coordinate --complete
 
 # Terminal 3 - Agent 3:
-/JIM 040-sync --claim 102
+/PRIS 040-sync --claim 102
 # Claims #102 [API] Auth endpoints
-/JIM 04-implement 102
-/JIM 045-coordinate --complete
+/PRIS 04-sebastian 102
+/PRIS 045-coordinate --complete
 
 # 4. Agents automatically coordinate through AGENT_NOTES.md
 # No merge conflicts due to architectural boundaries!
@@ -293,7 +293,7 @@ graph LR
     A[040-sync --status] --> B{Work Available?}
     B -->|Yes| C[040-sync --claim]
     B -->|No| A
-    C --> D[04-implement]
+    C --> D[04-sebastian]
     D --> E[045-coordinate --complete]
     E --> A
     
@@ -304,19 +304,19 @@ graph LR
 
 ```bash
 # Start of work session - Check what's happening
-/JIM 040-sync --status
+/PRIS 040-sync --status
 # Shows: who's working on what, what's available, recent changes
 
 # Claim your next piece of work
-/JIM 040-sync --claim
+/PRIS 040-sync --claim
 # Automatically: checks dependencies, shows relevant notes, assigns work
 
 # Implement the claimed work
-/JIM 04-implement <issue-number>
+/PRIS 04-sebastian <issue-number>
 # Stays within boundaries, follows contracts, writes tests
 
 # Complete and coordinate
-/JIM 045-coordinate --complete
+/PRIS 045-coordinate --complete
 # Updates AGENT_NOTES, closes issue, unblocks dependencies
 
 # Repeat!
@@ -372,7 +372,7 @@ graph LR
 2. **Trust the Process**: Let each specialist complete their analysis
 3. **Provide Context**: The more detailed your requirements, the better the output
 4. **Review and Validate**: Always review generated code and decisions
-5. **Use Living Documents**: Check `current/` folder for latest state
+5. **Use Living Documents**: Check `memories/` folder for latest state
 
 ## Troubleshooting
 
@@ -383,7 +383,7 @@ graph LR
 
 ## Future Enhancements
 
-The JIM system is designed to be extensible. Future commands could include:
+The PRIS system is designed to be extensible. Future commands could include:
 - Performance optimization analysis
 - Security audit automation
 - Documentation generation
@@ -392,4 +392,4 @@ The JIM system is designed to be extensible. Future commands could include:
 
 ---
 
-*JIM: Turning requirements into reality through systematic, AI-powered development*
+*PRIS: Turning requirements into reality through systematic, AI-powered development*

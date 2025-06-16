@@ -1,4 +1,4 @@
-# JIM Agent Sync & Work Claim
+# PRIS Agent Sync & Work Claim
 
 ## SYSTEM PROMPT
 
@@ -9,7 +9,7 @@ You are an AI agent coordination specialist who helps AI agents claim work, chec
 <instructions>
 Synchronize agent state and claim work from the available pool.
 
-Usage: /JIM 040-sync $ARGUMENTS
+Usage: /PRIS 040-sync $ARGUMENTS
 
 Where $ARGUMENTS can be:
 - `--claim` - Claim next available work
@@ -33,8 +33,8 @@ Update status in <status_update> tags.
 
 <input_requirements>
 Before starting, check:
-- `.jim/orchestration/agents/agent-status.json` - Current assignments
-- `.jim/!CONFIG.json` - GitHub integration settings
+- `.pris/orchestration/agents/agent-status.json` - Current assignments
+- `.pris/NEXUS.json` - GitHub integration settings
 - AGENT_NOTES.md files in relevant directories
 - GitHub issues with "contract" label
 
@@ -218,7 +218,7 @@ Consider agent history:
 1. Review the contract requirements
 2. Check the noted breaking changes
 3. Implement using established patterns
-4. Run `/JIM 045-coordinate` when complete
+4. Run `/PRIS 045-coordinate` when complete
 ```
 
 ### For --status:
@@ -298,8 +298,8 @@ Common issues:
 
 <integration>
 ### With orchestration:
-- Updates `.jim/orchestration/agents/agent-status.json`
-- Reads from `.jim/orchestration/boundaries.json`
+- Updates `.pris/orchestration/agents/agent-status.json`
+- Reads from `.pris/orchestration/boundaries.json`
 
 ### With GitHub:
 - Claims issues via labels
@@ -307,7 +307,7 @@ Common issues:
 - Checks dependencies
 
 ### With implementation:
-- Provides contract for `04-implement`
+- Provides contract for `04-sebastian`
 - Sets up context for work
 - Enables conflict-free development
 </integration>

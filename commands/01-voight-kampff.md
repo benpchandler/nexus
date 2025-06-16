@@ -1,4 +1,4 @@
-# JIM Requirements Analysis Interview
+# PRIS Requirements Analysis Interview
 
 ## SYSTEM PROMPT
 
@@ -107,15 +107,15 @@ If unsure about any requirement, ask clarifying questions rather than making ass
 <output_structure>
 After completing the interview, create two documents:
 
-1. **Snapshot Artifact**: `.jim/artifacts/10-requirements/10-REQUIREMENTS-ANALYSIS-<timestamp>.md`
+1. **Snapshot Artifact**: `.pris/cells/10-vk-results/10-REQUIREMENTS-ANALYSIS-<timestamp>.md`
    - Historical record of this specific analysis session
    - Never modified after creation
    - Includes interview transcript and decision rationale
    
-2. **Living Document**: `.jim/current/_10-REQUIREMENTS.md`
+2. **Living Document**: `.pris/memories/_10-REQUIREMENTS.md`
    - Current state of requirements
    - Updated as requirements evolve
-   - Reference for all subsequent JIM phases
+   - Reference for all subsequent PRIS phases
 
 Both documents should follow this structure:
 

@@ -1,12 +1,12 @@
-# JIM Prompt Engineering Optimization Command
+# PRIS Prompt Engineering Optimization Command
 
 **Command ID**: 90-improve-prompts  
-**Purpose**: Systematically review and enhance JIM command prompts using Anthropic best practices  
+**Purpose**: Systematically review and enhance PRIS command prompts using Anthropic best practices  
 **Based on**: Anthropic Prompt Engineering Interactive Tutorial Analysis
 
 ## EXECUTIVE SUMMARY
 
-This command applies proven prompt engineering techniques to optimize JIM system prompts for accuracy, consistency, and effectiveness. It provides a systematic approach to reviewing and improving all JIM commands, living documents, and AI-powered features.
+This command applies proven prompt engineering techniques to optimize PRIS system prompts for accuracy, consistency, and effectiveness. It provides a systematic approach to reviewing and improving all PRIS commands, living documents, and AI-powered features.
 
 ## CORE PRINCIPLES (80/20 RULE)
 
@@ -197,7 +197,7 @@ Step 2: Validation → Use Previous Result
 Step 3: Final Output → Combine All Results
 ```
 
-**JIM Application**:
+**PRIS Application**:
 
 - Requirements → Architecture → Implementation Plan
 - Code Review → Fix Recommendations → Validation
@@ -222,7 +222,7 @@ You have access to tools for [specific domain]. Use tools when:
 </function_calls>
 ```
 
-**JIM Integration Points**:
+**PRIS Integration Points**:
 
 - Financial analysis calculations
 - Git operations and code analysis
@@ -265,7 +265,7 @@ Now process: [actual input]
 ### 📋 **PHASE 1: AUDIT EXISTING PROMPTS**
 
 ```bash
-# Run this analysis on each JIM command
+# Run this analysis on each PRIS command
 1. Identify prompt structure issues
 2. Check for missing examples
 3. Validate output consistency
@@ -323,11 +323,11 @@ User: "Do [task]. First think in <thinking> tags. Format as [structure]. Only pr
 
 ## EXECUTION COMMAND
 
-To apply this guide to existing JIM commands:
+To apply this guide to existing PRIS commands:
 
 ```bash
-# Review and optimize all JIM commands
-find .claude/commands/JIM -name "*.md" -exec echo "Reviewing: {}" \; -exec cat {} \;
+# Review and optimize all PRIS commands
+find .claude/commands/PRIS -name "*.md" -exec echo "Reviewing: {}" \; -exec cat {} \;
 
 # Apply optimization checklist to each command
 # Update prompts following the patterns above
@@ -337,7 +337,7 @@ find .claude/commands/JIM -name "*.md" -exec echo "Reviewing: {}" \; -exec cat {
 
 **Next Steps**:
 
-1. Review current JIM command prompts against this checklist
+1. Review current PRIS command prompts against this checklist
 2. Prioritize high-impact improvements (80/20 rule)
 3. Implement optimizations incrementally
 4. Test and validate each change

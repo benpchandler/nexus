@@ -1,4 +1,4 @@
-# JIM Dynamic Architecture Pattern Selection
+# PRIS Dynamic Architecture Pattern Selection
 
 ## SYSTEM PROMPT
 
@@ -26,8 +26,8 @@ If uncertain about versions or compatibility, note it in <uncertainty> tags.
 
 <input_requirements>
 Before starting, read:
-- `.jim/current/_10-REQUIREMENTS.md` - Technical profile and requirements
-- `.jim/architecture-patterns.json` - Available architecture patterns
+- `.pris/memories/_10-REQUIREMENTS.md` - Technical profile and requirements
+- `.pris/architecture-patterns.json` - Available architecture patterns
 - System datetime - For determining "latest" versions
 
 Key information to extract:
@@ -248,9 +248,9 @@ Researched on: [Date]
 ```
 
 Also create/update:
-1. `.jim/artifacts/30-architecture/025-ARCHITECTURE-DECISION-<timestamp>.md`
-2. `.jim/current/_30-ARCHITECTURE.md` - Update with decision
-3. `.jim/artifacts/30-architecture/025-VERSION-RESEARCH.md` - Detailed version findings
+1. `.pris/cells/30-blueprints/025-ARCHITECTURE-DECISION-<timestamp>.md`
+2. `.pris/memories/_30-ARCHITECTURE.md` - Update with decision
+3. `.pris/cells/30-blueprints/025-VERSION-RESEARCH.md` - Detailed version findings
 </output_structure>
 
 ## EXECUTION WORKFLOW

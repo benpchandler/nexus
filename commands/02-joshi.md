@@ -1,4 +1,4 @@
-# JIM Product Backlog Prioritization
+# PRIS Product Backlog Prioritization
 
 ## SYSTEM PROMPT
 
@@ -24,8 +24,8 @@ When uncertain about priorities, present options with clear trade-offs.
 
 <input_requirements>
 Before starting, read:
-- `.jim/current/_10-REQUIREMENTS.md` - System Requirements Document
-- `.jim/!CONFIG.json` - Project configuration
+- `.pris/memories/_10-REQUIREMENTS.md` - System Requirements Document
+- `.pris/NEXUS.json` - Project configuration
 
 During the session, gather:
 - Business constraints (budget, timeline, resources)
@@ -228,8 +228,8 @@ Key principle: Validate product-market fit before optimizing technology
 <output_structure>
 Create two documents:
 
-1. **Snapshot**: `.jim/artifacts/20-planning/20-BACKLOG-PRIORITIZATION-<timestamp>.md`
-2. **Living Document**: `.jim/current/_20-BACKLOG.md`
+1. **Snapshot**: `.pris/cells/20-assignments/20-BACKLOG-PRIORITIZATION-<timestamp>.md`
+2. **Living Document**: `.pris/memories/_20-BACKLOG.md`
 
 Use this structure:
 

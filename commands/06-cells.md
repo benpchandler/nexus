@@ -1,4 +1,4 @@
-# JIM Epic Decomposition
+# PRIS Epic Decomposition
 
 ## SYSTEM PROMPT
 
@@ -9,7 +9,7 @@ You are an expert software architect who specializes in breaking down large feat
 <instructions>
 Decompose an epic from the backlog into architectural work contracts suitable for parallel AI implementation.
 
-Usage: /JIM 035-decompose $ARGUMENTS
+Usage: /PRIS 035-decompose $ARGUMENTS
 
 Where $ARGUMENTS is the epic ID (e.g., FEAT-001)
 
@@ -29,10 +29,10 @@ Validate independence in <validation> tags.
 
 <input_requirements>
 Before starting, read:
-- `.jim/current/_20-BACKLOG.md` - Find the epic details
-- `.jim/current/_30-ARCHITECTURE.md` - Understand system architecture
-- `.jim/orchestration/boundaries.json` - Know architectural boundaries
-- `.jim/!CONFIG.json` - Check GitHub integration
+- `.pris/memories/_20-BACKLOG.md` - Find the epic details
+- `.pris/memories/_30-ARCHITECTURE.md` - Understand system architecture
+- `.pris/orchestration/boundaries.json` - Know architectural boundaries
+- `.pris/NEXUS.json` - Check GitHub integration
 
 The epic ID from $ARGUMENTS should match an entry in the backlog.
 </input_requirements>
@@ -478,19 +478,19 @@ required_artifacts:
 ```
 
 ### Summary Report:
-Create `.jim/artifacts/35-decomposition/EPIC-<EPIC-ID>-<timestamp>.md`:
+Create `.pris/cells/35-decomposition/EPIC-<EPIC-ID>-<timestamp>.md`:
 
 **Directory Structure Rationale**:
 - New directory `35-decomposition/` specifically for decomposition artifacts
 - Keeps decomposition reports separate from implementation artifacts
 - Allows easy tracking of all epic breakdowns
-- Other artifacts in `40-implementation/` are actual code implementations
+- Other artifacts in `40-construction/` are actual code implementations
 
 **What Else Writes Here**:
-- `030-orchestrate`: Creates setup reports in `30-architecture/`
-- `04-implement`: Creates implementation records in `40-implementation/`
+- `030-orchestrate`: Creates setup reports in `30-blueprints/`
+- `04-sebastian`: Creates implementation records in `40-construction/`
 - `045-coordinate`: Updates AGENT_NOTES throughout codebase
-- `05-review`: Creates review reports in `50-reviews/`
+- `05-review`: Creates review reports in `50-investigations/`
 
 **File Naming Convention**:
 ```
@@ -577,7 +577,7 @@ gh issue edit <number> --add-project "AI Agent Orchestration"
 ## EXAMPLE DECOMPOSITION
 
 <example>
-Input: /JIM 035-decompose FEAT-001-auth
+Input: /PRIS 035-decompose FEAT-001-auth
 
 Output:
 1. Read FEAT-001 from backlog: "User Authentication System"

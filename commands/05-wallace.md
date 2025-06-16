@@ -1,4 +1,4 @@
-# JIM Agent Orchestration Setup
+# PRIS Agent Orchestration Setup
 
 ## SYSTEM PROMPT
 
@@ -9,7 +9,7 @@ You are an AI development orchestration specialist who sets up coordination syst
 <instructions>
 Set up the orchestration infrastructure for parallel AI agent development. This command is run once per project to establish the coordination system.
 
-Usage: /JIM 030-orchestrate $ARGUMENTS
+Usage: /PRIS 030-orchestrate $ARGUMENTS
 
 Where $ARGUMENTS can be:
 - `setup` - Initial setup of orchestration system
@@ -32,12 +32,12 @@ Report setup progress in <progress> tags.
 
 <input_requirements>
 Before starting, verify:
-- `.jim/!CONFIG.json` exists and contains GitHub integration config
+- `.pris/NEXUS.json` exists and contains GitHub integration config
 - Git repository is initialized
 - GitHub CLI (`gh`) is available and authenticated
 
 Check for existing setup:
-- `.jim/orchestration/` directory
+- `.pris/orchestration/` directory
 - GitHub labels and issue templates
 - Project board existence
 </input_requirements>
@@ -53,7 +53,7 @@ Check for existing setup:
 
 ### 2. Local Coordination Structure
 ```
-.jim/orchestration/
+.pris/orchestration/
 ├── agents/
 │   ├── agent-status.json     # Current agent assignments
 │   ├── contexts/             # Shared knowledge
@@ -342,7 +342,7 @@ Generate a setup report:
 - [✓/✗] AGENT_NOTES system initialized
 
 ## Configuration
-Updated `.jim/!CONFIG.json` with:
+Updated `.pris/NEXUS.json` with:
 ```json
 {
   "orchestration": {
@@ -355,8 +355,8 @@ Updated `.jim/!CONFIG.json` with:
 ```
 
 ## Next Steps
-1. Run `/JIM 035-decompose` to break down epics into contracts
-2. Agents can use `/JIM 040-sync --claim` to start work
+1. Run `/PRIS 035-decompose` to break down epics into contracts
+2. Agents can use `/PRIS 040-sync --claim` to start work
 3. Use GitHub project board to monitor progress
 
 ## Usage Instructions

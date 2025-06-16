@@ -1,4 +1,4 @@
-# JIM Project Setup Implementation
+# PRIS Project Setup Implementation
 
 ## SYSTEM PROMPT
 
@@ -9,7 +9,7 @@ You are an expert DevOps Engineer and Implementation Specialist who transforms a
 <instructions>
 Implement the architecture decision from phase 025 by generating a comprehensive setup script and project structure. Follow these principles:
 
-1. Read the architecture decision from `.jim/current/_30-ARCHITECTURE.md`
+1. Read the architecture decision from `.pris/memories/_30-ARCHITECTURE.md`
 2. Implement the exact technology stack specified
 3. Use the versions researched and documented in the architecture phase
 4. Generate a comprehensive, error-resistant setup script
@@ -33,15 +33,15 @@ Note any implementation challenges in <challenges> tags.
 
 <input_requirements>
 Before starting, read:
-- `.jim/current/_30-ARCHITECTURE.md` - **REQUIRED: Architecture decision from 025-architecture**
-- `.jim/current/_10-REQUIREMENTS.md` - System requirements
-- `.jim/current/_20-BACKLOG.md` - Prioritized features
-- `.jim/!CONFIG.json` - Project configuration
+- `.pris/memories/_30-ARCHITECTURE.md` - **REQUIRED: Architecture decision from 025-architecture**
+- `.pris/memories/_10-REQUIREMENTS.md` - System requirements
+- `.pris/memories/_20-BACKLOG.md` - Prioritized features
+- `.pris/NEXUS.json` - Project configuration
 
 **CRITICAL**: The architecture decision MUST exist before running setup. 
 
 **Validation Steps**:
-1. Check if `.jim/current/_30-ARCHITECTURE.md` exists
+1. Check if `.pris/memories/_30-ARCHITECTURE.md` exists
 2. Look for section "Architecture Decision from 025-architecture" 
 3. Verify it contains:
    - Technology Stack section with versions
@@ -57,7 +57,7 @@ The 025-architecture command must be run before setup to:
 - Research current technology versions  
 - Document technology decisions
 
-Please run: /JIM 025-architecture
+Please run: /PRIS 025-architecture
 
 Then return to run this setup command.
 ```
@@ -139,7 +139,7 @@ When implementing the chosen architecture:
 Generate three key outputs:
 
 ### 1. Setup Implementation Report
-Create `.jim/artifacts/30-architecture/30-SETUP-IMPLEMENTATION-<timestamp>.md`:
+Create `.pris/cells/30-blueprints/30-SETUP-IMPLEMENTATION-<timestamp>.md`:
 
 ```markdown
 # Setup Implementation Report

@@ -8,7 +8,38 @@ PRIS (Polymorphic Reality Implementation System) is an AI-powered development wo
 
 ## Installation
 
-### As a Git Submodule (Recommended)
+### For Claude Code Users (Recommended)
+
+PRIS integrates seamlessly with Claude Code through custom slash commands. This approach keeps commands centralized and up-to-date while maintaining project-specific data.
+
+```bash
+# 1. Clone PRIS to a central location (if not already done)
+cd ~/Dev
+git clone https://github.com/benpchandler/pris.git
+
+# 2. In your project, create symlink for Claude Code commands
+cd your-project
+mkdir -p .claude/commands
+# Use absolute path for the symlink
+ln -s /full/path/to/pris/commands .claude/commands/PRIS
+# Example: ln -s /Users/username/Dev/pris/commands .claude/commands/PRIS
+
+# 3. Initialize project-specific PRIS workspace
+mkdir .pris
+# Run initialization (through Claude Code: /PRIS/00-baseline)
+```
+
+This gives you:
+- `.claude/commands/PRIS/` → Shared PRIS commands (always up-to-date)
+- `.pris/` → Project-specific data (memories, cells, logs)
+
+**Troubleshooting**: To verify your symlink is working:
+```bash
+# Should list all PRIS command files
+ls -la .claude/commands/PRIS/
+```
+
+### As a Git Submodule (For Non-Claude Code Users)
 
 ```bash
 # Add PRIS to your project
@@ -19,7 +50,7 @@ git commit -m "Add PRIS as submodule"
 pris 00-baseline
 ```
 
-### For Fresh Clones
+### For Fresh Clones with Submodules
 
 ```bash
 git clone --recurse-submodules https://github.com/your-username/your-project.git
@@ -103,6 +134,18 @@ git push origin main
 ```
 
 ### Updating Multiple Projects
+
+#### For Claude Code Users (Symlink Approach)
+
+Simply pull the latest PRIS updates once, and all projects automatically get the latest commands:
+
+```bash
+cd ~/Dev/pris
+git pull origin main
+# That's it! All symlinked projects now have the latest PRIS commands
+```
+
+#### For Submodule Users
 
 Create a script to update PRIS across all your projects:
 

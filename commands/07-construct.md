@@ -1,4 +1,4 @@
-# JIM Feature Implementation
+# PRIS Feature Implementation
 
 ## SYSTEM PROMPT
 
@@ -23,7 +23,7 @@ Validate your work in <validation> tags.
 If you find issues during validation, correct them before proceeding.
 
 The system supports multiple ticket sources:
-- **Static Backlog**: Read from `.jim/current/_20-BACKLOG.md`
+- **Static Backlog**: Read from `.pris/memories/_20-BACKLOG.md`
 - **GitHub Issues**: Fetch via GitHub API using issue number
 - **Linear**: Fetch via Linear API using ticket ID
 - **Custom**: Any source with proper API integration
@@ -35,9 +35,9 @@ The system supports multiple ticket sources:
 Before starting, determine ticket source and read:
 
 ### Core Documents (Always Required)
-- `.jim/current/_10-REQUIREMENTS.md` - System requirements
-- `.jim/current/_30-ARCHITECTURE.md` - Architecture patterns to follow
-- `.jim/!CONFIG.json` - Configuration and integration settings
+- `.pris/memories/_10-REQUIREMENTS.md` - System requirements
+- `.pris/memories/_30-ARCHITECTURE.md` - Architecture patterns to follow
+- `.pris/NEXUS.json` - Configuration and integration settings
 
 ### Work Contract Mode (NEW - For Parallel AI Development)
 When working in orchestrated mode, tickets come from GitHub contracts:
@@ -72,29 +72,29 @@ When working in orchestrated mode, tickets come from GitHub contracts:
 
 ### Traditional Ticket Sources
 1. **Static Backlog** (default)
-   - Read: `.jim/current/_20-BACKLOG.md`
+   - Read: `.pris/memories/_20-BACKLOG.md`
    - Find ticket by ID in the document
 
 2. **GitHub Issues** (Including Contracts)
-   - Config: `github.token` and `github.repo` in !CONFIG.json
+   - Config: `github.token` and `github.repo` in NEXUS.json
    - Fetch: `GET /repos/{owner}/{repo}/issues/{issue_number}`
    - Parse: Extract description and acceptance criteria from issue body
    - Check labels: If "contract" label present, use contract mode
 
 3. **Linear**
-   - Config: `linear.apiKey` and `linear.teamId` in !CONFIG.json
+   - Config: `linear.apiKey` and `linear.teamId` in NEXUS.json
    - Fetch: GraphQL query for issue by identifier
    - Parse: Extract description, acceptance criteria, and labels
 
 4. **Custom Integration**
-   - Config: Custom fields in !CONFIG.json
+   - Config: Custom fields in NEXUS.json
    - Fetch: As defined by integration
    - Parse: Map to standard ticket format
 
 ### Ticket Identification
 The ticket ID is provided via (in priority order):
 1. Command parameter: `--ticket FEAT-001` or just ticket number
-2. Config file: `.jim/!CONFIG.json` → `current_ticket`
+2. Config file: `.pris/NEXUS.json` → `current_ticket`
 3. User prompt: "Implement ticket FEAT-001" or "Implement 102"
 4. Interactive selection: List available tickets for user choice
 </input_requirements>
@@ -704,7 +704,7 @@ Before submitting:
 ## OUTPUT FORMAT
 
 <output_structure>
-The output should be a structured JSON that contains the actual code to be implemented. This JSON format allows the JIM system to:
+The output should be a structured JSON that contains the actual code to be implemented. This JSON format allows the PRIS system to:
 1. Write the actual code files to the filesystem
 2. Create proper git commits
 3. Open pull requests with the code
@@ -749,7 +749,7 @@ Generate a complete implementation package as JSON:
   ],
   "documentation_updates": [
     {
-      "path": ".jim/artifacts/40-implementation/completed/40-FEAT-001-IMPLEMENTATION.md",
+      "path": ".pris/cells/40-construction/completed/40-FEAT-001-IMPLEMENTATION.md",
       "summary": "Implementation details and decisions"
     }
   ],
@@ -763,18 +763,18 @@ Generate a complete implementation package as JSON:
     "contract_id": "102",
     "boundaries_respected": true,
     "interface_contract_fulfilled": true,
-    "coordination_command": "/JIM 045-coordinate --complete"
+    "coordination_command": "/PRIS 045-coordinate --complete"
   }
 }
 ```
 
 ### How the Output is Used
 
-The JIM system processes this JSON output to:
+The PRIS system processes this JSON output to:
 
 1. **Create Files**: Each entry in `files` and `test_files` is written to the filesystem
    ```bash
-   # JIM executes:
+   # PRIS executes:
    write_file(file.path, file.content)
    git add file.path
    ```
@@ -1271,11 +1271,11 @@ describe('LoginForm', () => {
 - Use interface contracts as the source of truth
 
 **Coordination Workflow**
-1. Claim work: `/JIM 040-sync --claim <issue-number>`
+1. Claim work: `/PRIS 040-sync --claim <issue-number>`
 2. Check dependencies and AGENT_NOTES
 3. Implement within boundaries only
 4. Update AGENT_NOTES with changes
-5. Complete work: `/JIM 045-coordinate --complete`
+5. Complete work: `/PRIS 045-coordinate --complete`
 
 **Conflict Prevention**
 - Never modify files outside your allowed_paths
