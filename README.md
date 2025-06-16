@@ -6,6 +6,16 @@
 
 PRIS (Polymorphic Reality Implementation System) is an AI-powered development workflow system inspired by Blade Runner. It manages the software development lifecycle through distinct phases, each named after characters and concepts from the Blade Runner universe.
 
+## Version
+
+**Current Version: 1.0.0**
+
+This is the first stable release of PRIS with:
+- Complete JIM to PRIS migration
+- Global Claude Code command support
+- Blade Runner themed architecture
+- Full development lifecycle coverage
+
 ## Installation
 
 ### For Claude Code Users (Recommended)
