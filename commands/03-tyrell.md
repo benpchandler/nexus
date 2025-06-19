@@ -36,7 +36,37 @@ Key information to extract:
 - Team expertise
 - Scalability needs
 - Integration requirements
+- **Project Context** (SIMPLICITY MODE or STANDARD MODE)
 </input_requirements>
+
+## SIMPLICITY MODE DETECTION
+
+<simplicity_mode>
+**BEFORE selecting any architecture, check the Project Context in requirements:**
+
+If **SIMPLICITY MODE** is detected:
+- **Override all other considerations** - simplicity trumps everything
+- Prefer single-file solutions over frameworks
+- Choose static hosting over dynamic servers
+- Avoid microservices, databases, and complex dependencies
+- Select technologies the user already knows
+- Optimize for understanding and quick setup, not scalability
+
+**Simple Architecture Preferences:**
+- **Web Apps**: HTML/CSS/JS files, GitHub Pages hosting
+- **APIs**: Single-file Python/Node scripts, SQLite or no database
+- **Dashboards**: Static sites with client-side data fetching
+- **Tools**: Command-line scripts or simple web pages
+
+**What NOT to suggest in SIMPLICITY MODE:**
+- Next.js, React frameworks, or complex build processes
+- Kubernetes, Docker, or containerization
+- PostgreSQL, Redis, or database clusters  
+- Authentication systems (unless explicitly required)
+- CI/CD pipelines, monitoring, or DevOps tooling
+
+**If uncertain**, always choose the simpler option.
+</simplicity_mode>
 
 ## ARCHITECTURE SELECTION PHASES
 
@@ -58,6 +88,45 @@ Key information to extract:
 - Check LTS availability
 - Verify ecosystem maturity
 - Confirm security status
+
+#### Enhanced with Sub-Agent Research (NEW)
+<sub_agent_research>
+When sub_agents.enabled in config, spawn parallel research agents:
+
+```javascript
+// Example: Research multiple framework options in parallel
+if (config.sub_agents.enabled && complexity.requiresDeepResearch) {
+  const researchTasks = [
+    {
+      task: "Research React ecosystem 2025",
+      prompt: "Research current React patterns, Next.js 15 features, and ecosystem maturity. Focus on: performance improvements, server components, AI-friendly patterns. Return structured findings with version recommendations."
+    },
+    {
+      task: "Research Vue 3 ecosystem",
+      prompt: "Research Vue 3 composition API, Nuxt 3 features, and ecosystem tools. Include: TypeScript support, performance benchmarks, enterprise adoption. Return structured findings."
+    },
+    {
+      task: "Research Svelte 5 architecture",
+      prompt: "Research Svelte 5 runes, SvelteKit features, and bundle size advantages. Evaluate: developer experience, tooling maturity, production readiness. Return structured findings."
+    }
+  ];
+  
+  // Spawn parallel research agents
+  const results = await Promise.all(
+    researchTasks.map(task => Task(task))
+  );
+  
+  // Synthesize findings
+  const synthesis = synthesizeResearch(results);
+}
+```
+
+Benefits of parallel research:
+- 3x faster architecture decisions
+- More thorough version checking
+- Unbiased framework comparison
+- Current best practices discovery
+</sub_agent_research>
 
 ### Phase 4: Compatibility Verification
 - Check version compatibility
