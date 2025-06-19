@@ -35,9 +35,19 @@ The system supports multiple ticket sources:
 Before starting, determine ticket source and read:
 
 ### Core Documents (Always Required)
-- `.pris/memories/_10-REQUIREMENTS.md` - System requirements
+- `.pris/memories/_10-REQUIREMENTS.md` - System requirements (check Project Context)
 - `.pris/memories/_30-ARCHITECTURE.md` - Architecture patterns to follow
 - `.pris/NEXUS.json` - Configuration and integration settings
+
+### Simplicity Mode Check
+**CRITICAL**: Before any implementation, check Project Context in requirements:
+
+If **SIMPLICITY MODE** detected:
+- **Use minimal patterns only** - avoid enterprise patterns from pattern library
+- **Generate simple, readable code** - optimize for understanding over performance
+- **Minimal dependencies** - prefer standard library or single-file solutions
+- **Skip advanced features** - no auth, caching, or complex architecture unless explicitly required
+- **Focus on core functionality** - implement exactly what was requested, nothing more
 
 ### Work Contract Mode (NEW - For Parallel AI Development)
 When working in orchestrated mode, tickets come from GitHub contracts:
@@ -266,6 +276,66 @@ Before implementing, research current best practices:
 
 ### Phase 4: Code Generation (API Contract First)
 
+#### Step 0: Pattern Library Search (NEW - Pattern Injection)
+**Before implementing, search for relevant patterns from the library:**
+
+<pattern_injection>
+Check if patterns are enabled in `.pris/config.yaml`:
+```yaml
+patterns:
+  enabled: true  # Must be true to use patterns
+```
+
+If enabled, search for relevant patterns:
+
+1. **Extract Search Terms**
+   - From ticket description and requirements
+   - Technology stack (language, framework)
+   - Feature type (CRUD, auth, forms, etc.)
+   - Common tags from acceptance criteria
+
+2. **Pattern Retrieval Process**
+   ```
+   Search Criteria:
+   - Language: [extracted from project]
+   - Framework: [extracted from architecture]
+   - Feature Type: [from ticket analysis]
+   - Tags: [relevant keywords]
+   
+   Example:
+   - Language: python
+   - Framework: fastapi
+   - Type: api
+   - Tags: ["crud", "pagination", "validation"]
+   ```
+
+3. **Pattern Injection**
+   If matching patterns found (relevance score > 0.7):
+   ```
+   📚 Found 2 relevant patterns from library:
+   
+   1. [0.95] crud-api-endpoints (python, fastapi)
+      Complete CRUD implementation with pagination
+      Success rate: 95%, Used 42 times
+   
+   2. [0.89] input-validation (python, pydantic)
+      Request validation with error handling
+      Success rate: 89%, Used 31 times
+   
+   Using these patterns as reference for implementation.
+   ```
+
+4. **Pattern Application**
+   - Use pattern as starting template
+   - Adapt to specific requirements
+   - Maintain pattern's best practices
+   - Document any deviations
+
+If no patterns found:
+- Proceed with implementation from scratch
+- After successful implementation, consider adding as new pattern
+</pattern_injection>
+
 #### Step 1: Define API Contract (Critical)
 **This must be completed and agreed upon before ANY implementation begins.**
 
@@ -345,6 +415,97 @@ Only after both sides are complete:
 
 **Critical Testing Philosophy:**
 Your value as an AI developer is measured by the robustness and thoughtfulness of your tests, NOT by making tests pass easily. Writing comprehensive tests that catch real issues is what makes the product better and earns developer trust.
+
+#### Enhanced Test Generation (NEW - Automated Testing Support)
+
+<automated_test_generation>
+When --generate-tests flag is provided or testing.enabled in config:
+
+1. **Analyze Implementation**
+   - Extract all public functions/methods
+   - Identify API endpoints
+   - Find UI components
+   - Map data flows
+
+2. **Generate Test Suite Structure**
+   ```
+   tests/
+   ├── unit/
+   │   ├── services/
+   │   │   └── userService.test.ts
+   │   └── utils/
+   │       └── validation.test.ts
+   ├── integration/
+   │   └── api/
+   │       └── userEndpoints.test.ts
+   └── e2e/
+       └── userFlow.test.ts
+   ```
+
+3. **Test Generation Strategy**
+   For each component type, generate appropriate tests:
+
+   **For Functions/Methods:**
+   ```typescript
+   // Implementation
+   function calculateDiscount(price: number, percentage: number): number {
+     return price * (1 - percentage / 100);
+   }
+
+   // Generated Tests
+   describe('calculateDiscount', () => {
+     // Happy path
+     it('should calculate discount correctly', () => {
+       expect(calculateDiscount(100, 20)).toBe(80);
+     });
+
+     // Edge cases
+     it('should handle zero price', () => {
+       expect(calculateDiscount(0, 20)).toBe(0);
+     });
+
+     it('should handle 100% discount', () => {
+       expect(calculateDiscount(100, 100)).toBe(0);
+     });
+
+     // Error cases
+     it('should handle negative values', () => {
+       expect(() => calculateDiscount(-100, 20)).toThrow();
+     });
+   });
+   ```
+
+   **For API Endpoints:**
+   ```typescript
+   // Generated API Tests
+   describe('POST /api/users', () => {
+     it('should create user with valid data', async () => {
+       const response = await request(app)
+         .post('/api/users')
+         .send(validUserData);
+       
+       expect(response.status).toBe(201);
+       expect(response.body).toHaveProperty('id');
+     });
+
+     it('should reject invalid email', async () => {
+       const response = await request(app)
+         .post('/api/users')
+         .send({ ...validUserData, email: 'invalid' });
+       
+       expect(response.status).toBe(400);
+       expect(response.body.error).toContain('email');
+     });
+   });
+   ```
+
+4. **Coverage-Driven Generation**
+   Ensure tests cover:
+   - All code paths (branches)
+   - Error conditions
+   - Edge cases
+   - Integration points
+</automated_test_generation>
 
 #### Test-First Development Process
 

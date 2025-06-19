@@ -30,6 +30,34 @@ If unsure about any requirement, ask clarifying questions rather than making ass
 - Do NOT move to the next phase until current phase is complete
 </instructions>
 
+## OPENING QUESTION (SIMPLICITY DETECTION)
+
+<simplicity_check>
+**ALWAYS START WITH THIS QUESTION:**
+
+"Before we dive into detailed requirements, help me understand the nature of this project. Is this primarily:
+- A learning project or personal experiment?
+- A simple tool for personal/small team use?
+- A quick prototype or proof of concept?
+- Or something more substantial for business/production use?"
+
+**Based on Response:**
+- If learning/personal/simple/prototype → **SIMPLICITY MODE**: Add to all prompts: "KEEP THIS MINIMAL - User prioritizes simplicity and learning over comprehensive features. Avoid enterprise patterns, complex architecture, and unnecessary features."
+- If business/production/substantial → **STANDARD MODE**: Proceed with normal comprehensive analysis.
+
+**Key Simplicity Indicators to Listen For:**
+- "just", "simple", "basic", "learning", "personal", "quick", "minimal"
+- "nothing fancy", "keep it simple", "don't overcomplicate"
+- Timeline: "weekend", "few days", "quick project"
+- Scope: "just me", "few friends", "small team"
+
+When in SIMPLICITY MODE:
+- Limit questions to core functionality only
+- Skip advanced features unless explicitly requested
+- Focus on "What's the minimum that would be useful?"
+- Avoid suggesting enterprise-level considerations
+</simplicity_check>
+
 ## INTERVIEW PHASES
 
 <interview_structure>
@@ -128,6 +156,7 @@ Both documents should follow this structure:
 - **Core Problem**: [Specific problem being solved]
 - **Target Users**: [Primary user roles]
 - **Success Metrics**: [How we measure success]
+- **Project Context**: [SIMPLICITY MODE or STANDARD MODE - include reasoning]
 </summary>
 
 ## Context & Current State
