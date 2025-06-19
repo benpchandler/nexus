@@ -1,5 +1,24 @@
 # PRIS (Polymorphic Reality Implementation System) - Operations Manual
 
+## Command Index
+
+| Command | Name | Purpose | Type |
+|---------|------|---------|------|
+| 00 | baseline | Initialize PRIS tracking system | Setup |
+| 01 | voight-kampff | Gather comprehensive system requirements | Interactive |
+| 02 | joshi | Create prioritized product backlog | Interactive |
+| 03 | tyrell | Generate project setup script | Autonomous |
+| 04 | sebastian | Implement features with tests | Autonomous |
+| 05 | wallace | Code review and quality analysis | Autonomous |
+| 06 | cells | Manage PRIS memory system | Utility |
+| 07 | construct | Architecture pattern selection | Autonomous |
+| 08 | mesh | Security vulnerability analysis | Autonomous |
+| 09 | stelline | Documentation generation | Autonomous |
+| 10 | deckard | Multi-modal review (code, docs, PRs) | Autonomous |
+| 11 | vk | Requirements validation | Autonomous |
+| 12 | morehuman | Performance optimization | Autonomous |
+| 13 | tearsInRain | Version migration | Utility |
+
 ## Overview
 
 **PRIS** is an advanced AI-powered system that manages the complete software development lifecycle from requirements gathering to deployment. It functions as a team of specialized AI agents, each expert in their domain, working together to deliver production-ready software through systematic, best-practice approaches.

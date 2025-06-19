@@ -1294,3 +1294,138 @@ describe('LoginForm', () => {
 ```
 
 **Remember**: In parallel development, coordination > speed. A well-coordinated team of agents outperforms rushed, conflicting work.
+
+## IMPLEMENTATION DOCUMENTATION
+
+<implementation_documentation>
+### Quick Decision Documentation
+During implementation, document decisions that affect the codebase:
+
+#### When to Create Quick Decisions
+Create a Quick Decision document when:
+- Choosing between libraries/packages
+- Selecting implementation patterns
+- Making performance trade-offs
+- Deciding on error handling approaches
+- Choosing data structures
+- Making any decision affecting <3 files
+
+#### Quick Decision Creation
+```bash
+# Create decision document
+cp docs/_templates/04-QUICK-DECISION-template.md \
+   docs/[component]/decisions/DECISION-$(date +%Y%m%d)-[topic].md
+
+# Example:
+cp docs/_templates/04-QUICK-DECISION-template.md \
+   docs/02-business-features/auth/decisions/DECISION-20240115-jwt-library.md
+```
+
+#### Quick Decision Format
+```markdown
+# Decision: [Topic]
+Date: YYYY-MM-DD
+Status: Accepted
+
+## Context
+[1-2 sentences on why this decision was needed]
+
+## Decision
+[What was decided]
+
+## Rationale
+[Why this option over others]
+
+## Impact
+- Files affected: [list]
+- Future considerations: [if any]
+```
+
+### TDD Status Updates
+As implementation progresses, update TDD:
+
+```markdown
+## Implementation Status
+- [x] API Contract defined
+- [x] Backend endpoints implemented
+- [ ] Frontend components (in progress)
+- [ ] Integration tests
+- [ ] Documentation updated
+```
+
+### ADR Revisions
+If implementation reveals need to change architecture:
+1. DO NOT modify existing ADR
+2. Create new ADR explaining the change
+3. Reference original ADR
+
+```bash
+# Create revision ADR
+cp docs/_templates/03-ADR-template.md \
+   docs/00-platform/decisions/ADR-004-revise-auth-approach.md
+```
+
+### Documentation Index Updates
+After implementation:
+```bash
+# Update documentation index
+cat >> .pris/memories/_DOCUMENTATION.md << EOF
+## Implementation Decisions
+- $(date +%Y-%m-%d): [Topic] | [path] | [Impact]
+
+## Feature Implementation Status
+- [Feature]: TDD Implementation 60% complete
+EOF
+```
+
+### Output Documentation Section
+Add to implementation output JSON:
+```json
+"documentation_updates": [
+  {
+    "type": "quick_decision",
+    "path": "docs/[location]/decisions/DECISION-[date]-[topic].md",
+    "content": "# Decision: Chose JWT over sessions\n..."
+  },
+  {
+    "type": "tdd_update",
+    "path": "docs/[location]/TDD-[feature].md",
+    "updates": {
+      "implementation_status": {
+        "backend": "complete",
+        "frontend": "in_progress",
+        "tests": "pending"
+      }
+    }
+  }
+]
+```
+
+### Guidance for User
+During implementation reviews:
+```
+During implementation, I made these decisions that should be documented:
+
+1. **JWT Library Selection**
+   - Chose jsonwebtoken over jose
+   - Reason: Better TypeScript support
+   - Impact: Auth service implementation
+   
+2. **Error Handling Pattern**
+   - Standardized on AppError class
+   - Reason: Consistent error responses
+   - Impact: All API endpoints
+
+Shall I create Quick Decision documents for these choices?
+```
+
+### Best Practices
+- Document decisions while context is fresh
+- Keep Quick Decisions brief (under 1 page)
+- Focus on "why" not "what"
+- Link to relevant code changes
+- Update TDD progress regularly
+- Create new ADRs for architecture changes, don't modify old ones
+</implementation_documentation>
+
+**Remember**: In parallel development, coordination > speed. A well-coordinated team of agents outperforms rushed, conflicting work.

@@ -378,6 +378,109 @@ Selected Architecture:
 - Track end-of-life dates
 </version_practices>
 
+## DOCUMENTATION GENERATION
+
+<documentation_generation>
+After architecture selection is complete, generate technical documentation:
+
+### TDD (Technical Design Document) Generation
+Create comprehensive TDD with architecture decisions:
+
+**Action**:
+```bash
+# Create system-level TDD
+cp docs/_templates/02-TDD-template.md docs/00-platform/architecture/TDD-system-architecture.md
+
+# Pre-populate TDD with:
+# - Architecture pattern from decision
+# - Technology stack with researched versions
+# - Component breakdown
+# - Integration patterns
+# - Data model structure
+# - API design approach
+```
+
+**TDD Pre-Population**:
+```markdown
+## Overview
+[Architecture decision summary]
+
+## Architecture
+### High-Level Architecture
+[Insert architecture diagram based on selected pattern]
+
+### Key Architectural Decisions
+[Copy major decisions from architecture selection]
+
+### Component Breakdown
+[Table of components from architecture decision]
+
+## Technology Stack
+[Copy exact versions from version research]
+```
+
+### ADR (Architecture Decision Record) Generation
+Create ADRs for each major decision:
+
+**Decisions requiring ADRs:**
+1. Architecture pattern choice (monolith vs microservices vs serverless)
+2. Primary language and framework selection
+3. Database technology choice
+4. Frontend framework selection
+5. Infrastructure and deployment approach
+
+**Action**:
+```bash
+# Create ADRs for major decisions
+cp docs/_templates/03-ADR-template.md docs/00-platform/decisions/ADR-001-[pattern-choice].md
+cp docs/_templates/03-ADR-template.md docs/00-platform/decisions/ADR-002-[database-choice].md
+cp docs/_templates/03-ADR-template.md docs/00-platform/decisions/ADR-003-[frontend-framework].md
+
+# Pre-populate each ADR with:
+# - Problem context from requirements
+# - Chosen solution with rationale
+# - Alternatives considered from evaluation
+# - Trade-offs accepted
+```
+
+### Documentation Index Update
+```bash
+# Update documentation index
+cat >> .pris/memories/_DOCUMENTATION.md << EOF
+## Technical Design (TDDs)
+- System Architecture | docs/00-platform/architecture/TDD-system-architecture.md | Created | $(date)
+
+## Architecture Decisions (ADRs)  
+- ADR-001: [Pattern] | docs/00-platform/decisions/ADR-001-[pattern].md | Approved | $(date)
+- ADR-002: [Database] | docs/00-platform/decisions/ADR-002-[database].md | Approved | $(date)
+EOF
+```
+
+### Link to PRDs
+If PRDs exist, update TDD to reference them:
+```markdown
+## Related Documentation
+- [Feature PRD](../path/to/PRD-feature.md) - Business requirements this architecture supports
+```
+
+### Guidance for User
+```
+Based on the architecture selection, I'll now create:
+
+1. **Technical Design Document (TDD)**
+   - System architecture overview
+   - Pre-populated with your technology choices
+   - Component breakdown and integration points
+   
+2. **Architecture Decision Records (ADRs)**
+   - ADR-001: [Architecture pattern decision]
+   - ADR-002: [Database technology decision]
+   - ADR-003: [Frontend framework decision]
+   
+These documents will guide implementation and capture the reasoning behind our technical choices.
+```
+</documentation_generation>
+
 ## IMPORTANT NOTES
 
 - Always research current versions at execution time
@@ -387,3 +490,5 @@ Selected Architecture:
 - Plan for long-term maintenance
 - Security updates trump feature additions
 - When uncertain about bleeding-edge tech, choose boring
+- Document all major decisions in ADRs for future reference
+- TDD should be created immediately after architecture selection while context is fresh

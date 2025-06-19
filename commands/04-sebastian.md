@@ -595,6 +595,98 @@ fi
 ```
 </error_handling>
 
+## AI CONTEXT DOCUMENTATION
+
+<ai_context_documentation>
+While building project structure, create CLAUDE.md files for AI assistant context:
+
+### Root CLAUDE.md
+Create at project root for overall system context:
+
+**Action**:
+```bash
+# Create root CLAUDE.md
+cp docs/_templates/05-CLAUDE-platform-overview-template.md ./CLAUDE.md
+
+# Pre-populate with:
+# - System purpose from requirements
+# - Architecture overview from TDD
+# - Technology stack summary
+# - Key conventions and patterns
+# - Links to PRDs and TDDs
+```
+
+### Service/Platform CLAUDE.md
+For each platform service directory:
+
+**Action**:
+```bash
+# For each service (auth, payments, etc.)
+cp docs/_templates/06-CLAUDE-platform-service-template.md services/[service]/CLAUDE.md
+
+# Pre-populate with:
+# - Service purpose and boundaries
+# - API endpoints this service provides
+# - Dependencies on other services
+# - Key design patterns used
+# - Testing approach
+```
+
+### Feature CLAUDE.md
+For each feature directory:
+
+**Action**:
+```bash
+# For each feature
+cp docs/_templates/07-CLAUDE-feature-template.md features/[feature]/CLAUDE.md
+
+# Pre-populate with:
+# - Link to feature PRD
+# - Component structure
+# - State management approach
+# - Integration points
+# - UI patterns used
+```
+
+### Documentation Linking
+Each CLAUDE.md should reference:
+```markdown
+## Related Documentation
+- [System Architecture TDD](docs/00-platform/architecture/TDD-system-architecture.md)
+- [Feature PRD](docs/[location]/PRD-[feature].md)
+- [Key ADRs](docs/00-platform/decisions/)
+```
+
+### Documentation Index Update
+```bash
+# Update documentation index
+cat >> .pris/memories/_DOCUMENTATION.md << EOF
+## AI Context (CLAUDE.md)
+- Platform Overview | /CLAUDE.md | Platform | All docs | $(date)
+- Auth Service | services/auth/CLAUDE.md | Service | Auth TDD | $(date)
+- [Feature] | features/[feature]/CLAUDE.md | Feature | Feature PRD | $(date)
+EOF
+```
+
+### Guidance for User
+```
+Creating AI context documentation (CLAUDE.md files) in:
+
+1. **Root Directory** - Overall system context
+2. **Service Directories** - Platform service contexts
+3. **Feature Directories** - Feature-specific contexts
+
+These files help AI assistants understand your codebase structure and conventions, leading to better code generation and fewer mistakes.
+```
+
+### Best Practices
+- Keep CLAUDE.md files concise but comprehensive
+- Update when patterns change significantly
+- Include "do" and "don't" examples
+- Reference related documentation
+- Focus on conventions unique to this codebase
+</ai_context_documentation>
+
 ## IMPORTANT NOTES
 
 - Architecture should serve the requirements, not vice versa
@@ -603,3 +695,5 @@ fi
 - Document every significant decision
 - Plan for monitoring and observability from the start
 - Security is not an afterthought
+- CLAUDE.md files are essential for AI-assisted development
+- Create documentation structure alongside code structure

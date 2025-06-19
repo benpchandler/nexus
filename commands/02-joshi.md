@@ -368,6 +368,10 @@ Features (with AI implementation approach):
 **Technical Notes:**
 - [Implementation consideration]
 
+**Documentation:**
+- **PRD:** [Link to PRD if exists or "Create PRD before implementation"]
+- **TDD:** [Link to TDD or "Create during architecture phase"]
+
 **Size:** M
 **Priority:** Must Have
 **Dependencies:** None
@@ -564,6 +568,59 @@ Constraints Captured:
   - Analytics from day one
 </patterns>
 
+## DOCUMENTATION REQUIREMENTS
+
+<documentation_requirements>
+### PRD Creation Check
+Before marking any user story as "Ready for Development":
+1. Verify PRD exists for the feature
+2. Link PRD in the story documentation section
+3. Ensure PRD has been reviewed and approved
+
+### Documentation Status Tracking
+Add to backlog summary:
+```markdown
+## Documentation Status
+### Features Needing PRDs
+- [ ] [Feature 1] - Priority: High
+- [ ] [Feature 2] - Priority: Medium
+
+### Features Ready for Development (PRD Complete)
+- [x] [Feature 3] - PRD: [link]
+- [x] [Feature 4] - PRD: [link]
+```
+
+### Backlog-to-Documentation Flow
+1. **During Prioritization**: Identify which features need PRDs
+2. **High Priority Items**: Must have PRDs before sprint planning
+3. **Documentation Sprint**: Allocate time for PRD creation
+4. **Link Maintenance**: Keep PRD links current in backlog
+
+### Documentation Index Update
+```bash
+# When creating backlog, update documentation needs
+cat >> .pris/memories/_DOCUMENTATION.md << EOF
+## PRDs Needed (from Backlog)
+- [Feature] | Priority: [High/Medium/Low] | Target Sprint: [X]
+EOF
+```
+
+### Guidance for User
+After prioritization, present documentation needs:
+```
+Based on our prioritized backlog, these high-priority items need PRDs:
+
+1. **[Feature 1]** (Must Have - Sprint 1)
+   - Needs PRD before development can begin
+   - Estimated 2-3 hours to create PRD
+   
+2. **[Feature 2]** (Should Have - Sprint 2)
+   - Can create PRD in parallel with Sprint 1 work
+
+Shall we schedule time to create these PRDs? This ensures clear requirements before implementation begins.
+```
+</documentation_requirements>
+
 ## IMPORTANT NOTES
 
 - Always tie priorities back to user value and business goals
@@ -573,3 +630,5 @@ Constraints Captured:
 - Start with simple, proven technologies - add complexity only when validated
 - Technology should evolve with product maturity, not precede it
 - Review and adjust priorities based on learnings
+- High-priority items must have PRDs before development begins
+- Documentation is part of "Definition of Ready" for user stories

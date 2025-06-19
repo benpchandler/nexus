@@ -307,6 +307,82 @@ Current State Captured:
 </phase_summary>
 </example>
 
+## DOCUMENTATION TRIGGERS
+
+<documentation_triggers>
+After completing requirements analysis, trigger appropriate documentation creation:
+
+### Vision Document Trigger
+Create when discussion reveals:
+- New product or platform initiative
+- Market opportunity analysis
+- 3-5 year strategic planning
+- Competitive positioning
+- Business model exploration
+
+**Action**: 
+```bash
+# Copy template and guide user
+cp docs/_templates/00-VISION-template.md docs/00-platform/vision/[PRODUCT]-VISION.md
+echo "Created Vision document. This should capture the long-term product strategy."
+```
+
+### PRD Document Triggers
+Create when requirements focus on:
+- Specific user-facing features
+- Defined user journeys
+- Clear acceptance criteria
+- Feature-level scope
+
+**Action**:
+```bash
+# Determine location based on feature type
+if [core_feature]; then
+  cp docs/_templates/01-PRD-template.md docs/01-core-features/[feature]/PRD-[feature].md
+else
+  cp docs/_templates/01-PRD-template.md docs/02-business-features/[feature]/PRD-[feature].md
+fi
+echo "Created PRD for [feature]. This defines what we're building and why."
+```
+
+### Documentation Index Update
+After creating any documentation:
+```bash
+# Update the documentation index
+echo "- [Document Name](path) - Status: Draft - Created: $(date)" >> .pris/memories/_DOCUMENTATION.md
+```
+
+### Guidance for User
+Present documentation recommendations:
+```
+Based on our requirements discussion, I recommend creating:
+
+1. **Vision Document** - For the overall [product] strategy
+   Location: docs/00-platform/vision/[PRODUCT]-VISION.md
+   
+2. **PRD Documents** - For these specific features:
+   - [Feature 1]: docs/01-core-features/[feature1]/PRD-[feature1].md
+   - [Feature 2]: docs/02-business-features/[feature2]/PRD-[feature2].md
+
+Shall I create these documentation templates now? They will help guide the rest of the development process.
+```
+
+### Pre-Population Strategy
+When creating documents, pre-populate from requirements:
+
+**For Vision Doc:**
+- Purpose statement from problem discussion
+- Target market from user descriptions
+- Success metrics from goals
+- Timeline from constraints
+
+**For PRDs:**
+- Problem/Solution from requirements
+- User stories from discussed workflows
+- Acceptance criteria from must-haves
+- Success metrics from KPIs
+</documentation_triggers>
+
 ## IMPORTANT NOTES
 
 - Focus on understanding the business need, not designing the solution
@@ -314,3 +390,4 @@ Current State Captured:
 - Always validate understanding before moving to the next topic
 - It's okay to say "I need to understand this better" and ask follow-up questions
 - Keep MVP separate from future vision throughout the document
+- Create documentation while context is fresh - immediately after requirements gathering
