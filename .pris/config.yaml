@@ -1,0 +1,91 @@
+# PRIS Configuration File
+# This file controls feature flags and system behavior
+
+# Pattern Library Configuration
+patterns:
+  enabled: true                    # Enable/disable pattern injection
+  max_patterns_per_query: 3        # Maximum patterns to inject per generation
+  min_relevance_score: 0.7         # Minimum similarity score for pattern matching
+  auto_learn: false                # Automatically learn from successful implementations
+  
+  # Pattern directories (relative to .pris/)
+  directories:
+    - patterns/api
+    - patterns/frontend
+    - patterns/testing
+    - patterns/database
+    - patterns/architecture
+    - patterns/security
+
+# Testing & Correction Loop Configuration  
+testing:
+  enabled: true                    # Enable/disable automated testing loops (BETA)
+  max_correction_attempts: 3       # Maximum attempts to fix failing tests
+  test_timeout_seconds: 300        # Timeout for test execution
+  auto_fix: true                   # Automatically attempt to fix test failures
+  
+  # Quality gates
+  quality_gates:
+    linting: true                  # Run linting checks
+    type_checking: true            # Run type checking
+    security_scan: false           # Run security scanning
+    coverage_threshold: 80         # Minimum test coverage percentage
+
+# Sub-Agent Orchestration Configuration
+sub_agents:
+  enabled: true                    # Enable/disable sub-agent spawning (ALPHA)
+  max_concurrent_agents: 3         # Maximum parallel agents (max: 10)
+  max_depth: 2                     # Maximum sub-agent nesting depth
+  timeout_minutes: 30              # Timeout for sub-agent tasks
+  
+  # Cost controls
+  cost_tracking: true              # Track costs per agent
+  max_cost_per_task: 5.00         # Maximum cost in USD per task
+  require_approval_above: 2.00     # Require user approval for expensive tasks
+
+# General PRIS Configuration
+system:
+  version: "1.0.0"
+  verbose_logging: false           # Enable detailed logging
+  dry_run: false                   # Preview actions without executing
+  
+  # Memory management
+  memory:
+    max_cell_size_mb: 50          # Maximum size for a single cell
+    auto_archive_days: 30         # Archive cells older than N days
+    compression: true             # Compress archived cells
+  
+  # Performance
+  performance:
+    parallel_file_operations: true # Enable parallel file I/O
+    cache_ttl_minutes: 60         # Cache time-to-live
+    
+# Environment-specific overrides
+environments:
+  development:
+    testing:
+      enabled: true
+      max_correction_attempts: 5
+    sub_agents:
+      max_concurrent_agents: 2
+      
+  production:
+    system:
+      dry_run: false
+      verbose_logging: false
+    sub_agents:
+      require_approval_above: 1.00
+      
+# Feature rollout schedule
+rollout:
+  patterns:
+    status: "stable"
+    enabled_since: "2025-06-19"
+    
+  testing:
+    status: "beta"
+    target_date: "2025-06-26"
+    
+  sub_agents:
+    status: "alpha"
+    target_date: "2025-07-03"
