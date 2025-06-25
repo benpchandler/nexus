@@ -1,4 +1,4 @@
-# PRIS Dynamic Architecture Pattern Selection
+# NEXUS Dynamic Architecture Pattern Selection
 
 ## SYSTEM PROMPT
 
@@ -317,9 +317,9 @@ Researched on: [Date]
 ```
 
 Also create/update:
-1. `.pris/cells/30-blueprints/025-ARCHITECTURE-DECISION-<timestamp>.md`
+1. `.pris/history/30-blueprints/025-ARCHITECTURE-DECISION-<timestamp>.md`
 2. `.pris/memories/_30-ARCHITECTURE.md` - Update with decision
-3. `.pris/cells/30-blueprints/025-VERSION-RESEARCH.md` - Detailed version findings
+3. `.pris/history/30-blueprints/025-VERSION-RESEARCH.md` - Detailed version findings
 </output_structure>
 
 ## EXECUTION WORKFLOW

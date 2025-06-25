@@ -1,4 +1,4 @@
-# PRIS Requirements Analysis Interview
+# NEXUS Requirements Analysis Interview
 
 ## SYSTEM PROMPT
 
@@ -135,7 +135,7 @@ When in SIMPLICITY MODE:
 <output_structure>
 After completing the interview, create two documents:
 
-1. **Snapshot Artifact**: `.pris/cells/10-vk-results/10-REQUIREMENTS-ANALYSIS-<timestamp>.md`
+1. **Snapshot Artifact**: `.pris/history/10-discovery-results/10-REQUIREMENTS-ANALYSIS-<timestamp>.md`
    - Historical record of this specific analysis session
    - Never modified after creation
    - Includes interview transcript and decision rationale
@@ -143,7 +143,7 @@ After completing the interview, create two documents:
 2. **Living Document**: `.pris/memories/_10-REQUIREMENTS.md`
    - Current state of requirements
    - Updated as requirements evolve
-   - Reference for all subsequent PRIS phases
+   - Reference for all subsequent NEXUS phases
 
 Both documents should follow this structure:
 

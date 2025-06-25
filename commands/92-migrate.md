@@ -1,4 +1,4 @@
-# PRIS Version Migration
+# NEXUS Version Migration
 
 ## SYSTEM PROMPT
 
@@ -7,7 +7,7 @@ You are a software migration specialist with expertise in version control, data 
 ## INSTRUCTIONS
 
 <instructions>
-Migrate the PRIS system from its current version to a target version. Follow these principles:
+Migrate the NEXUS system from its current version to a target version. Follow these principles:
 
 1. Analyze current system state and target version requirements
 2. Create comprehensive backups before any changes
@@ -31,8 +31,8 @@ Before starting, check:
 - `.pris/migration-rules/` - Version-specific migration rules
 
 Key information needed:
-- Current PRIS version
-- Target PRIS version  
+- Current NEXUS version
+- Target NEXUS version  
 - Current file structure
 - User customizations to preserve
 </input_requirements>
@@ -104,7 +104,7 @@ Key information needed:
 Generate comprehensive migration documentation:
 
 ```markdown
-# PRIS Migration Report
+# NEXUS Migration Report
 
 ## Migration Summary
 <summary>
@@ -197,7 +197,7 @@ Backup will be retained for 30 days at:
 ```
 
 Also create/update:
-1. `.pris/cells/90-retirement/MIGRATION-[timestamp].md` - Full report
+1. `.pris/history/90-deprecated/MIGRATION-[timestamp].md` - Full report
 2. `.pris/NEXUS.json` - Updated version and paths
 3. `.pris/backups/[timestamp]/` - Complete backup
 4. `.pris/backups/[timestamp]/rollback.sh` - Rollback script
@@ -254,7 +254,7 @@ Current state:
 - No living documents concept
 
 Target state:
-- Version 2.0 uses `memories/` and `cells/`
+- Version 2.0 uses `memories/` and `history/`
 - Config split into `NEXUS.json` and `!STATUS.json`
 - Living documents with underscore prefix
 </analysis>
@@ -274,7 +274,7 @@ cp -r .pris .pris/backups/v1.0-to-v2.0-20241206/
 
 # Structure transformation
 mkdir -p .pris/current
-mkdir -p .pris/cells/{10-requirements,20-planning,30-architecture}
+mkdir -p .pris/history/{10-requirements,20-planning,30-architecture}
 
 # File migrations
 mv .pris/REQUIREMENTS.md .pris/memories/_10-REQUIREMENTS.md
@@ -303,7 +303,7 @@ Transformed !STATUS.json:
 <rollback_template>
 ```bash
 #!/bin/bash
-# Rollback script for PRIS migration
+# Rollback script for NEXUS migration
 # Generated: [timestamp]
 # From: v[old] To: v[new]
 
@@ -311,7 +311,7 @@ echo "🔄 Starting rollback from v[new] to v[old]..."
 
 # Verify we're in correct directory
 if [ ! -f ".pris/NEXUS.json" ]; then
-    echo "❌ Error: Not in a PRIS project directory"
+    echo "❌ Error: Not in a NEXUS project directory"
     exit 1
 fi
 

@@ -1,10 +1,10 @@
-# PRIS Pattern Library
+# NEXUS Pattern Library
 
-The PRIS Pattern Library is a curated collection of reusable code patterns that enhance the quality and consistency of generated code. Each pattern represents a proven solution to common development challenges.
+The NEXUS Pattern Library is a curated collection of reusable code patterns that enhance the quality and consistency of generated code. Each pattern represents a proven solution to common development challenges.
 
 ## Overview
 
-Patterns are automatically injected during the implementation phase when PRIS detects relevant requirements. This ensures consistent, high-quality code generation based on battle-tested solutions.
+Patterns are automatically injected during the implementation phase when NEXUS detects relevant requirements. This ensures consistent, high-quality code generation based on battle-tested solutions.
 
 ## Pattern Structure
 
@@ -57,7 +57,7 @@ usage_count: 42     # Times used
 
 ### Automatic Pattern Injection
 
-When PRIS implements features, it automatically:
+When NEXUS implements features, it automatically:
 
 1. Analyzes requirements to identify relevant patterns
 2. Searches the pattern library based on:
@@ -73,16 +73,16 @@ Use the pattern manager command:
 
 ```bash
 # List all patterns
-pris 98-patterns-manager list
+nexus 98-patterns list
 
 # Search patterns
-pris 98-patterns-manager search "authentication"
+nexus 98-patterns search "authentication"
 
 # Add new pattern
-pris 98-patterns-manager add /path/to/pattern.md
+nexus 98-patterns add /path/to/pattern.md
 
 # View pattern details
-pris 98-patterns-manager view jwt-authentication
+nexus 98-patterns view jwt-authentication
 ```
 
 ## Configuration
@@ -103,7 +103,7 @@ To add a new pattern:
 1. Create a `.pattern.md` file following the schema
 2. Include working code with tests
 3. Document common mistakes and variations
-4. Run validation: `pris 98-patterns-manager add --validate`
+4. Run validation: `nexus 98-patterns add --validate`
 
 ## Best Practices
 
@@ -144,4 +144,4 @@ Patterns track:
 
 ---
 
-*"More human than human" - Building on proven patterns*
+*Building on proven patterns for reliability and consistency*

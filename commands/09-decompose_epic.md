@@ -1,4 +1,4 @@
-# PRIS Epic Decomposition
+# NEXUS Epic Decomposition
 
 ## SYSTEM PROMPT
 
@@ -9,7 +9,7 @@ You are an expert software architect who specializes in breaking down large feat
 <instructions>
 Decompose an epic from the backlog into architectural work contracts suitable for parallel AI implementation.
 
-Usage: /PRIS 035-decompose $ARGUMENTS
+Usage: /NEXUS 09-decompose_epic $ARGUMENTS
 
 Where $ARGUMENTS is the epic ID (e.g., FEAT-001)
 
@@ -478,7 +478,7 @@ required_artifacts:
 ```
 
 ### Summary Report:
-Create `.pris/cells/35-decomposition/EPIC-<EPIC-ID>-<timestamp>.md`:
+Create `.pris/history/35-decomposition/EPIC-<EPIC-ID>-<timestamp>.md`:
 
 **Directory Structure Rationale**:
 - New directory `35-decomposition/` specifically for decomposition artifacts
@@ -487,9 +487,9 @@ Create `.pris/cells/35-decomposition/EPIC-<EPIC-ID>-<timestamp>.md`:
 - Other artifacts in `40-construction/` are actual code implementations
 
 **What Else Writes Here**:
-- `030-orchestrate`: Creates setup reports in `30-blueprints/`
-- `04-sebastian`: Creates implementation records in `40-construction/`
-- `045-coordinate`: Updates AGENT_NOTES throughout codebase
+- `08-setup_orchestration`: Creates setup reports in `30-blueprints/`
+- `04-scaffold`: Creates implementation records in `40-construction/`
+- `11-create_handoff`: Updates AGENT_NOTES throughout codebase
 - `05-review`: Creates review reports in `50-investigations/`
 
 **File Naming Convention**:
@@ -577,7 +577,7 @@ gh issue edit <number> --add-project "AI Agent Orchestration"
 ## EXAMPLE DECOMPOSITION
 
 <example>
-Input: /PRIS 035-decompose FEAT-001-auth
+Input: /NEXUS 09-decompose_epic FEAT-001-auth
 
 Output:
 1. Read FEAT-001 from backlog: "User Authentication System"

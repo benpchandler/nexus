@@ -10,7 +10,7 @@ project-root/
 │   │   ├── _20-BACKLOG.md         # Prioritized backlog
 │   │   ├── _30-ARCHITECTURE.md    # Architecture decisions
 │   │   └── _DOCUMENTATION.md      # Documentation index
-│   └── cells/                      # Historical snapshots
+│   └── history/                    # Historical snapshots
 ├── CLAUDE.md                       # Root AI context
 ├── docs/                           # All project documentation
 │   ├── 00-platform/                # Platform-wide docs

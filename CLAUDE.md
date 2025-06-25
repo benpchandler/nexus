@@ -1,22 +1,22 @@
-# PRIS AI Context and Guidelines
+# NEXUS AI Context and Guidelines
 
-*This document provides context for AI assistants working with the PRIS (Polymorphic Reality Implementation System) project.*
+*This document provides context for AI assistants working with the NEXUS (Next-generation EXecution Unified System) project.*
 
 ## Project Overview
 
-PRIS is an advanced AI-powered system that manages the complete software development lifecycle from requirements gathering to deployment. It functions as a team of specialized AI agents, each expert in their domain, working together to deliver production-ready software through systematic, best-practice approaches.
+NEXUS is an advanced AI-powered system that manages the complete software development lifecycle from requirements gathering to deployment. It functions as a team of specialized AI agents, each expert in their domain, working together to deliver production-ready software through systematic, best-practice approaches.
 
 ## Key Concepts
 
 ### 1. Command-Based Architecture
-- PRIS operates through numbered commands (00-13)
+- NEXUS operates through numbered commands (00-13)
 - Each command represents a specialized AI agent with specific expertise
 - Commands build on each other in a structured workflow
 - Commands are stored in `/commands/` directory with numbered prefixes
 
 ### 2. Memory System
 - **Living Documents**: Continuously updated files in `.pris/memories/`
-- **Cells**: Historical snapshots of work in `.pris/cells/`
+- **History**: Historical snapshots of work in `.pris/history/`
 - **NEXUS.json**: Central configuration and state management
 - **AGENT_NOTES.md**: Distributed communication files for parallel AI coordination
 
@@ -26,11 +26,11 @@ PRIS is an advanced AI-powered system that manages the complete software develop
 - Work contracts ensure clean separation of concerns
 - GitHub issues track agent assignments
 
-## Working with PRIS Commands
+## Working with NEXUS Commands
 
 ### Command Naming Convention
 - Format: `XX-name.md` where XX is a two-digit number
-- Examples: `00-baseline.md`, `01-voight-kampff.md`
+- Examples: `00-initialize.md`, `01-discover.md`
 - Numbers indicate workflow order and dependencies
 
 ### Command Types
@@ -51,19 +51,19 @@ PRIS is an advanced AI-powered system that manages the complete software develop
 pris/
 ├── README.md                  # Main project documentation
 ├── CLAUDE.md                  # This file - AI context
-├── commands/                  # All PRIS command prompts
-│   ├── 00-baseline.md        # System initialization
-│   ├── 01-voight-kampff.md   # Requirements gathering
+├── commands/                  # All NEXUS command prompts
+│   ├── 00-initialize.md      # System initialization
+│   ├── 01-discover.md        # Requirements gathering
 │   └── ...                   # Other commands
 ├── docs/                     # Additional documentation
 │   ├── _templates/           # Document templates
 │   ├── architecture/         # Architecture decisions
 │   ├── development/          # Development guidelines
 │   └── guides/              # User guides
-└── .pris/                   # Runtime data (created by PRIS)
+└── .pris/                   # Runtime data (created by NEXUS)
     ├── NEXUS.json           # Configuration
     ├── memories/            # Living documents
-    └── cells/              # Historical records
+    └── history/            # Historical records
 ```
 
 ## Best Practices for AI Assistants
@@ -76,7 +76,7 @@ pris/
 
 ### 2. File Management
 - Living documents in `memories/` should be updated, not replaced
-- Historical records in `cells/` should never be modified
+- Historical records in `history/` should never be modified
 - Use consistent naming conventions for generated files
 - Always check for existing files before creating new ones
 
@@ -96,22 +96,22 @@ pris/
 
 ### Initialize a New Project
 ```bash
-# Use 00-baseline.md to create .pris structure
+# Use 00-initialize.md to create .pris structure
 ```
 
 ### Implement a Feature
 ```bash
-# Use 04-sebastian.md with a ticket ID from the backlog
+# Use 04-scaffold.md with a ticket ID from the backlog
 ```
 
 ### Review Code
 ```bash
-# Use 05-wallace.md with a branch name
+# Use 12-review_code.md with a branch name
 ```
 
 ### Generate Documentation
 ```bash
-# Use 09-stelline.md to create project documentation
+# Use 11-create_handoff.md to create project documentation
 ```
 
 ## Troubleshooting
@@ -127,13 +127,13 @@ pris/
 - Respect architectural boundaries defined in contracts
 
 ### Version Issues
-- Use 13-tearsInRain.md for migrations
+- Use 92-migrate.md for migrations
 - Check NEXUS.json for current version
-- Review migration guides in cells/
+- Review migration guides in history/
 
 ## Future Development
 
-When extending PRIS:
+When extending NEXUS:
 1. Follow the numbered command convention
 2. Include comprehensive examples in new commands
 3. Update this CLAUDE.md with new concepts

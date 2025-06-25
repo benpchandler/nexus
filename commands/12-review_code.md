@@ -1,4 +1,4 @@
-# PRIS Code Review & Quality Analysis
+# NEXUS Code Review & Quality Analysis
 
 ## SYSTEM PROMPT
 
@@ -11,9 +11,9 @@ Conduct a thorough code review of changes in the specified feature branch. Follo
 
 **Review Standards Reference:**
 Before reviewing, familiarize yourself with:
-1. Project-specific standards in `.pris/cells/30-blueprints/CODE-STANDARDS.md`
+1. Project-specific standards in `.pris/history/30-blueprints/CODE-STANDARDS.md`
 2. Technology requirements in `.pris/memories/_30-ARCHITECTURE.md`
-3. Code quality standards from `04-sebastian.md` (shadcn/ui usage, TypeScript strictness, etc.)
+3. Code quality standards from `04-scaffold.md` (shadcn/ui usage, TypeScript strictness, etc.)
 
 **Review Approach:**
 1. Analyze the diff between main and feature branch
@@ -133,7 +133,7 @@ except DatabaseError as e:
 
 **Standards Reference:**
 Check against established standards in:
-- `.pris/cells/30-blueprints/CODE-STANDARDS.md`
+- `.pris/history/30-blueprints/CODE-STANDARDS.md`
 - TypeScript strict mode requirements
 - shadcn/ui component usage patterns
 - Project naming conventions
@@ -344,7 +344,7 @@ Missing Tests:
 
 <file_strategy>
 **Historical Records (MD Files)**
-Use `.pris/cells/50-investigations/` for permanent historical records:
+Use `.pris/history/50-investigations/` for permanent historical records:
 - Full review with all findings and context
 - Immutable once created (never edited)
 - Serves as audit trail and reference
@@ -358,7 +358,7 @@ Use GitHub Issues/Linear/Jira for actionable items:
 - Integrated with PR workflow
 
 **Implementation Approach:**
-1. Generate full review in `.pris/cells/50-investigations/50-REVIEW-[branch]-[timestamp].md`
+1. Generate full review in `.pris/history/50-investigations/50-REVIEW-[branch]-[timestamp].md`
 2. For each Critical/Major issue found:
    - Create GitHub issue with:
      - Link to review file
@@ -378,8 +378,8 @@ Use GitHub Issues/Linear/Jira for actionable items:
 </file_strategy>
 
 Create/update these files:
-1. `.pris/cells/50-investigations/50-REVIEW-[branch]-[timestamp].md` - Full immutable review record
-2. `.pris/cells/50-investigations/50-SUMMARY.md` - Review summary log (append-only)
+1. `.pris/history/50-investigations/50-REVIEW-[branch]-[timestamp].md` - Full immutable review record
+2. `.pris/history/50-investigations/50-SUMMARY.md` - Review summary log (append-only)
 3. `.pris/memories/_40-ISSUES.md` - High-level issues dashboard with links to tracker
 </output_structure>
 

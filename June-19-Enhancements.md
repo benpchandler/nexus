@@ -441,4 +441,4 @@ Start with implementing sub-agents for your most complex features, add testing l
 
 ---
 
-*"More human than human" - Tyrell Corporation*
+*Building better software through intelligent automation*

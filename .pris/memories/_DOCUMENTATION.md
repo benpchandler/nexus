@@ -53,22 +53,22 @@ Central index for all project documentation. This living document tracks the loc
 ### When to Create Each Document Type
 
 **Vision Document**
-- Triggered by: New product or major pivot discussions in voight-kampff
+- Triggered by: New product or major pivot discussions in discover
 - Created at: docs/00-platform/vision/
 - Updated: Quarterly or on major strategy changes
 
 **PRD (Product Requirements Document)**
-- Triggered by: Feature-level requirements in voight-kampff
+- Triggered by: Feature-level requirements in discover
 - Created at: docs/01-core-features/[name]/ or docs/02-business-features/[name]/
 - Updated: Before implementation begins, locked during development
 
 **TDD (Technical Design Document)**
-- Triggered by: Architecture selection in tyrell
+- Triggered by: Architecture selection in architect
 - Created at: Same directory as feature or docs/00-platform/ for system-wide
 - Updated: During implementation to track progress
 
 **ADR (Architecture Decision Record)**
-- Triggered by: Major technical decisions in tyrell
+- Triggered by: Major technical decisions in architect
 - Created at: docs/[component]/decisions/
 - Updated: Never (immutable) - create new ADRs to revise
 
@@ -78,7 +78,7 @@ Central index for all project documentation. This living document tracks the loc
 - Updated: Never (immutable)
 
 **CLAUDE.md**
-- Triggered by: Directory creation in sebastian
+- Triggered by: Directory creation in scaffold
 - Created at: Same directory as code
 - Updated: When patterns or conventions change
 
@@ -91,6 +91,6 @@ Central index for all project documentation. This living document tracks the loc
 - [ ] Review quarterly for staleness
 
 ### Notes
-- This index is automatically updated by PRIS commands
+- This index is automatically updated by NEXUS commands
 - Manual updates may be needed for external changes
 - Archive outdated docs to docs/99-archive/

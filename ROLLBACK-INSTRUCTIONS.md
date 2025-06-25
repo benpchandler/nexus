@@ -1,4 +1,4 @@
-# PRIS Simplicity Detection - Rollback Instructions
+# NEXUS Simplicity Detection - Rollback Instructions
 
 ## Quick Rollback (if needed)
 
@@ -8,7 +8,7 @@ If the simplicity detection changes cause issues, you can easily roll back:
 ```bash
 git reset --hard v1.0.0-pre-simplicity
 ```
-This will completely undo all simplicity detection changes and return PRIS to its previous state.
+This will completely undo all simplicity detection changes and return NEXUS to its previous state.
 
 ### Option 2: Selective Rollback (if only some changes are problematic)
 ```bash
@@ -50,7 +50,7 @@ sub_agents:
 - `enhancements/evaluation/` - Complete test results and analysis
 
 ### Configuration:
-- `.pris/config.yaml` - PRIS feature configuration
+- `.pris/config.yaml` - NEXUS feature configuration
 
 ## Testing Rollback
 
@@ -74,7 +74,7 @@ git checkout v1.1.0-simplicity-detection
 ## Validation
 
 The changes are extensive but well-contained:
-- ✅ All changes are additive (no core PRIS functionality removed)
+- ✅ All changes are additive (no core NEXUS functionality removed)
 - ✅ Clean git history with logical commits
 - ✅ Tagged rollback points available  
 - ✅ Comprehensive test results documenting improvements

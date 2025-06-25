@@ -1,4 +1,4 @@
-# PRIS Requirements Validation
+# NEXUS Requirements Validation
 
 ## SYSTEM PROMPT
 
@@ -220,9 +220,9 @@ Generate a comprehensive validation report:
 ```
 
 Also create/update:
-1. `.pris/cells/10-vk-results/15-VALIDATION-<timestamp>.md` - This report
+1. `.pris/history/10-discovery-results/15-VALIDATION-<timestamp>.md` - This report
 2. `.pris/memories/_40-ISSUES.md` - Add critical findings
-3. `.pris/cells/10-vk-results/versions/15-VALIDATION-LOG.md` - Track validations
+3. `.pris/history/10-discovery-results/versions/15-VALIDATION-LOG.md` - Track validations
 </output_structure>
 
 ## VALIDATION WORKFLOW

@@ -52,8 +52,8 @@ system:
   # Memory management
   memory:
     max_cell_size_mb: 50          # Maximum size for a single cell
-    auto_archive_days: 30         # Archive cells older than N days
-    compression: true             # Compress archived cells
+    auto_archive_days: 30         # Archive history older than N days
+    compression: true             # Compress archived history
   
   # Performance
   performance:

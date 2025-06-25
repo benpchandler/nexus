@@ -1,39 +1,43 @@
-# PRIS (Polymorphic Reality Implementation System) - Operations Manual
+# NEXUS (Polymorphic Reality Implementation System) - Operations Manual
 
 ## Command Index
 
 | Command | Name | Purpose | Type |
 |---------|------|---------|------|
-| 00 | baseline | Initialize PRIS tracking system | Setup |
-| 01 | voight-kampff | Gather comprehensive system requirements | Interactive |
-| 02 | joshi | Create prioritized product backlog | Interactive |
-| 03 | tyrell | Generate project setup script | Autonomous |
-| 04 | sebastian | Implement features with tests | Autonomous |
-| 05 | wallace | Code review and quality analysis | Autonomous |
-| 06 | cells | Manage PRIS memory system | Utility |
-| 07 | construct | Architecture pattern selection | Autonomous |
-| 08 | mesh | Security vulnerability analysis | Autonomous |
-| 09 | stelline | Documentation generation | Autonomous |
-| 10 | deckard | Multi-modal review (code, docs, PRs) | Autonomous |
-| 11 | vk | Requirements validation | Autonomous |
-| 12 | morehuman | Performance optimization | Autonomous |
-| 13 | tearsInRain | Version migration | Utility |
+| 00 | initialize | Initialize NEXUS tracking system | Setup |
+| 01 | discover | Gather comprehensive system requirements | Interactive |
+| 02 | prioritize | Create prioritized product backlog | Interactive |
+| 03 | architect | Generate project setup script | Autonomous |
+| 04 | scaffold | Implement features with tests | Autonomous |
+| 05 | construct | Feature implementation with TDD | Autonomous |
+| 06 | verify | Test and validate implementations | Autonomous |
+| 07 | refine | Code review and quality analysis | Autonomous |
+| 08 | setup_orchestration | Setup parallel AI coordination | Autonomous |
+| 09 | decompose_epic | Break epics into work contracts | Autonomous |
+| 10 | claim_work | Claim and execute work contracts | Autonomous |
+| 11 | create_handoff | Documentation generation | Autonomous |
+| 12 | review_code | Multi-modal review (code, docs, PRs) | Autonomous |
+| 90 | validate | Requirements validation | Utility |
+| 91 | optimize | Performance optimization | Utility |
+| 92 | migrate | Version migration | Utility |
+| 93 | spawn_parallel | Direct parallel agent spawning | Utility |
+| 98 | patterns | Pattern library management | Utility |
 
 ## Overview
 
-**PRIS** is an advanced AI-powered system that manages the complete software development lifecycle from requirements gathering to deployment. It functions as a team of specialized AI agents, each expert in their domain, working together to deliver production-ready software through systematic, best-practice approaches.
+**NEXUS** is an advanced AI-powered system that manages the complete software development lifecycle from requirements gathering to deployment. It functions as a team of specialized AI agents, each expert in their domain, working together to deliver production-ready software through systematic, best-practice approaches.
 
 ## What's New
 
 ### Parallel AI Agent Development (NEW!)
-PRIS now supports orchestrated parallel development with multiple AI agents working simultaneously:
+NEXUS now supports orchestrated parallel development with multiple AI agents working simultaneously:
 - **Agent Orchestration**: Multiple Claude Code instances working in parallel
 - **Architectural Boundaries**: Prevents merge conflicts through clear work contracts
 - **Smart Coordination**: Agents communicate through AGENT_NOTES.md files
 - **GitHub Integration**: Work tracked through issues with contract labels
 
 ### Enhanced Prompt Engineering
-All PRIS commands have been enhanced with Anthropic's latest prompt engineering best practices:
+All NEXUS commands have been enhanced with Anthropic's latest prompt engineering best practices:
 - Clear role definitions using natural language
 - Step-by-step thinking with XML tags for better reasoning
 - Structured output formats for consistency
@@ -42,30 +46,30 @@ All PRIS commands have been enhanced with Anthropic's latest prompt engineering 
 
 ## Prerequisites
 
-PRIS only requires the `.pris` directory structure to operate. Project-specific tools are determined during the architecture phase based on requirements.
+NEXUS only requires the `.pris` directory structure to operate. Project-specific tools are determined during the architecture phase based on requirements.
 
-For the setup phase (03-tyrell), the generated script will check for required tools based on the chosen architecture.
+For the setup phase (03-architect), the generated script will check for required tools based on the chosen architecture.
 
 ## Workflow Overview
 
 ```mermaid
 graph TD
-    A[00-init: Initialize PRIS] --> B[01-voight-kampff: Gather Requirements]
-    B --> C[02-joshi: Create Backlog]
-    C --> D[025-architecture: Select Architecture]
-    D --> E[03-tyrell: Generate Setup Script]
+    A[00-initialize: Initialize NEXUS] --> B[01-discover: Gather Requirements]
+    B --> C[02-prioritize: Create Backlog]
+    C --> D[03-architect: Select Architecture]
+    D --> E[03-architect: Generate Setup Script]
     
     E --> F{Parallel Development?}
-    F -->|Yes| G[030-orchestrate: Setup GitHub]
-    F -->|No| H[04-sebastian: Single Agent]
+    F -->|Yes| G[08-setup_orchestration: Setup GitHub]
+    F -->|No| H[04-scaffold: Single Agent]
     
-    G --> I[035-decompose: Break Down Epics]
-    I --> J[040-sync: Agents Claim Work]
-    J --> K[04-sebastian: Parallel Work]
-    K --> L[045-coordinate: Update Status]
+    G --> I[09-decompose_epic: Break Down Epics]
+    I --> J[10-claim_work: Agents Claim Work]
+    J --> K[04-scaffold: Parallel Work]
+    K --> L[11-create_handoff: Update Status]
     L --> J
     
-    H --> M[05-review: Code Review]
+    H --> M[12-review_code: Code Review]
     K --> M
     
     style G fill:#f9f,stroke:#333,stroke-width:4px
@@ -76,49 +80,49 @@ graph TD
 
 ## Command Structure
 
-PRIS operates through a series of specialized commands, each handling a specific phase of development:
+NEXUS operates through a series of specialized commands, each handling a specific phase of development:
 
 ### Core Development Flow
 
-#### `00-init.md`: System Initialization
-- **Purpose:** Initialize the PRIS tracking system
+#### `00-initialize.md`: System Initialization
+- **Purpose:** Initialize the NEXUS tracking system
 - **Role:** System initialization specialist
 - **Creates:** `.pris` directory structure and configuration files
 - **Note:** Does NOT check for development tools - that happens later
 
-#### `01-voight-kampff.md`: Requirements Analysis
+#### `01-discover.md`: Requirements Analysis
 - **Purpose:** Gather comprehensive system requirements through structured interview
 - **Role:** Expert Systems Analyst
 - **Creates:** System Requirements Document with user stories, data models, and acceptance criteria
 - **Type:** Interactive - requires human input
 
-#### `02-joshi.md`: Product Backlog Prioritization
+#### `02-prioritize.md`: Product Backlog Prioritization
 - **Purpose:** Transform requirements into prioritized, actionable backlog
 - **Role:** Expert Product Owner and Strategic Planner
 - **Creates:** Prioritized backlog with MVP definition and roadmap
 - **Type:** Interactive - requires human input
 - **Special:** Includes technology progression planning
 
-#### `025-architecture.md`: Architecture Pattern Selection
+#### `03-architect.md`: Architecture Pattern Selection
 - **Purpose:** Select optimal architecture pattern based on requirements
 - **Role:** Software Architect (pattern specialist)
 - **Creates:** Architecture Decision Record with technology choices and versions
 - **Type:** Autonomous - reads requirements and priorities
 - **When:** After requirements are clear, BEFORE any setup
 
-#### `03-tyrell.md`: Project Setup Implementation
+#### `03-architect.md`: Project Setup Implementation
 - **Purpose:** Implement the selected architecture with setup scripts
 - **Role:** DevOps Engineer and Implementation Specialist
 - **Creates:** Executable setup script and project structure
 - **Type:** Autonomous - reads architecture decision from 025
 
-#### `04-sebastian.md`: Feature Implementation
+#### `04-scaffold.md`: Feature Implementation
 - **Purpose:** Generate complete, tested code for specific features
 - **Role:** Expert Full-Stack Developer
 - **Creates:** Implementation package with code, tests, and PR details
 - **Type:** Autonomous - requires ticket ID
 
-#### `05-review.md`: Code Review & Quality Analysis
+#### `12-review_code.md`: Code Review & Quality Analysis
 - **Purpose:** Review code changes for quality, security, and best practices
 - **Role:** Senior Software Engineer (code reviewer)
 - **Creates:** Comprehensive code review with actionable feedback
@@ -126,65 +130,65 @@ PRIS operates through a series of specialized commands, each handling a specific
 
 ### Parallel Development Commands (NEW!)
 
-#### `030-orchestrate.md`: Agent Orchestration Setup
+#### `08-setup_orchestration.md`: Agent Orchestration Setup
 - **Purpose:** Set up GitHub infrastructure for parallel AI development
 - **Role:** AI Development Orchestration Specialist
 - **Creates:** Labels, issue templates, project boards, and coordination structure
 - **Type:** Autonomous - run once per project
-- **Usage:** `/PRIS 030-orchestrate setup`
+- **Usage:** `/NEXUS 08-setup_orchestration setup`
 
-#### `035-decompose.md`: Epic Decomposition
+#### `09-decompose_epic.md`: Epic Decomposition
 - **Purpose:** Break down epics into architecturally-clean work contracts
 - **Role:** Expert Software Architect (decomposition specialist)
 - **Creates:** GitHub issues with clear boundaries and interface contracts
 - **Type:** Autonomous - requires epic ID
-- **Usage:** `/PRIS 035-decompose FEAT-001`
+- **Usage:** `/NEXUS 09-decompose_epic FEAT-001`
 
-#### `040-sync.md`: Agent Sync & Work Claim
+#### `10-claim_work.md`: Agent Sync & Work Claim
 - **Purpose:** Synchronize agent state and claim work from available pool
 - **Role:** AI Agent Coordination Specialist
 - **Creates:** Work assignments and conflict detection
 - **Type:** Interactive - requires agent identification
-- **Usage:** `/PRIS 040-sync --claim`
+- **Usage:** `/NEXUS 10-claim_work --claim`
 
-#### `045-coordinate.md`: Post-Work Coordination
+#### `11-create_handoff.md`: Post-Work Coordination
 - **Purpose:** Update coordination state after completing work
 - **Role:** AI Agent Coordination Specialist
 - **Creates:** AGENT_NOTES updates, handoff packages, completion reports
 - **Type:** Autonomous - requires active work
-- **Usage:** `/PRIS 045-coordinate --complete`
+- **Usage:** `/NEXUS 11-create_handoff --complete`
 
 ### Utility Commands
 
-#### `15-validate.md`: Requirements Validation
+#### `90-validate.md`: Requirements Validation
 - **Purpose:** Validate requirements for completeness and testability
 - **Role:** Requirements Analyst and QA Specialist
 - **Creates:** Validation report with issues and recommendations
 - **Type:** Autonomous - analyzes requirements document
 
 
-#### `90-migrate.md`: Version Migration
-- **Purpose:** Migrate PRIS system between versions safely
+#### `92-migrate.md`: Version Migration
+- **Purpose:** Migrate NEXUS system between versions safely
 - **Role:** Software Migration Specialist
 - **Creates:** Migration report, backups, and rollback scripts
 - **Type:** Autonomous - handles version upgrades
 
 ## File Structure
 
-PRIS uses a structured file system within `.pris/`:
+NEXUS uses a structured file system within `.pris/`:
 
 ```
 .pris/
 ├── NEXUS.json          # System configuration (! prefix for sort priority)
-├── inception.log           # Operation log
+├── operations.log    # Operation log
 ├── memories/              # Living documents (continuously updated)
 │   ├── _10-REQUIREMENTS.md   # Current requirements
 │   ├── _20-BACKLOG.md        # Current backlog
 │   ├── _30-ARCHITECTURE.md   # Current architecture
 │   ├── _21-SPRINTS.md        # Sprint planning
 │   └── _40-ISSUES.md         # Known issues
-├── cells/            # Historical records
-│   ├── 10-vk-results/  # Requirements snapshots
+├── history/          # Historical records
+│   ├── 10-discovery-results/  # Requirements snapshots
 │   ├── 20-assignments/      # Planning artifacts
 │   ├── 30-blueprints/  # Architecture decisions
 │   ├── 40-construction/# Implementation records
@@ -212,16 +216,16 @@ Distributed throughout the codebase in key directories:
 
 1. **Setup Phase** (Run once):
    ```bash
-   /PRIS 030-orchestrate setup  # Creates GitHub labels, project board
-   /PRIS 035-decompose FEAT-001 # Breaks epic into work contracts
+   /NEXUS 08-setup_orchestration setup  # Creates GitHub labels, project board
+   /NEXUS 09-decompose_epic FEAT-001 # Breaks epic into work contracts
    ```
 
 2. **Agent Work Loop** (Each agent repeats):
    ```bash
-   /PRIS 040-sync --status      # See what's available
-   /PRIS 040-sync --claim       # Claim next work
-   /PRIS 04-sebastian <number>  # Do the work
-   /PRIS 045-coordinate --complete  # Mark done & share updates
+   /NEXUS 10-claim_work --status      # See what's available
+   /NEXUS 10-claim_work --claim       # Claim next work
+   /NEXUS 04-scaffold <number>  # Do the work
+   /NEXUS 11-create_handoff --complete  # Mark done & share updates
    ```
 
 3. **Multiple Agents** (In separate terminals):
@@ -233,35 +237,35 @@ Distributed throughout the codebase in key directories:
 ## Usage Examples
 
 ```bash
-# 1. Initialize PRIS system
-# Use 00-init.md prompt with Claude
+# 1. Initialize NEXUS system
+# Use 00-initialize.md prompt with Claude
 # This creates the .pris directory structure
 
 # 2. Gather requirements (interactive)
-# Use 01-voight-kampff.md prompt
+# Use 01-discover.md prompt
 # Claude will interview you about your project needs
 
 # 3. Prioritize features (interactive)  
-# Use 02-joshi.md prompt
+# Use 02-prioritize.md prompt
 # Claude will help define MVP and create backlog
 
 # 4. Select architecture pattern
-# Use 025-architecture.md prompt
+# Use 03-architect.md prompt
 # Claude will analyze requirements and select optimal architecture
 
 # 5. Generate setup script
-# Use 03-tyrell.md prompt
+# Use 03-architect.md prompt
 # Claude will implement the selected architecture
 
 # 6. Run the generated setup script
 ./setup.sh my-project-name
 
 # 7. Implement a feature
-# Use 04-sebastian.md prompt with ticket ID
+# Use 04-scaffold.md prompt with ticket ID
 # Example: Implement FEAT-001 from backlog
 
 # 8. Review code changes
-# Use 05-review.md prompt with branch name
+# Use 12-review_code.md prompt with branch name
 # Example: Review feat/FEAT-001-user-auth branch
 ```
 
@@ -269,35 +273,35 @@ Distributed throughout the codebase in key directories:
 
 ```bash
 # 1. One-time setup: Initialize orchestration
-# Use 030-orchestrate.md prompt
-/PRIS 030-orchestrate setup
+# Use 08-setup_orchestration.md prompt
+/NEXUS 08-setup_orchestration setup
 
 # 2. Break down an epic into work contracts
-# Use 035-decompose.md prompt
-/PRIS 035-decompose FEAT-001-auth
+# Use 09-decompose_epic.md prompt
+/NEXUS 09-decompose_epic FEAT-001-auth
 
 # 3. In multiple terminal windows (e.g., zellij):
 # Each agent claims and works on contracts independently
 
 # Terminal 1 - Agent 1:
-/PRIS 040-sync --claim
+/NEXUS 10-claim_work --claim
 # Claims #101 [SHARED] Auth types
-/PRIS 04-sebastian 101
-/PRIS 045-coordinate --complete
+/NEXUS 04-scaffold 101
+/NEXUS 11-create_handoff --complete
 
 # Terminal 2 - Agent 2:
-/PRIS 040-sync --status
+/NEXUS 10-claim_work --status
 # Waits for #101 to complete, then:
-/PRIS 040-sync --claim 103
+/NEXUS 10-claim_work --claim 103
 # Claims #103 [FRONTEND] Auth UI
-/PRIS 04-sebastian 103
-/PRIS 045-coordinate --complete
+/NEXUS 04-scaffold 103
+/NEXUS 11-create_handoff --complete
 
 # Terminal 3 - Agent 3:
-/PRIS 040-sync --claim 102
+/NEXUS 10-claim_work --claim 102
 # Claims #102 [API] Auth endpoints
-/PRIS 04-sebastian 102
-/PRIS 045-coordinate --complete
+/NEXUS 04-scaffold 102
+/NEXUS 11-create_handoff --complete
 
 # 4. Agents automatically coordinate through AGENT_NOTES.md
 # No merge conflicts due to architectural boundaries!
@@ -309,11 +313,11 @@ Each AI agent follows this simple loop:
 
 ```mermaid
 graph LR
-    A[040-sync --status] --> B{Work Available?}
-    B -->|Yes| C[040-sync --claim]
+    A[10-claim_work --status] --> B{Work Available?}
+    B -->|Yes| C[10-claim_work --claim]
     B -->|No| A
-    C --> D[04-sebastian]
-    D --> E[045-coordinate --complete]
+    C --> D[04-scaffold]
+    D --> E[11-create_handoff --complete]
     E --> A
     
     style C fill:#f9f,stroke:#333,stroke-width:2px
@@ -323,19 +327,19 @@ graph LR
 
 ```bash
 # Start of work session - Check what's happening
-/PRIS 040-sync --status
+/NEXUS 10-claim_work --status
 # Shows: who's working on what, what's available, recent changes
 
 # Claim your next piece of work
-/PRIS 040-sync --claim
+/NEXUS 10-claim_work --claim
 # Automatically: checks dependencies, shows relevant notes, assigns work
 
 # Implement the claimed work
-/PRIS 04-sebastian <issue-number>
+/NEXUS 04-scaffold <issue-number>
 # Stays within boundaries, follows contracts, writes tests
 
 # Complete and coordinate
-/PRIS 045-coordinate --complete
+/NEXUS 11-create_handoff --complete
 # Updates AGENT_NOTES, closes issue, unblocks dependencies
 
 # Repeat!
@@ -397,12 +401,12 @@ graph LR
 
 - **Missing Prerequisites**: Each command checks its required inputs
 - **Unclear Requirements**: Use 15-validate.md to check requirements quality
-- **Architecture Questions**: 025-architecture.md researches current versions
+- **Architecture Questions**: 03-architect.md researches current versions
 - **Migration Issues**: 90-migrate.md includes rollback procedures
 
 ## Future Enhancements
 
-The PRIS system is designed to be extensible. Future commands could include:
+The NEXUS system is designed to be extensible. Future commands could include:
 - Performance optimization analysis
 - Security audit automation
 - Documentation generation
@@ -411,4 +415,4 @@ The PRIS system is designed to be extensible. Future commands could include:
 
 ---
 
-*PRIS: Turning requirements into reality through systematic, AI-powered development*
+*NEXUS: Turning requirements into reality through systematic, AI-powered development*

@@ -1,4 +1,4 @@
-# PRIS Agent Sync & Work Claim
+# NEXUS Agent Sync & Work Claim
 
 ## SYSTEM PROMPT
 
@@ -9,7 +9,7 @@ You are an AI agent coordination specialist who helps AI agents claim work, chec
 <instructions>
 Synchronize agent state and claim work from the available pool.
 
-Usage: /PRIS 040-sync $ARGUMENTS
+Usage: /NEXUS 10-claim_work $ARGUMENTS
 
 Where $ARGUMENTS can be:
 - `--claim` - Claim next available work
@@ -218,7 +218,7 @@ Consider agent history:
 1. Review the contract requirements
 2. Check the noted breaking changes
 3. Implement using established patterns
-4. Run `/PRIS 045-coordinate` when complete
+4. Run `/NEXUS 11-create_handoff` when complete
 ```
 
 ### For --status:
@@ -307,7 +307,7 @@ Common issues:
 - Checks dependencies
 
 ### With implementation:
-- Provides contract for `04-sebastian`
+- Provides contract for `04-scaffold`
 - Sets up context for work
 - Enables conflict-free development
 </integration>

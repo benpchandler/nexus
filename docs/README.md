@@ -67,7 +67,7 @@ PRIS operates through numbered commands (00-13) that represent specialized AI ag
 
 ### Memory System
 - **Living Documents**: Continuously updated files in `.pris/memories/`
-- **Cells**: Historical snapshots in `.pris/cells/`
+- **History**: Historical snapshots in `.pris/history/`
 - **NEXUS.json**: Central configuration
 
 ### Parallel Development

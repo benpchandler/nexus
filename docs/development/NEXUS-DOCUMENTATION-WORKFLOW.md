@@ -1,26 +1,26 @@
-# PRIS Documentation Workflow Integration
+# NEXUS Documentation Workflow Integration
 
 ## Overview
-This guide shows how documentation flows through the PRIS development lifecycle, ensuring knowledge is captured when context is fresh.
+This guide shows how documentation flows through the NEXUS development lifecycle, ensuring knowledge is captured when context is fresh.
 
 ## Documentation Flow Diagram
 
 ```mermaid
 graph TD
-    A[01-voight-kampff<br/>Requirements] -->|New Product| B[Vision Doc]
+    A[01-discover<br/>Requirements] -->|New Product| B[Vision Doc]
     A -->|Features| C[PRD Docs]
     
-    C --> D[02-joshi<br/>Prioritization]
+    C --> D[02-prioritize<br/>Prioritization]
     D -->|Links PRDs| E[Backlog Items]
     
-    E --> F[03-tyrell<br/>Architecture]
+    E --> F[03-architect<br/>Architecture]
     F -->|System Design| G[TDD Doc]
     F -->|Decisions| H[ADR Docs]
     
-    G --> I[04-sebastian<br/>Setup]
+    G --> I[04-scaffold<br/>Setup]
     I -->|AI Context| J[CLAUDE.md Files]
     
-    J --> K[07-construct<br/>Implementation]
+    J --> K[05-construct<br/>Implementation]
     K -->|Choices| L[Quick Decisions]
     K -->|Updates| M[TDD Status]
     
@@ -34,7 +34,7 @@ graph TD
 
 ## Phase-by-Phase Documentation
 
-### Phase 1: Requirements Gathering (voight-kampff)
+### Phase 1: Requirements Gathering (discover)
 **Creates**: Requirements document
 **Triggers**:
 - **Vision Document** - For new products/platforms
@@ -43,7 +43,7 @@ graph TD
 **Example Flow**:
 ```bash
 # Run requirements gathering
-pris 01-voight-kampff
+nexus 01-discover
 
 # AI detects product-level discussion
 "I see you're planning a new SaaS platform. Should I create a Vision document?"
@@ -57,14 +57,14 @@ pris 01-voight-kampff
 # - docs/02-business-features/reporting/PRD-analytics.md
 ```
 
-### Phase 2: Prioritization (joshi)
+### Phase 2: Prioritization (prioritize)
 **Links**: Backlog items to PRDs
 **Validates**: High-priority items have documentation
 
 **Example Flow**:
 ```bash
 # Run prioritization
-pris 02-joshi
+nexus 02-prioritize
 
 # Backlog items now include:
 FEAT-001: User Authentication
@@ -78,7 +78,7 @@ FEAT-002: Analytics Dashboard
 - Documentation Status: ⚠️ Needs PRD
 ```
 
-### Phase 3: Architecture Selection (tyrell)
+### Phase 3: Architecture Selection (architect)
 **Creates**: 
 - **TDD** - Technical design document
 - **ADRs** - Architecture decision records
@@ -86,7 +86,7 @@ FEAT-002: Analytics Dashboard
 **Example Flow**:
 ```bash
 # Run architecture selection
-pris 03-tyrell
+nexus 03-architect
 
 # Creates and pre-populates:
 # - docs/00-platform/architecture/TDD-system-architecture.md
@@ -97,13 +97,13 @@ pris 03-tyrell
 # - docs/00-platform/decisions/ADR-003-react-nextjs.md
 ```
 
-### Phase 4: Project Setup (sebastian)
+### Phase 4: Project Setup (scaffold)
 **Creates**: CLAUDE.md files for AI context
 
 **Example Flow**:
 ```bash
 # Run project setup
-pris 04-sebastian
+nexus 04-scaffold
 
 # Creates AI context files:
 # - /CLAUDE.md (root - platform overview)
@@ -119,7 +119,7 @@ pris 04-sebastian
 **Example Flow**:
 ```bash
 # During implementation
-pris 07-construct --ticket FEAT-001
+nexus 05-construct --ticket FEAT-001
 
 # AI makes implementation decision:
 "Choosing bcrypt over argon2 for password hashing"
@@ -193,7 +193,7 @@ Implementation → Quick Decisions (as you code)
 ```
 
 ### 2. Pre-Population Pattern
-Each PRIS phase pre-populates documents with context:
+Each NEXUS phase pre-populates documents with context:
 - Vision: Uses problem statement, target users
 - PRD: Uses requirements, user stories
 - TDD: Uses architecture decisions, stack
@@ -219,9 +219,9 @@ Use the Documentation Index to track:
 ## Common Scenarios
 
 ### Scenario 1: New Feature Request
-1. Update requirements in voight-kampff
+1. Update requirements in discover
 2. Create PRD for the feature
-3. Link PRD in backlog (joshi)
+3. Link PRD in backlog (prioritize)
 4. Create feature TDD (if complex)
 5. Add CLAUDE.md when building
 6. Document decisions during coding
@@ -255,12 +255,12 @@ Use the Documentation Index to track:
 
 ## Quick Reference
 
-| PRIS Phase | Creates | Updates | Triggers |
+| NEXUS Phase | Creates | Updates | Triggers |
 |------------|---------|---------|----------|
-| voight-kampff | Requirements | - | Vision, PRDs |
-| joshi | Backlog | Doc links | PRD validation |
-| tyrell | Architecture | - | TDD, ADRs |
-| sebastian | Project structure | - | CLAUDE.md files |
+| discover | Requirements | - | Vision, PRDs |
+| prioritize | Backlog | Doc links | PRD validation |
+| architect | Architecture | - | TDD, ADRs |
+| scaffold | Project structure | - | CLAUDE.md files |
 | construct | Code | TDD status | Quick Decisions |
 
 ## Verification Checklist

@@ -2,7 +2,7 @@
 
 ```ascii
 ╔═══════════════════════════════════════════════════════════════════════════╗
-║                           PRIS TEST VERIFICATION                          ║
+║                           NEXUS TEST VERIFICATION                          ║
 ║                "Do Androids Dream of Electric Tests?" - PKD               ║
 ╚═══════════════════════════════════════════════════════════════════════════╝
 ```
@@ -110,7 +110,7 @@ Detect test framework by examining:
 1. **Prepare Environment**
    ```bash
    # Navigate to cell directory
-   cd .pris/cells/{cell_id}
+   cd .pris/history/{cell_id}
    
    # Install dependencies if needed
    npm install  # or pip install -r requirements.txt
@@ -365,7 +365,7 @@ Handle these scenarios gracefully:
    {
      "error": "NO_TESTS_FOUND",
      "message": "No test files detected in cell",
-     "suggestion": "Generate tests using PRIS test generation"
+     "suggestion": "Generate tests using NEXUS test generation"
    }
    ```
 
@@ -403,7 +403,7 @@ Handle these scenarios gracefully:
 This command integrates with 06-build:
 
 1. **State Tracking**
-   Write results to `.pris/cells/{cell_id}/.build_state.json`:
+   Write results to `.pris/history/{cell_id}/.build_state.json`:
    ```json
    {
      "test_runs": [

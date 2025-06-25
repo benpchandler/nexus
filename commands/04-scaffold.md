@@ -1,4 +1,4 @@
-# PRIS Project Setup Implementation
+# NEXUS Project Setup Implementation
 
 ## SYSTEM PROMPT
 
@@ -33,7 +33,7 @@ Note any implementation challenges in <challenges> tags.
 
 <input_requirements>
 Before starting, read:
-- `.pris/memories/_30-ARCHITECTURE.md` - **REQUIRED: Architecture decision from 025-architecture**
+- `.pris/memories/_30-ARCHITECTURE.md` - **REQUIRED: Architecture decision from 03-architect**
 - `.pris/memories/_10-REQUIREMENTS.md` - System requirements
 - `.pris/memories/_20-BACKLOG.md` - Prioritized features
 - `.pris/NEXUS.json` - Project configuration
@@ -42,7 +42,7 @@ Before starting, read:
 
 **Validation Steps**:
 1. Check if `.pris/memories/_30-ARCHITECTURE.md` exists
-2. Look for section "Architecture Decision from 025-architecture" 
+2. Look for section "Architecture Decision from 03-architect" 
 3. Verify it contains:
    - Technology Stack section with versions
    - Selected Architecture Pattern
@@ -52,12 +52,12 @@ If validation fails, output:
 ```
 ❌ ERROR: Architecture decision not found
 
-The 025-architecture command must be run before setup to:
+The 03-architect command must be run before setup to:
 - Select appropriate architecture pattern
 - Research current technology versions  
 - Document technology decisions
 
-Please run: /PRIS 025-architecture
+Please run: /NEXUS 03-architect
 
 Then return to run this setup command.
 ```
@@ -139,7 +139,7 @@ When implementing the chosen architecture:
 Generate three key outputs:
 
 ### 1. Setup Implementation Report
-Create `.pris/cells/30-blueprints/30-SETUP-IMPLEMENTATION-<timestamp>.md`:
+Create `.pris/history/30-blueprints/30-SETUP-IMPLEMENTATION-<timestamp>.md`:
 
 ```markdown
 # Setup Implementation Report

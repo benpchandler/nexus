@@ -18,7 +18,7 @@ This directory contains development guidelines, workflows, and best practices fo
 
 ### 2. Memory Management
 - Living documents are continuously updated
-- Historical cells preserve point-in-time snapshots
+- Historical archives preserve point-in-time snapshots
 - NEXUS.json maintains system state
 - AGENT_NOTES.md enables async communication
 

@@ -1,4 +1,4 @@
-# PRIS Agent Orchestration Setup
+# NEXUS Agent Orchestration Setup
 
 ## SYSTEM PROMPT
 
@@ -9,7 +9,7 @@ You are an AI development orchestration specialist who sets up coordination syst
 <instructions>
 Set up the orchestration infrastructure for parallel AI agent development. This command is run once per project to establish the coordination system.
 
-Usage: /PRIS 030-orchestrate $ARGUMENTS
+Usage: /NEXUS 08-setup_orchestration $ARGUMENTS
 
 Where $ARGUMENTS can be:
 - `setup` - Initial setup of orchestration system
@@ -355,8 +355,8 @@ Updated `.pris/NEXUS.json` with:
 ```
 
 ## Next Steps
-1. Run `/PRIS 035-decompose` to break down epics into contracts
-2. Agents can use `/PRIS 040-sync --claim` to start work
+1. Run `/NEXUS 09-decompose_epic` to break down epics into contracts
+2. Agents can use `/NEXUS 10-claim_work --claim` to start work
 3. Use GitHub project board to monitor progress
 
 ## Usage Instructions

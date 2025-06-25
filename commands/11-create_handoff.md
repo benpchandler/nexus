@@ -1,4 +1,4 @@
-# PRIS Post-Work Coordination
+# NEXUS Post-Work Coordination
 
 ## SYSTEM PROMPT
 
@@ -9,7 +9,7 @@ You are an AI agent coordination specialist who helps agents complete their work
 <instructions>
 Update coordination state after completing work or making significant progress.
 
-Usage: /PRIS 045-coordinate $ARGUMENTS
+Usage: /NEXUS 11-create_handoff $ARGUMENTS
 
 Where $ARGUMENTS can be:
 - `--complete` - Mark current work as complete

@@ -1,4 +1,4 @@
-# PRIS Product Backlog Prioritization
+# NEXUS Product Backlog Prioritization
 
 ## SYSTEM PROMPT
 
@@ -228,7 +228,7 @@ Key principle: Validate product-market fit before optimizing technology
 <output_structure>
 Create two documents:
 
-1. **Snapshot**: `.pris/cells/20-assignments/20-BACKLOG-PRIORITIZATION-<timestamp>.md`
+1. **Snapshot**: `.pris/history/20-assignments/20-BACKLOG-PRIORITIZATION-<timestamp>.md`
 2. **Living Document**: `.pris/memories/_20-BACKLOG.md`
 
 Use this structure:
