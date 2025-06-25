@@ -245,6 +245,66 @@ Note concerns:
 ## MIGRATION EXAMPLES
 
 <example>
+### Example: Blade Runner Terminology Migration (v1.0 → v1.1)
+
+<analysis>
+Current state analysis:
+- Version: 1.0 (uses Blade Runner terminology)
+- Target: 1.1 (professional terminology)
+- Major changes: File and directory renames only
+- No data transformation required
+- Simple rename operations
+</analysis>
+
+<risk_assessment>
+Risk evaluation:
+- Data loss potential: Low (rename operations only)
+- Downtime required: < 1 minute
+- Rollback complexity: Simple (reverse renames)
+- User impact: Must update any scripts using old paths
+Mitigation: Create backup and rollback script
+</risk_assessment>
+
+<transformation>
+File renames:
+- File: .pris/inception.log
+- Action: Rename to .pris/operations.log
+- Reason: Remove movie reference for professional terminology
+- Validation: Check file exists and contains log entries
+
+- File: .pris/retirement.log  
+- Action: Rename to .pris/errors.log
+- Reason: "Retirement" is Blade Runner slang
+- Validation: Check file exists and is writable
+
+- File: .pris/cells/
+- Action: Rename to .pris/history/
+- Reason: "Cells" references memory cells from movie
+- Validation: Check all subdirectories moved
+
+- File: .pris/history/90-retirement/
+- Action: Rename to .pris/history/90-deprecated/
+- Reason: Consistent terminology update
+- Validation: Check directory exists if present
+</transformation>
+
+Migration commands:
+```bash
+# Create backup
+cp -r .pris .pris.backup.$(date +%Y%m%d-%H%M%S)
+
+# Rename files
+mv .pris/inception.log .pris/operations.log
+mv .pris/retirement.log .pris/errors.log
+mv .pris/cells .pris/history
+[ -d .pris/history/90-retirement ] && mv .pris/history/90-retirement .pris/history/90-deprecated
+
+# Update NEXUS.json
+echo "Migration completed at $(date -Iseconds)" >> .pris/operations.log
+```
+</example>
+
+<example>
 ### Example: v1.0 to v2.0 Migration
 
 <analysis>

@@ -90,6 +90,20 @@ Check for existing NEXUS installation:
   - If .pris exists with valid config and status is "archived" → Abort, suggest using migration command
 </existence_check>
 
+<legacy_structure_check>
+Check for legacy Blade Runner structure:
+- If .pris exists, check for old structure:
+  - Does inception.log exist? (old operations log)
+  - Does retirement.log exist? (old errors log)
+  - Does cells/ directory exist? (old history directory)
+  - Does cells/90-retirement/ exist? (old deprecated directory)
+- If ANY legacy structure detected:
+  - Inform user about structure changes
+  - Offer automatic migration
+  - Show exact commands that will be run
+  - Get explicit confirmation before proceeding
+</legacy_structure_check>
+
 <directory_creation>
 Create the directory structure:
 - Make all necessary directories
@@ -390,6 +404,54 @@ To proceed:
 1. Continue with the existing NEXUS installation using the appropriate phase command
 2. Manually backup and remove .pris/ if you need to start over
 3. Check .pris/NEXUS.json to see current status and phase
+</example>
+
+<example>
+Input: Initialize NEXUS but legacy Blade Runner structure detected
+Output:
+<existence_check>
+Found existing .pris directory in /Users/dev/my-project
+Checking configuration...
+NEXUS.json exists and is valid
+</existence_check>
+
+<legacy_structure_check>
+⚠️ Legacy NEXUS structure detected!
+
+Found old Blade Runner-themed file names:
+- ✓ inception.log (old operations log)
+- ✓ retirement.log (old errors log)  
+- ✓ cells/ directory (old history directory)
+- ✓ cells/90-retirement/ (old deprecated directory)
+
+NEXUS has been rebranded to use professional terminology.
+</legacy_structure_check>
+
+🔄 Migration Available
+
+The following changes need to be made:
+1. inception.log → operations.log
+2. retirement.log → errors.log
+3. cells/ → history/
+4. cells/90-retirement/ → history/90-deprecated/
+
+Would you like to automatically migrate to the new structure? [y/N]: y
+
+<migration>
+Migrating legacy structure...
+✓ Renamed inception.log to operations.log
+✓ Renamed retirement.log to errors.log
+✓ Renamed cells/ to history/
+✓ Renamed history/90-retirement/ to history/90-deprecated/
+✓ Updated NEXUS.json with migration timestamp
+
+Migration complete! Your NEXUS installation now uses the new structure.
+</migration>
+
+✅ Legacy structure successfully migrated
+
+Your project is now using the updated NEXUS structure.
+All historical data has been preserved in the new locations.
 </example>
 
 ## IMPORTANT NOTES
