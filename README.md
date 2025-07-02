@@ -140,7 +140,16 @@ NEXUS is designed to be extended. When adding new commands:
 
 ## License
 
-[MIT License](LICENSE)
+[Apache 2.0 with Commons Clause](LICENSE)
+
+This means:
+- ✅ Free to use, modify, and distribute
+- ✅ Use in personal projects
+- ✅ Use in internal company projects
+- ❌ Cannot sell NEXUS or offer it as a paid service
+- ❌ Cannot charge for hosting or consulting services where NEXUS is the primary value
+
+For commercial licensing inquiries, please contact the author.
 
 ## Support
 
