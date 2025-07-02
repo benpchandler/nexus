@@ -361,14 +361,14 @@ class BuildState:
     
     def save(self):
         """Save state to disk."""
-        state_file = f".pris/history/{self.cell_id}/.build_state.json"
+        state_file = f".nexus/history/{self.cell_id}/.build_state.json"
         with open(state_file, 'w') as f:
             json.dump(self.__dict__, f, indent=2, default=str)
     
     @classmethod
     def load(cls, cell_id: str) -> 'BuildState':
         """Load state from disk."""
-        state_file = f".pris/history/{cell_id}/.build_state.json"
+        state_file = f".nexus/history/{cell_id}/.build_state.json"
         if os.path.exists(state_file):
             with open(state_file, 'r') as f:
                 data = json.load(f)

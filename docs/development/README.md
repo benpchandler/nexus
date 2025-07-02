@@ -59,7 +59,7 @@ This directory contains development guidelines, workflows, and best practices fo
 
 | Task | Command | Notes |
 |------|---------|-------|
-| Initialize PRIS | 00-baseline | Creates .pris structure |
+| Initialize PRIS | 00-baseline | Creates .nexus structure |
 | Gather Requirements | 01-voight-kampff | Interactive process |
 | Select Architecture | 07-construct | Based on requirements |
 | Implement Feature | 04-sebastian | Requires ticket ID |

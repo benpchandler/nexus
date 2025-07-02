@@ -29,10 +29,10 @@ Validate independence in <validation> tags.
 
 <input_requirements>
 Before starting, read:
-- `.pris/memories/_20-BACKLOG.md` - Find the epic details
-- `.pris/memories/_30-ARCHITECTURE.md` - Understand system architecture
-- `.pris/orchestration/boundaries.json` - Know architectural boundaries
-- `.pris/NEXUS.json` - Check GitHub integration
+- `.nexus/memories/_20-BACKLOG.md` - Find the epic details
+- `.nexus/memories/_30-ARCHITECTURE.md` - Understand system architecture
+- `.nexus/orchestration/boundaries.json` - Know architectural boundaries
+- `.nexus/NEXUS.json` - Check GitHub integration
 
 The epic ID from $ARGUMENTS should match an entry in the backlog.
 </input_requirements>
@@ -478,7 +478,7 @@ required_artifacts:
 ```
 
 ### Summary Report:
-Create `.pris/history/35-decomposition/EPIC-<EPIC-ID>-<timestamp>.md`:
+Create `.nexus/history/35-decomposition/EPIC-<EPIC-ID>-<timestamp>.md`:
 
 **Directory Structure Rationale**:
 - New directory `35-decomposition/` specifically for decomposition artifacts

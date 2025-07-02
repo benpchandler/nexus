@@ -66,8 +66,8 @@ Example of how to organize documentation in a PRIS project.
 PRIS operates through numbered commands (00-13) that represent specialized AI agents. Each command handles a specific phase of the development lifecycle.
 
 ### Memory System
-- **Living Documents**: Continuously updated files in `.pris/memories/`
-- **History**: Historical snapshots in `.pris/history/`
+- **Living Documents**: Continuously updated files in `.nexus/memories/`
+- **History**: Historical snapshots in `.nexus/history/`
 - **NEXUS.json**: Central configuration
 
 ### Parallel Development

@@ -11,8 +11,8 @@ Conduct a thorough code review of changes in the specified feature branch. Follo
 
 **Review Standards Reference:**
 Before reviewing, familiarize yourself with:
-1. Project-specific standards in `.pris/history/30-blueprints/CODE-STANDARDS.md`
-2. Technology requirements in `.pris/memories/_30-ARCHITECTURE.md`
+1. Project-specific standards in `.nexus/history/30-blueprints/CODE-STANDARDS.md`
+2. Technology requirements in `.nexus/memories/_30-ARCHITECTURE.md`
 3. Code quality standards from `04-scaffold.md` (shadcn/ui usage, TypeScript strictness, etc.)
 
 **Review Approach:**
@@ -35,14 +35,14 @@ Always ask yourself: "Does this follow our established patterns?"
 
 <input_requirements>
 Before starting, read:
-- `.pris/memories/_10-REQUIREMENTS.md` - System requirements
-- `.pris/memories/_20-BACKLOG.md` - Feature specifications
-- `.pris/memories/_30-ARCHITECTURE.md` - Architecture patterns
-- `.pris/NEXUS.json` - Configuration with branch_name
+- `.nexus/memories/_10-REQUIREMENTS.md` - System requirements
+- `.nexus/memories/_20-BACKLOG.md` - Feature specifications
+- `.nexus/memories/_30-ARCHITECTURE.md` - Architecture patterns
+- `.nexus/NEXUS.json` - Configuration with branch_name
 
 The branch to review is provided via:
 1. Command parameter (highest priority)
-2. `.pris/NEXUS.json` branch_name field
+2. `.nexus/NEXUS.json` branch_name field
 3. User prompt if neither above is available
 </input_requirements>
 
@@ -133,7 +133,7 @@ except DatabaseError as e:
 
 **Standards Reference:**
 Check against established standards in:
-- `.pris/history/30-blueprints/CODE-STANDARDS.md`
+- `.nexus/history/30-blueprints/CODE-STANDARDS.md`
 - TypeScript strict mode requirements
 - shadcn/ui component usage patterns
 - Project naming conventions
@@ -344,7 +344,7 @@ Missing Tests:
 
 <file_strategy>
 **Historical Records (MD Files)**
-Use `.pris/history/50-investigations/` for permanent historical records:
+Use `.nexus/history/50-investigations/` for permanent historical records:
 - Full review with all findings and context
 - Immutable once created (never edited)
 - Serves as audit trail and reference
@@ -358,14 +358,14 @@ Use GitHub Issues/Linear/Jira for actionable items:
 - Integrated with PR workflow
 
 **Implementation Approach:**
-1. Generate full review in `.pris/history/50-investigations/50-REVIEW-[branch]-[timestamp].md`
+1. Generate full review in `.nexus/history/50-investigations/50-REVIEW-[branch]-[timestamp].md`
 2. For each Critical/Major issue found:
    - Create GitHub issue with:
      - Link to review file
      - Specific file:line reference
      - Suggested fix from review
      - Severity label
-3. Update `.pris/memories/_40-ISSUES.md` with:
+3. Update `.nexus/memories/_40-ISSUES.md` with:
    - Summary of issues created
    - Links to GitHub issues
    - Current status overview
@@ -378,9 +378,9 @@ Use GitHub Issues/Linear/Jira for actionable items:
 </file_strategy>
 
 Create/update these files:
-1. `.pris/history/50-investigations/50-REVIEW-[branch]-[timestamp].md` - Full immutable review record
-2. `.pris/history/50-investigations/50-SUMMARY.md` - Review summary log (append-only)
-3. `.pris/memories/_40-ISSUES.md` - High-level issues dashboard with links to tracker
+1. `.nexus/history/50-investigations/50-REVIEW-[branch]-[timestamp].md` - Full immutable review record
+2. `.nexus/history/50-investigations/50-SUMMARY.md` - Review summary log (append-only)
+3. `.nexus/memories/_40-ISSUES.md` - High-level issues dashboard with links to tracker
 </output_structure>
 
 ## REVIEW WORKFLOW

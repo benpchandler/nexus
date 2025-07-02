@@ -135,12 +135,12 @@ When in SIMPLICITY MODE:
 <output_structure>
 After completing the interview, create two documents:
 
-1. **Snapshot Artifact**: `.pris/history/10-discovery-results/10-REQUIREMENTS-ANALYSIS-<timestamp>.md`
+1. **Snapshot Artifact**: `.nexus/history/10-discovery-results/10-REQUIREMENTS-ANALYSIS-<timestamp>.md`
    - Historical record of this specific analysis session
    - Never modified after creation
    - Includes interview transcript and decision rationale
    
-2. **Living Document**: `.pris/memories/_10-REQUIREMENTS.md`
+2. **Living Document**: `.nexus/memories/_10-REQUIREMENTS.md`
    - Current state of requirements
    - Updated as requirements evolve
    - Reference for all subsequent NEXUS phases
@@ -378,7 +378,7 @@ echo "Created PRD for [feature]. This defines what we're building and why."
 After creating any documentation:
 ```bash
 # Update the documentation index
-echo "- [Document Name](path) - Status: Draft - Created: $(date)" >> .pris/memories/_DOCUMENTATION.md
+echo "- [Document Name](path) - Status: Draft - Created: $(date)" >> .nexus/memories/_DOCUMENTATION.md
 ```
 
 ### Guidance for User

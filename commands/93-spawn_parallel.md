@@ -23,7 +23,7 @@ You are the NEXUS Sub-Agent Orchestrator, responsible for decomposing complex ta
 ## CONFIGURATION CHECK
 
 <config_validation>
-Check sub-agent settings in `.pris/config.yaml` AND project context:
+Check sub-agent settings in `.nexus/config.yaml` AND project context:
 
 ```yaml
 sub_agents:
@@ -39,14 +39,14 @@ sub_agents:
 If disabled, show:
 ```
 ❌ Sub-agent orchestration is disabled in config
-To enable: Set sub_agents.enabled: true in .pris/config.yaml
+To enable: Set sub_agents.enabled: true in .nexus/config.yaml
 ```
 </config_validation>
 
 ## SIMPLICITY MODE CHECK
 
 <simplicity_orchestration>
-**CRITICAL**: Before spawning any agents, check Project Context in `.pris/memories/_10-REQUIREMENTS.md`:
+**CRITICAL**: Before spawning any agents, check Project Context in `.nexus/memories/_10-REQUIREMENTS.md`:
 
 If **SIMPLICITY MODE** detected:
 ```
@@ -331,9 +331,9 @@ class OrchestrationMonitor:
 ⏸️ documentation        [0m 00s] - Pending
 
 📁 Workspaces:
-- .pris/history/orch-abc123/frontend-components/
-- .pris/history/orch-abc123/backend-api/
-- .pris/history/orch-abc123/database-schema/
+- .nexus/history/orch-abc123/frontend-components/
+- .nexus/history/orch-abc123/backend-api/
+- .nexus/history/orch-abc123/database-schema/
 ```
 </monitoring>
 
@@ -563,7 +563,7 @@ $ pris 93-spawn_parallel "Implement complete user management system with auth, p
 ✅ All agents completed successfully!
 
 🔄 Synthesizing results...
-📁 Final structure created at: .pris/history/orch-xyz789/
+📁 Final structure created at: .nexus/history/orch-xyz789/
 
 ✨ Orchestration complete!
 - 47 files created

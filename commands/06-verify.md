@@ -23,8 +23,8 @@ You are a meticulous Test Verification Specialist who executes tests, analyzes f
 
 <input_requirements>
 Before starting, verify:
-- `.pris/NEXUS.json` - Project configuration
-- `.pris/memories/_10-REQUIREMENTS.md` - Check Project Context for simplicity mode
+- `.nexus/NEXUS.json` - Project configuration
+- `.nexus/memories/_10-REQUIREMENTS.md` - Check Project Context for simplicity mode
 - Current cell directory from environment
 - Test files exist in the implementation
 
@@ -110,7 +110,7 @@ Detect test framework by examining:
 1. **Prepare Environment**
    ```bash
    # Navigate to cell directory
-   cd .pris/history/{cell_id}
+   cd .nexus/history/{cell_id}
    
    # Install dependencies if needed
    npm install  # or pip install -r requirements.txt
@@ -403,7 +403,7 @@ Handle these scenarios gracefully:
 This command integrates with 06-build:
 
 1. **State Tracking**
-   Write results to `.pris/history/{cell_id}/.build_state.json`:
+   Write results to `.nexus/history/{cell_id}/.build_state.json`:
    ```json
    {
      "test_runs": [

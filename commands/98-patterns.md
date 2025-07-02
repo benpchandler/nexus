@@ -309,7 +309,7 @@ Example session:
 $ pris 98-patterns add auth-jwt.pattern.md
 ✓ Pattern validated
 ✓ Pattern added: jwt-authentication
-✓ Added to: .pris/patterns/security/jwt-authentication.pattern.md
+✓ Added to: .nexus/patterns/security/jwt-authentication.pattern.md
 
 # Search for authentication patterns
 $ pris 98-patterns search --tag authentication

@@ -23,7 +23,7 @@ Validate your work in <validation> tags.
 If you find issues during validation, correct them before proceeding.
 
 The system supports multiple ticket sources:
-- **Static Backlog**: Read from `.pris/memories/_20-BACKLOG.md`
+- **Static Backlog**: Read from `.nexus/memories/_20-BACKLOG.md`
 - **GitHub Issues**: Fetch via GitHub API using issue number
 - **Linear**: Fetch via Linear API using ticket ID
 - **Custom**: Any source with proper API integration
@@ -35,9 +35,9 @@ The system supports multiple ticket sources:
 Before starting, determine ticket source and read:
 
 ### Core Documents (Always Required)
-- `.pris/memories/_10-REQUIREMENTS.md` - System requirements (check Project Context)
-- `.pris/memories/_30-ARCHITECTURE.md` - Architecture patterns to follow
-- `.pris/NEXUS.json` - Configuration and integration settings
+- `.nexus/memories/_10-REQUIREMENTS.md` - System requirements (check Project Context)
+- `.nexus/memories/_30-ARCHITECTURE.md` - Architecture patterns to follow
+- `.nexus/NEXUS.json` - Configuration and integration settings
 
 ### Simplicity Mode Check
 **CRITICAL**: Before any implementation, check Project Context in requirements:
@@ -82,7 +82,7 @@ When working in orchestrated mode, tickets come from GitHub contracts:
 
 ### Traditional Ticket Sources
 1. **Static Backlog** (default)
-   - Read: `.pris/memories/_20-BACKLOG.md`
+   - Read: `.nexus/memories/_20-BACKLOG.md`
    - Find ticket by ID in the document
 
 2. **GitHub Issues** (Including Contracts)
@@ -104,7 +104,7 @@ When working in orchestrated mode, tickets come from GitHub contracts:
 ### Ticket Identification
 The ticket ID is provided via (in priority order):
 1. Command parameter: `--ticket FEAT-001` or just ticket number
-2. Config file: `.pris/NEXUS.json` → `current_ticket`
+2. Config file: `.nexus/NEXUS.json` → `current_ticket`
 3. User prompt: "Implement ticket FEAT-001" or "Implement 102"
 4. Interactive selection: List available tickets for user choice
 </input_requirements>
@@ -280,7 +280,7 @@ Before implementing, research current best practices:
 **Before implementing, search for relevant patterns from the library:**
 
 <pattern_injection>
-Check if patterns are enabled in `.pris/config.yaml`:
+Check if patterns are enabled in `.nexus/config.yaml`:
 ```yaml
 patterns:
   enabled: true  # Must be true to use patterns
@@ -910,7 +910,7 @@ Generate a complete implementation package as JSON:
   ],
   "documentation_updates": [
     {
-      "path": ".pris/history/40-construction/completed/40-FEAT-001-IMPLEMENTATION.md",
+      "path": ".nexus/history/40-construction/completed/40-FEAT-001-IMPLEMENTATION.md",
       "summary": "Implementation details and decisions"
     }
   ],
@@ -1530,7 +1530,7 @@ cp docs/_templates/03-ADR-template.md \
 After implementation:
 ```bash
 # Update documentation index
-cat >> .pris/memories/_DOCUMENTATION.md << EOF
+cat >> .nexus/memories/_DOCUMENTATION.md << EOF
 ## Implementation Decisions
 - $(date +%Y-%m-%d): [Topic] | [path] | [Impact]
 

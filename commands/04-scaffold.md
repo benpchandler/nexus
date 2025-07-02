@@ -9,7 +9,7 @@ You are an expert DevOps Engineer and Implementation Specialist who transforms a
 <instructions>
 Implement the architecture decision from phase 025 by generating a comprehensive setup script and project structure. Follow these principles:
 
-1. Read the architecture decision from `.pris/memories/_30-ARCHITECTURE.md`
+1. Read the architecture decision from `.nexus/memories/_30-ARCHITECTURE.md`
 2. Implement the exact technology stack specified
 3. Use the versions researched and documented in the architecture phase
 4. Generate a comprehensive, error-resistant setup script
@@ -33,15 +33,15 @@ Note any implementation challenges in <challenges> tags.
 
 <input_requirements>
 Before starting, read:
-- `.pris/memories/_30-ARCHITECTURE.md` - **REQUIRED: Architecture decision from 03-architect**
-- `.pris/memories/_10-REQUIREMENTS.md` - System requirements
-- `.pris/memories/_20-BACKLOG.md` - Prioritized features
-- `.pris/NEXUS.json` - Project configuration
+- `.nexus/memories/_30-ARCHITECTURE.md` - **REQUIRED: Architecture decision from 03-architect**
+- `.nexus/memories/_10-REQUIREMENTS.md` - System requirements
+- `.nexus/memories/_20-BACKLOG.md` - Prioritized features
+- `.nexus/NEXUS.json` - Project configuration
 
 **CRITICAL**: The architecture decision MUST exist before running setup. 
 
 **Validation Steps**:
-1. Check if `.pris/memories/_30-ARCHITECTURE.md` exists
+1. Check if `.nexus/memories/_30-ARCHITECTURE.md` exists
 2. Look for section "Architecture Decision from 03-architect" 
 3. Verify it contains:
    - Technology Stack section with versions
@@ -139,7 +139,7 @@ When implementing the chosen architecture:
 Generate three key outputs:
 
 ### 1. Setup Implementation Report
-Create `.pris/history/30-blueprints/30-SETUP-IMPLEMENTATION-<timestamp>.md`:
+Create `.nexus/history/30-blueprints/30-SETUP-IMPLEMENTATION-<timestamp>.md`:
 
 ```markdown
 # Setup Implementation Report
@@ -660,7 +660,7 @@ Each CLAUDE.md should reference:
 ### Documentation Index Update
 ```bash
 # Update documentation index
-cat >> .pris/memories/_DOCUMENTATION.md << EOF
+cat >> .nexus/memories/_DOCUMENTATION.md << EOF
 ## AI Context (CLAUDE.md)
 - Platform Overview | /CLAUDE.md | Platform | All docs | $(date)
 - Auth Service | services/auth/CLAUDE.md | Service | Auth TDD | $(date)

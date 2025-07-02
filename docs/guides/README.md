@@ -27,7 +27,7 @@ This directory contains practical guides for using PRIS effectively.
 
 ### 2. Implementing Features
 ```bash
-# Check backlog in .pris/memories/_20-BACKLOG.md
+# Check backlog in .nexus/memories/_20-BACKLOG.md
 # Find a ticket ID (e.g., FEAT-001)
 
 # Implement the feature
@@ -91,7 +91,7 @@ This directory contains practical guides for using PRIS effectively.
 
 ## Tips and Tricks
 
-1. **Use Living Documents**: Always check `.pris/memories/` for latest state
+1. **Use Living Documents**: Always check `.nexus/memories/` for latest state
 2. **Trust the Process**: Let each command complete its analysis
 3. **Provide Context**: More detailed requirements = better results
 4. **Review Everything**: AI generates code, humans ensure quality
@@ -103,7 +103,7 @@ This directory contains practical guides for using PRIS effectively.
 
 **"Prerequisites not met"**
 - Check that previous commands have been run
-- Verify files exist in `.pris/memories/`
+- Verify files exist in `.nexus/memories/`
 
 **"Cannot find ticket"**
 - Ensure ticket ID exists in backlog

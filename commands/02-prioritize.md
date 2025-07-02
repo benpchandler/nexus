@@ -24,8 +24,8 @@ When uncertain about priorities, present options with clear trade-offs.
 
 <input_requirements>
 Before starting, read:
-- `.pris/memories/_10-REQUIREMENTS.md` - System Requirements Document
-- `.pris/NEXUS.json` - Project configuration
+- `.nexus/memories/_10-REQUIREMENTS.md` - System Requirements Document
+- `.nexus/NEXUS.json` - Project configuration
 
 During the session, gather:
 - Business constraints (budget, timeline, resources)
@@ -228,8 +228,8 @@ Key principle: Validate product-market fit before optimizing technology
 <output_structure>
 Create two documents:
 
-1. **Snapshot**: `.pris/history/20-assignments/20-BACKLOG-PRIORITIZATION-<timestamp>.md`
-2. **Living Document**: `.pris/memories/_20-BACKLOG.md`
+1. **Snapshot**: `.nexus/history/20-assignments/20-BACKLOG-PRIORITIZATION-<timestamp>.md`
+2. **Living Document**: `.nexus/memories/_20-BACKLOG.md`
 
 Use this structure:
 
@@ -599,7 +599,7 @@ Add to backlog summary:
 ### Documentation Index Update
 ```bash
 # When creating backlog, update documentation needs
-cat >> .pris/memories/_DOCUMENTATION.md << EOF
+cat >> .nexus/memories/_DOCUMENTATION.md << EOF
 ## PRDs Needed (from Backlog)
 - [Feature] | Priority: [High/Medium/Low] | Target Sprint: [X]
 EOF

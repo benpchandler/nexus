@@ -54,7 +54,7 @@ Use this command when you need to:
 
 **You MUST have**:
 - Architecture decision from 025
-- The file `.pris/memories/_30-ARCHITECTURE.md` must exist
+- The file `.nexus/memories/_30-ARCHITECTURE.md` must exist
 - All technology choices already made
 
 **You will get**:
@@ -139,7 +139,7 @@ Ask yourself:
   - No → Use 025-architecture
   - Yes → Use 03-tyrell
 
-- "Is there an architecture decision in `.pris/memories/_30-ARCHITECTURE.md`?"
+- "Is there an architecture decision in `.nexus/memories/_30-ARCHITECTURE.md`?"
   - No → Use 025-architecture first
   - Yes → Use 03-tyrell
 

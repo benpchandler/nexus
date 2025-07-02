@@ -364,7 +364,7 @@ usage: |
 ```
 
 Store patterns in:
-`.pris/orchestration/agents/contexts/patterns.yaml`
+`.nexus/orchestration/agents/contexts/patterns.yaml`
 </pattern_capture>
 
 ## CONFLICT RESOLUTION
@@ -418,7 +418,7 @@ Track and report:
    - Conflicts encountered
    - Cross-agent dependencies
 
-Update in `.pris/orchestration/metrics.json`
+Update in `.nexus/orchestration/metrics.json`
 </metrics>
 
 ## ERROR HANDLING

@@ -4,7 +4,7 @@ This shows how documentation should be organized in a project using PRIS.
 
 ```
 project-root/
-├── .pris/                          # PRIS system files
+├── .nexus/                          # PRIS system files
 │   ├── memories/                   # Living documents
 │   │   ├── _10-REQUIREMENTS.md    # Current requirements
 │   │   ├── _20-BACKLOG.md         # Prioritized backlog
@@ -59,7 +59,7 @@ project-root/
 - **99-** Archive (old/deprecated)
 
 ### 2. Living vs Static Documents
-- **Living** (in .pris/memories/): Requirements, backlog, current state
+- **Living** (in .nexus/memories/): Requirements, backlog, current state
 - **Static** (in docs/): PRDs, TDDs, ADRs, decisions
 
 ### 3. AI Context (CLAUDE.md)
@@ -87,6 +87,6 @@ project-root/
 
 This structure ensures all documentation is:
 - Easy to find (numbered and organized)
-- Current (living docs in .pris/memories/)
+- Current (living docs in .nexus/memories/)
 - Traceable (cross-referenced)
 - AI-friendly (CLAUDE.md context)

@@ -46,7 +46,7 @@ All NEXUS commands have been enhanced with Anthropic's latest prompt engineering
 
 ## Prerequisites
 
-NEXUS only requires the `.pris` directory structure to operate. Project-specific tools are determined during the architecture phase based on requirements.
+NEXUS only requires the `.nexus` directory structure to operate. Project-specific tools are determined during the architecture phase based on requirements.
 
 For the setup phase (03-architect), the generated script will check for required tools based on the chosen architecture.
 
@@ -87,7 +87,7 @@ NEXUS operates through a series of specialized commands, each handling a specifi
 #### `00-initialize.md`: System Initialization
 - **Purpose:** Initialize the NEXUS tracking system
 - **Role:** System initialization specialist
-- **Creates:** `.pris` directory structure and configuration files
+- **Creates:** `.nexus` directory structure and configuration files
 - **Note:** Does NOT check for development tools - that happens later
 
 #### `01-discover.md`: Requirements Analysis
@@ -175,10 +175,10 @@ NEXUS operates through a series of specialized commands, each handling a specifi
 
 ## File Structure
 
-NEXUS uses a structured file system within `.pris/`:
+NEXUS uses a structured file system within `.nexus/`:
 
 ```
-.pris/
+.nexus/
 ├── NEXUS.json          # System configuration (! prefix for sort priority)
 ├── operations.log    # Operation log
 ├── memories/              # Living documents (continuously updated)
@@ -239,7 +239,7 @@ Distributed throughout the codebase in key directories:
 ```bash
 # 1. Initialize NEXUS system
 # Use 00-initialize.md prompt with Claude
-# This creates the .pris directory structure
+# This creates the .nexus directory structure
 
 # 2. Gather requirements (interactive)
 # Use 01-discover.md prompt

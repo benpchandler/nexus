@@ -33,8 +33,8 @@ Update status in <status_update> tags.
 
 <input_requirements>
 Before starting, check:
-- `.pris/orchestration/agents/agent-status.json` - Current assignments
-- `.pris/NEXUS.json` - GitHub integration settings
+- `.nexus/orchestration/agents/agent-status.json` - Current assignments
+- `.nexus/NEXUS.json` - GitHub integration settings
 - AGENT_NOTES.md files in relevant directories
 - GitHub issues with "contract" label
 
@@ -298,8 +298,8 @@ Common issues:
 
 <integration>
 ### With orchestration:
-- Updates `.pris/orchestration/agents/agent-status.json`
-- Reads from `.pris/orchestration/boundaries.json`
+- Updates `.nexus/orchestration/agents/agent-status.json`
+- Reads from `.nexus/orchestration/boundaries.json`
 
 ### With GitHub:
 - Claims issues via labels

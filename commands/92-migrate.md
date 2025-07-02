@@ -26,9 +26,9 @@ If uncertain about a migration step, note it in <uncertainty> tags.
 
 <input_requirements>
 Before starting, check:
-- `.pris/NEXUS.json` - Current system configuration and version
+- `.nexus/NEXUS.json` - Current system configuration and version
 - Command arguments - Target version (if not specified, use latest)
-- `.pris/migration-rules/` - Version-specific migration rules
+- `.nexus/migration-rules/` - Version-specific migration rules
 
 Key information needed:
 - Current NEXUS version
@@ -124,7 +124,7 @@ Generate comprehensive migration documentation:
 - Last Modified: [Date]
 
 ### Backup Details
-- Backup Location: `.pris/backups/[timestamp]/`
+- Backup Location: `.nexus/backups/[timestamp]/`
 - Backup Size: [Size]
 - Rollback Script: `rollback.sh`
 </pre_migration>
@@ -187,20 +187,20 @@ Generate comprehensive migration documentation:
 <rollback>
 If you need to rollback this migration:
 
-1. Run: `bash .pris/backups/[timestamp]/rollback.sh`
-2. Verify: Check `.pris/NEXUS.json` shows old version
+1. Run: `bash .nexus/backups/[timestamp]/rollback.sh`
+2. Verify: Check `.nexus/NEXUS.json` shows old version
 3. Confirm: Run `jim-status` to verify system state
 
 Backup will be retained for 30 days at:
-`.pris/backups/[timestamp]/`
+`.nexus/backups/[timestamp]/`
 </rollback>
 ```
 
 Also create/update:
-1. `.pris/history/90-deprecated/MIGRATION-[timestamp].md` - Full report
-2. `.pris/NEXUS.json` - Updated version and paths
-3. `.pris/backups/[timestamp]/` - Complete backup
-4. `.pris/backups/[timestamp]/rollback.sh` - Rollback script
+1. `.nexus/history/90-deprecated/MIGRATION-[timestamp].md` - Full report
+2. `.nexus/NEXUS.json` - Updated version and paths
+3. `.nexus/backups/[timestamp]/` - Complete backup
+4. `.nexus/backups/[timestamp]/rollback.sh` - Rollback script
 </output_structure>
 
 ## MIGRATION WORKFLOW
@@ -267,23 +267,23 @@ Mitigation: Create backup and rollback script
 
 <transformation>
 File renames:
-- File: .pris/inception.log
-- Action: Rename to .pris/operations.log
+- File: .nexus/inception.log
+- Action: Rename to .nexus/operations.log
 - Reason: Remove movie reference for professional terminology
 - Validation: Check file exists and contains log entries
 
-- File: .pris/retirement.log  
-- Action: Rename to .pris/errors.log
+- File: .nexus/retirement.log  
+- Action: Rename to .nexus/errors.log
 - Reason: "Retirement" is Blade Runner slang
 - Validation: Check file exists and is writable
 
-- File: .pris/cells/
-- Action: Rename to .pris/history/
+- File: .nexus/cells/
+- Action: Rename to .nexus/history/
 - Reason: "Cells" references memory cells from movie
 - Validation: Check all subdirectories moved
 
-- File: .pris/history/90-retirement/
-- Action: Rename to .pris/history/90-deprecated/
+- File: .nexus/history/90-retirement/
+- Action: Rename to .nexus/history/90-deprecated/
 - Reason: Consistent terminology update
 - Validation: Check directory exists if present
 </transformation>
@@ -291,16 +291,16 @@ File renames:
 Migration commands:
 ```bash
 # Create backup
-cp -r .pris .pris.backup.$(date +%Y%m%d-%H%M%S)
+cp -r .nexus .nexus.backup.$(date +%Y%m%d-%H%M%S)
 
 # Rename files
-mv .pris/inception.log .pris/operations.log
-mv .pris/retirement.log .pris/errors.log
-mv .pris/cells .pris/history
-[ -d .pris/history/90-retirement ] && mv .pris/history/90-retirement .pris/history/90-deprecated
+mv .nexus/inception.log .nexus/operations.log
+mv .nexus/retirement.log .nexus/errors.log
+mv .nexus/cells .nexus/history
+[ -d .nexus/history/90-retirement ] && mv .nexus/history/90-retirement .nexus/history/90-deprecated
 
 # Update NEXUS.json
-echo "Migration completed at $(date -Iseconds)" >> .pris/operations.log
+echo "Migration completed at $(date -Iseconds)" >> .nexus/operations.log
 ```
 </example>
 
@@ -330,15 +330,15 @@ Risks identified:
 Migration executed:
 ```bash
 # Backup created
-cp -r .pris .pris/backups/v1.0-to-v2.0-20241206/
+cp -r .nexus .nexus/backups/v1.0-to-v2.0-20241206/
 
 # Structure transformation
-mkdir -p .pris/current
-mkdir -p .pris/history/{10-requirements,20-planning,30-architecture}
+mkdir -p .nexus/current
+mkdir -p .nexus/history/{10-requirements,20-planning,30-architecture}
 
 # File migrations
-mv .pris/REQUIREMENTS.md .pris/memories/_10-REQUIREMENTS.md
-mv .pris/BACKLOG.md .pris/memories/_20-BACKLOG.md
+mv .nexus/REQUIREMENTS.md .nexus/memories/_10-REQUIREMENTS.md
+mv .nexus/BACKLOG.md .nexus/memories/_20-BACKLOG.md
 
 # Config transformation
 {
@@ -370,13 +370,13 @@ Transformed !STATUS.json:
 echo "🔄 Starting rollback from v[new] to v[old]..."
 
 # Verify we're in correct directory
-if [ ! -f ".pris/NEXUS.json" ]; then
+if [ ! -f ".nexus/NEXUS.json" ]; then
     echo "❌ Error: Not in a NEXUS project directory"
     exit 1
 fi
 
 # Check current version
-CURRENT_VERSION=$(cat .pris/NEXUS.json | grep '"version"' | cut -d'"' -f4)
+CURRENT_VERSION=$(cat .nexus/NEXUS.json | grep '"version"' | cut -d'"' -f4)
 if [ "$CURRENT_VERSION" != "[new]" ]; then
     echo "❌ Error: Expected version [new], found $CURRENT_VERSION"
     exit 1
@@ -384,8 +384,8 @@ fi
 
 # Perform rollback
 echo "📦 Restoring from backup..."
-rm -rf .pris
-cp -r "$(dirname "$0")/.pris" .
+rm -rf .nexus
+cp -r "$(dirname "$0")/.nexus" .
 
 echo "✅ Rollback complete"
 echo "📌 System restored to version [old]"

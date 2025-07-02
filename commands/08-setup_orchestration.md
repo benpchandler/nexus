@@ -32,12 +32,12 @@ Report setup progress in <progress> tags.
 
 <input_requirements>
 Before starting, verify:
-- `.pris/NEXUS.json` exists and contains GitHub integration config
+- `.nexus/NEXUS.json` exists and contains GitHub integration config
 - Git repository is initialized
 - GitHub CLI (`gh`) is available and authenticated
 
 Check for existing setup:
-- `.pris/orchestration/` directory
+- `.nexus/orchestration/` directory
 - GitHub labels and issue templates
 - Project board existence
 </input_requirements>
@@ -53,7 +53,7 @@ Check for existing setup:
 
 ### 2. Local Coordination Structure
 ```
-.pris/orchestration/
+.nexus/orchestration/
 ├── agents/
 │   ├── agent-status.json     # Current agent assignments
 │   ├── contexts/             # Shared knowledge
@@ -342,7 +342,7 @@ Generate a setup report:
 - [✓/✗] AGENT_NOTES system initialized
 
 ## Configuration
-Updated `.pris/NEXUS.json` with:
+Updated `.nexus/NEXUS.json` with:
 ```json
 {
   "orchestration": {

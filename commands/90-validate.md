@@ -25,8 +25,8 @@ If something is unclear or potentially valid, note it in <uncertainty> tags.
 
 <input_requirements>
 Before starting, read:
-- `.pris/memories/_10-REQUIREMENTS.md` - The requirements document to validate
-- `.pris/NEXUS.json` - System configuration
+- `.nexus/memories/_10-REQUIREMENTS.md` - The requirements document to validate
+- `.nexus/NEXUS.json` - System configuration
 
 Focus on validating the requirements themselves, not implementation details.
 </input_requirements>
@@ -220,9 +220,9 @@ Generate a comprehensive validation report:
 ```
 
 Also create/update:
-1. `.pris/history/10-discovery-results/15-VALIDATION-<timestamp>.md` - This report
-2. `.pris/memories/_40-ISSUES.md` - Add critical findings
-3. `.pris/history/10-discovery-results/versions/15-VALIDATION-LOG.md` - Track validations
+1. `.nexus/history/10-discovery-results/15-VALIDATION-<timestamp>.md` - This report
+2. `.nexus/memories/_40-ISSUES.md` - Add critical findings
+3. `.nexus/history/10-discovery-results/versions/15-VALIDATION-LOG.md` - Track validations
 </output_structure>
 
 ## VALIDATION WORKFLOW

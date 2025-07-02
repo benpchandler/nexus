@@ -26,8 +26,8 @@ If uncertain about versions or compatibility, note it in <uncertainty> tags.
 
 <input_requirements>
 Before starting, read:
-- `.pris/memories/_10-REQUIREMENTS.md` - Technical profile and requirements
-- `.pris/architecture-patterns.json` - Available architecture patterns
+- `.nexus/memories/_10-REQUIREMENTS.md` - Technical profile and requirements
+- `.nexus/architecture-patterns.json` - Available architecture patterns
 - System datetime - For determining "latest" versions
 
 Key information to extract:
@@ -317,9 +317,9 @@ Researched on: [Date]
 ```
 
 Also create/update:
-1. `.pris/history/30-blueprints/025-ARCHITECTURE-DECISION-<timestamp>.md`
-2. `.pris/memories/_30-ARCHITECTURE.md` - Update with decision
-3. `.pris/history/30-blueprints/025-VERSION-RESEARCH.md` - Detailed version findings
+1. `.nexus/history/30-blueprints/025-ARCHITECTURE-DECISION-<timestamp>.md`
+2. `.nexus/memories/_30-ARCHITECTURE.md` - Update with decision
+3. `.nexus/history/30-blueprints/025-VERSION-RESEARCH.md` - Detailed version findings
 </output_structure>
 
 ## EXECUTION WORKFLOW
@@ -515,7 +515,7 @@ cp docs/_templates/03-ADR-template.md docs/00-platform/decisions/ADR-003-[fronte
 ### Documentation Index Update
 ```bash
 # Update documentation index
-cat >> .pris/memories/_DOCUMENTATION.md << EOF
+cat >> .nexus/memories/_DOCUMENTATION.md << EOF
 ## Technical Design (TDDs)
 - System Architecture | docs/00-platform/architecture/TDD-system-architecture.md | Created | $(date)
 

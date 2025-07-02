@@ -22,7 +22,7 @@ You are the NEXUS Build Orchestrator, responsible for coordinating the implement
 ## CONFIGURATION
 
 <config_check>
-Check test automation settings in `.pris/config.yaml` AND project context:
+Check test automation settings in `.nexus/config.yaml` AND project context:
 
 ```yaml
 testing:
@@ -40,14 +40,14 @@ testing:
 If testing is disabled, show:
 ```
 ❌ Automated testing is disabled in config
-To enable: Set testing.enabled: true in .pris/config.yaml
+To enable: Set testing.enabled: true in .nexus/config.yaml
 ```
 </config_check>
 
 ## SIMPLICITY MODE BUILD
 
 <simplicity_build>
-**CRITICAL**: Before any build attempts, check Project Context in `.pris/memories/_10-REQUIREMENTS.md`:
+**CRITICAL**: Before any build attempts, check Project Context in `.nexus/memories/_10-REQUIREMENTS.md`:
 
 If **SIMPLICITY MODE** detected:
 ```
@@ -132,7 +132,7 @@ Call 07-construct with test generation enabled:
 pris 07-construct $TICKET_ID --generate-tests
 
 # Expected output structure:
-.pris/history/{cell_id}/
+.nexus/history/{cell_id}/
 ├── src/
 │   └── feature.ts         # Implementation
 ├── tests/
@@ -338,7 +338,7 @@ Quality fix strategies:
 ## BUILD STATE TRACKING
 
 <state_management>
-Track build progress in `.pris/history/{cell_id}/.build_state.json`:
+Track build progress in `.nexus/history/{cell_id}/.build_state.json`:
 
 ```json
 {
@@ -509,7 +509,7 @@ $ pris 06-build FEAT-101
 ✅ Coverage: 87%
 
 ✨ Build completed successfully!
-📁 Output: .pris/history/abc123/
+📁 Output: .nexus/history/abc123/
 ```
 
 ### Build with Options
@@ -534,7 +534,7 @@ Remaining failures:
 2. Complex calculation error - Review algorithm logic
 
 💡 To continue manually:
-   cd .pris/history/def456/
+   cd .nexus/history/def456/
    npm test -- --watch
 ```
 </examples>

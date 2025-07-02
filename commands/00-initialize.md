@@ -11,7 +11,7 @@ Initialize the NEXUS system by creating the necessary directory structure and co
 
 Follow these steps:
 
-1. First, check if a .pris directory already exists in <existence_check> tags
+1. First, check if a .nexus directory already exists in <existence_check> tags
 2. Then, create the NEXUS directory structure in <directory_creation> tags
 3. Finally, initialize the configuration file in <configuration> tags
 
@@ -30,7 +30,7 @@ This command only prepares the NEXUS system to track project information that wi
 Optional parameters:
 - WORKING_DIR: Base directory for NEXUS initialization (default: current directory)
   - If not specified, uses the current working directory
-  - Should be the project root where you want .pris/ created
+  - Should be the project root where you want .nexus/ created
   - Does NOT automatically search for project root markers (like .git)
   - User is responsible for running from correct location
 - PROJECT_NAME: Name identifier for this NEXUS instance (default: based on directory name)
@@ -43,7 +43,7 @@ Optional parameters:
 <directory_structure>
 Create this structure in the working directory:
 ```
-.pris/
+.nexus/
 ├── README.md             # Explains NEXUS system and directory usage
 ├── NEXUS.json            # NEXUS system configuration
 ├── operations.log         # NEXUS operation log
@@ -77,22 +77,22 @@ Think through the initialization step by step:
 
 <existence_check>
 Check for existing NEXUS installation:
-- Does .pris directory exist?
+- Does .nexus directory exist?
 - If yes, check:
   - Is NEXUS.json present and valid JSON?
   - What is the pris_version in the config?
   - What is the current status field?
   - Are the core directories (memories/, history/) present?
 - Decision criteria:
-  - If no .pris exists → Proceed with fresh initialization
-  - If .pris exists but NEXUS.json is missing/corrupted → Abort, suggest manual cleanup
-  - If .pris exists with valid config and status is "active" → Abort, NEXUS already initialized
-  - If .pris exists with valid config and status is "archived" → Abort, suggest using migration command
+  - If no .nexus exists → Proceed with fresh initialization
+  - If .nexus exists but NEXUS.json is missing/corrupted → Abort, suggest manual cleanup
+  - If .nexus exists with valid config and status is "active" → Abort, NEXUS already initialized
+  - If .nexus exists with valid config and status is "archived" → Abort, suggest using migration command
 </existence_check>
 
 <legacy_structure_check>
 Check for legacy Blade Runner structure:
-- If .pris exists, check for old structure:
+- If .nexus exists, check for old structure:
   - Does inception.log exist? (old operations log)
   - Does retirement.log exist? (old errors log)
   - Does cells/ directory exist? (old history directory)
@@ -123,7 +123,7 @@ Initialize configuration:
 ## CONFIGURATION FORMAT
 
 <config_format>
-Create `.pris/NEXUS.json` with this minimal structure:
+Create `.nexus/NEXUS.json` with this minimal structure:
 ```json
 {
   "pris_version": "1.0",
@@ -165,7 +165,7 @@ When creating timestamps, always retrieve the current system time. Do not use pl
 ## README CONTENT
 
 <readme_content>
-Create `.pris/README.md` with this content:
+Create `.nexus/README.md` with this content:
 ```markdown
 # NEXUS System Directory
 
@@ -201,7 +201,7 @@ NEXUS is an AI-powered development workflow system that manages the software dev
 
 ## Usage
 
-NEXUS commands should be run from the project root directory. Each command reads from and writes to this .pris directory to maintain project state.
+NEXUS commands should be run from the project root directory. Each command reads from and writes to this .nexus directory to maintain project state.
 
 ## Important Notes
 
@@ -312,9 +312,9 @@ Issues will be logged here as they are discovered during implementation and test
 The initialization is successful when ALL of the following are verified:
 
 1. **Directory Structure**
-   - `.pris/` directory exists with read/write permissions
+   - `.nexus/` directory exists with read/write permissions
    - All subdirectories created: `memories/`, `history/` and their children
-   - Total of 13 directories created (including .pris itself)
+   - Total of 13 directories created (including .nexus itself)
 
 2. **Configuration File**
    - `NEXUS.json` exists and contains valid JSON
@@ -323,7 +323,7 @@ The initialization is successful when ALL of the following are verified:
    - Status field is set to "initialized"
 
 3. **Documentation Files**
-   - `README.md` created in .pris/ with system explanation
+   - `README.md` created in .nexus/ with system explanation
    - 5 placeholder documents created in `memories/`:
      - _10-REQUIREMENTS.md
      - _20-BACKLOG.md  
@@ -338,7 +338,7 @@ The initialization is successful when ALL of the following are verified:
    - Log is appendable for future operations
 
 5. **Verification Checks**
-   - Can write a test file to .pris/ and delete it
+   - Can write a test file to .nexus/ and delete it
    - JSON in NEXUS.json can be parsed without errors
    - All file paths are absolute, not relative
 
@@ -351,28 +351,28 @@ No external tools or dependencies are checked during initialization.
 Input: Initialize NEXUS in /Users/dev/my-project
 Output:
 <existence_check>
-No existing .pris directory found in /Users/dev/my-project
+No existing .nexus directory found in /Users/dev/my-project
 Safe to proceed with initialization
 </existence_check>
 
 <directory_creation>
-Created .pris/
-Created .pris/memories/
-Created .pris/history/
-Created .pris/history/10-discovery-results/versions/
-Created .pris/history/20-assignments/versions/
-Created .pris/history/30-blueprints/decisions/
-Created .pris/history/40-construction/plans/
-Created .pris/history/40-construction/completed/
-Created .pris/history/50-investigations/
-Created .pris/history/90-deprecated/
+Created .nexus/
+Created .nexus/memories/
+Created .nexus/history/
+Created .nexus/history/10-discovery-results/versions/
+Created .nexus/history/20-assignments/versions/
+Created .nexus/history/30-blueprints/decisions/
+Created .nexus/history/40-construction/plans/
+Created .nexus/history/40-construction/completed/
+Created .nexus/history/50-investigations/
+Created .nexus/history/90-deprecated/
 All directories created successfully
 </directory_creation>
 
 <configuration>
 Created NEXUS.json with project_name "my-project"
 Created README.md explaining the NEXUS system
-Initialized 5 living documents in .pris/memories/
+Initialized 5 living documents in .nexus/memories/
 Created operations.log with initialization entry
 NEXUS system initialized successfully
 </configuration>
@@ -384,10 +384,10 @@ Next step: Run `01-discover` to begin requirements gathering.
 </example>
 
 <example>
-Input: Initialize NEXUS but .pris already exists
+Input: Initialize NEXUS but .nexus already exists
 Output:
 <existence_check>
-Found existing .pris directory in /Users/dev/my-project
+Found existing .nexus directory in /Users/dev/my-project
 Checking configuration...
 NEXUS.json exists and shows:
 - Initialized: 2024-01-15
@@ -402,15 +402,15 @@ Current phase: 02-plan
 
 To proceed:
 1. Continue with the existing NEXUS installation using the appropriate phase command
-2. Manually backup and remove .pris/ if you need to start over
-3. Check .pris/NEXUS.json to see current status and phase
+2. Manually backup and remove .nexus/ if you need to start over
+3. Check .nexus/NEXUS.json to see current status and phase
 </example>
 
 <example>
 Input: Initialize NEXUS but legacy Blade Runner structure detected
 Output:
 <existence_check>
-Found existing .pris directory in /Users/dev/my-project
+Found existing .nexus directory in /Users/dev/my-project
 Checking configuration...
 NEXUS.json exists and is valid
 </existence_check>
@@ -459,5 +459,5 @@ All historical data has been preserved in the new locations.
 - This command ONLY sets up the NEXUS tracking system
 - It does NOT make any technology decisions
 - It does NOT check for development tools or dependencies
-- It does NOT create any project files outside of .pris/
+- It does NOT create any project files outside of .nexus/
 - Project setup happens in phase 03-architect after requirements are gathered
