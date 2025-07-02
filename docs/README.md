@@ -1,6 +1,6 @@
-# PRIS Documentation
+# NEXUS Documentation
 
-Welcome to the PRIS (Polymorphic Reality Implementation System) documentation. This directory contains all supporting documentation for understanding, using, and extending PRIS.
+Welcome to the NEXUS (Polymorphic Reality Implementation System) documentation. This directory contains all supporting documentation for understanding, using, and extending NEXUS.
 
 ## Documentation Structure
 
@@ -20,7 +20,7 @@ Architecture documentation and decisions:
 ### 📁 [development/](/development/)
 Development guidelines and workflows:
 - Developer documentation best practices
-- PRIS documentation workflow
+- NEXUS documentation workflow
 - Contribution guidelines
 - Development setup instructions
 
@@ -38,10 +38,10 @@ User and developer guides:
 - Advanced usage patterns
 
 ### 📄 [command-mapping.md](/command-mapping.md)
-Maps human-friendly descriptions to PRIS command numbers.
+Maps human-friendly descriptions to NEXUS command numbers.
 
 ### 📄 [project-structure-example.md](/project-structure-example.md)
-Example of how to organize documentation in a PRIS project.
+Example of how to organize documentation in a NEXUS project.
 
 ## Quick Links
 
@@ -52,7 +52,7 @@ Example of how to organize documentation in a PRIS project.
 
 ### For Developers
 1. Read [Development Guidelines](/development/developer-documentation-best-practices.md)
-2. Check [Documentation Workflow](/development/PRIS-DOCUMENTATION-WORKFLOW.md)
+2. Check [Documentation Workflow](/development/NEXUS-DOCUMENTATION-WORKFLOW.md)
 3. Use appropriate [Templates](/_templates/README.md)
 
 ### For Contributors
@@ -63,7 +63,7 @@ Example of how to organize documentation in a PRIS project.
 ## Key Concepts
 
 ### Commands
-PRIS operates through numbered commands (00-13) that represent specialized AI agents. Each command handles a specific phase of the development lifecycle.
+NEXUS operates through numbered commands (00-13) that represent specialized AI agents. Each command handles a specific phase of the development lifecycle.
 
 ### Memory System
 - **Living Documents**: Continuously updated files in `.nexus/memories/`
@@ -93,4 +93,4 @@ Multiple AI agents can work simultaneously using:
 
 ---
 
-*This documentation is part of PRIS v1.0.0*
+*This documentation is part of NEXUS v1.0.0*

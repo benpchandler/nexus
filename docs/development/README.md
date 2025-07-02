@@ -1,11 +1,11 @@
 # Development Documentation
 
-This directory contains development guidelines, workflows, and best practices for working with PRIS.
+This directory contains development guidelines, workflows, and best practices for working with NEXUS.
 
 ## Contents
 
 - **developer-documentation-best-practices.md**: Guidelines for writing effective documentation
-- **PRIS-DOCUMENTATION-WORKFLOW.md**: Workflow for maintaining PRIS documentation
+- **NEXUS-DOCUMENTATION-WORKFLOW.md**: Workflow for maintaining NEXUS documentation
 - **Development Guides**: How-to guides for common development tasks
 
 ## Key Development Concepts
@@ -28,7 +28,7 @@ This directory contains development guidelines, workflows, and best practices fo
 - Work contracts define clear interfaces
 - GitHub integration tracks progress
 
-## Contributing to PRIS
+## Contributing to NEXUS
 
 1. **Adding New Commands**:
    - Choose the next available number
@@ -51,7 +51,7 @@ This directory contains development guidelines, workflows, and best practices fo
 ## Development Tools
 
 - **Version Control**: Git
-- **Issue Tracking**: GitHub Issues with PRIS labels
+- **Issue Tracking**: GitHub Issues with NEXUS labels
 - **Documentation**: Markdown with Mermaid diagrams
 - **Testing**: Command validation through execution
 
@@ -59,7 +59,7 @@ This directory contains development guidelines, workflows, and best practices fo
 
 | Task | Command | Notes |
 |------|---------|-------|
-| Initialize PRIS | 00-baseline | Creates .nexus structure |
+| Initialize NEXUS | 00-baseline | Creates .nexus structure |
 | Gather Requirements | 01-voight-kampff | Interactive process |
 | Select Architecture | 07-construct | Based on requirements |
 | Implement Feature | 04-sebastian | Requires ticket ID |

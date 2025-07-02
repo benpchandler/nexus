@@ -1,10 +1,10 @@
-# PRIS Project Documentation Structure Example
+# NEXUS Project Documentation Structure Example
 
-This shows how documentation should be organized in a project using PRIS.
+This shows how documentation should be organized in a project using NEXUS.
 
 ```
 project-root/
-├── .nexus/                          # PRIS system files
+├── .nexus/                          # NEXUS system files
 │   ├── memories/                   # Living documents
 │   │   ├── _10-REQUIREMENTS.md    # Current requirements
 │   │   ├── _20-BACKLOG.md         # Prioritized backlog

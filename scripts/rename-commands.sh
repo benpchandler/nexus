@@ -1,8 +1,8 @@
 #!/bin/bash
-# PRIS Command Renaming Script
-# Converts JIM command files to PRIS naming
+# NEXUS Command Renaming Script
+# Converts JIM command files to NEXUS naming
 
-echo "🔄 Converting JIM commands to PRIS..."
+echo "🔄 Converting JIM commands to NEXUS..."
 
 # Create command mappings
 declare -A command_map=(
@@ -37,4 +37,4 @@ echo ""
 echo "Next steps:"
 echo "1. Update command content to reflect new names"
 echo "2. Merge 00-baseline-validate logic into 00-baseline"
-echo "3. Update all JIM references to PRIS"
+echo "3. Update all JIM references to NEXUS"

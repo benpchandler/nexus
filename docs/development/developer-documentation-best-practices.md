@@ -439,10 +439,10 @@ What happens as a result?
 What else did we evaluate?
 ```
 
-### PRIS Integration
+### NEXUS Integration
 ```
 00-platform/05-automation/
-├── pris-integration.md               # How PRIS uses these docs
+├── pris-integration.md               # How NEXUS uses these docs
 ├── doc-generation-rules.md           # Auto-generation from code
 ├── validation-rules.md               # Doc completeness checks
 └── update-triggers.md                # When to prompt for updates

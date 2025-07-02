@@ -1,6 +1,6 @@
 # Documentation Templates
 
-This directory contains numbered templates for documentation used throughout the PRIS workflow. Templates are numbered in the order they are typically used during development.
+This directory contains numbered templates for documentation used throughout the NEXUS workflow. Templates are numbered in the order they are typically used during development.
 
 ## Template Usage Order
 
@@ -99,7 +99,7 @@ cp 04-QUICK-DECISION-template.md ../01-core-features/auth/decisions/DECISION-202
 ## Template Best Practices
 
 1. **Keep Templates Current**: Update based on usage patterns
-2. **Pre-populate When Possible**: PRIS commands should fill in known information
+2. **Pre-populate When Possible**: NEXUS commands should fill in known information
 3. **Document Sparingly**: Only document what adds value
 4. **Cross-Reference**: Link related documents
 5. **Version Control**: Track template changes
@@ -113,4 +113,4 @@ cp 04-QUICK-DECISION-template.md ../01-core-features/auth/decisions/DECISION-202
 
 ---
 
-*Templates follow PRIS workflow: Requirements → Design → Implementation → Context*
+*Templates follow NEXUS workflow: Requirements → Design → Implementation → Context*

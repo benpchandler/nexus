@@ -2,7 +2,7 @@
 
 ## Overview
 
-PRIS separates architecture decisions from implementation to ensure thoughtful technology choices before any code is written. This document clarifies when to use each command.
+NEXUS separates architecture decisions from implementation to ensure thoughtful technology choices before any code is written. This document clarifies when to use each command.
 
 ## Command Comparison
 

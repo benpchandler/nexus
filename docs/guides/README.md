@@ -1,25 +1,25 @@
-# PRIS User Guides
+# NEXUS User Guides
 
-This directory contains practical guides for using PRIS effectively.
+This directory contains practical guides for using NEXUS effectively.
 
 ## Quick Start Guides
 
-### 1. First Project with PRIS
+### 1. First Project with NEXUS
 ```bash
-# Initialize PRIS
-/PRIS 00-baseline
+# Initialize NEXUS
+/NEXUS 00-baseline
 
 # Gather requirements interactively
-/PRIS 01-voight-kampff
+/NEXUS 01-voight-kampff
 
 # Create prioritized backlog
-/PRIS 02-joshi
+/NEXUS 02-joshi
 
 # Select architecture
-/PRIS 07-construct
+/NEXUS 07-construct
 
 # Generate setup
-/PRIS 03-tyrell
+/NEXUS 03-tyrell
 
 # Run setup
 ./setup.sh my-project
@@ -31,24 +31,24 @@ This directory contains practical guides for using PRIS effectively.
 # Find a ticket ID (e.g., FEAT-001)
 
 # Implement the feature
-/PRIS 04-sebastian FEAT-001
+/NEXUS 04-sebastian FEAT-001
 
 # Review the implementation
-/PRIS 05-wallace feat/FEAT-001
+/NEXUS 05-wallace feat/FEAT-001
 ```
 
 ### 3. Parallel Development
 ```bash
 # One-time setup
-/PRIS 030-orchestrate setup
+/NEXUS 030-orchestrate setup
 
 # Break down epic
-/PRIS 035-decompose EPIC-001
+/NEXUS 035-decompose EPIC-001
 
 # Each agent in separate terminal:
-/PRIS 040-sync --claim
-/PRIS 04-sebastian <issue-number>
-/PRIS 045-coordinate --complete
+/NEXUS 040-sync --claim
+/NEXUS 04-sebastian <issue-number>
+/NEXUS 045-coordinate --complete
 ```
 
 ## Guide Topics
@@ -56,17 +56,17 @@ This directory contains practical guides for using PRIS effectively.
 ### For Beginners
 - **Getting Started**: Complete walkthrough of first project
 - **Understanding Commands**: What each command does
-- **Reading PRIS Output**: Interpreting results and reports
+- **Reading NEXUS Output**: Interpreting results and reports
 
 ### For Developers
 - **[Architecture vs Setup](architecture-vs-setup.md)**: Understanding the separation between design and implementation
-- **Custom Commands**: Adding new PRIS commands
-- **Integration Guide**: Connecting PRIS with existing projects
+- **Custom Commands**: Adding new NEXUS commands
+- **Integration Guide**: Connecting NEXUS with existing projects
 - **Advanced Workflows**: Complex development patterns
 
 ### For Teams
 - **Parallel Development**: Running multiple AI agents
-- **Collaboration**: Sharing PRIS state across team
+- **Collaboration**: Sharing NEXUS state across team
 - **Best Practices**: Proven patterns for team success
 
 ## Common Scenarios
@@ -95,7 +95,7 @@ This directory contains practical guides for using PRIS effectively.
 2. **Trust the Process**: Let each command complete its analysis
 3. **Provide Context**: More detailed requirements = better results
 4. **Review Everything**: AI generates code, humans ensure quality
-5. **Iterate Quickly**: Use PRIS for rapid prototyping
+5. **Iterate Quickly**: Use NEXUS for rapid prototyping
 
 ## Troubleshooting
 
@@ -118,4 +118,4 @@ This directory contains practical guides for using PRIS effectively.
 1. Check command examples in `/commands/`
 2. Review this guide for common scenarios
 3. Check CLAUDE.md for AI context
-4. Submit issues on GitHub with PRIS labels
+4. Submit issues on GitHub with NEXUS labels

@@ -1,16 +1,16 @@
 # Architecture Documentation
 
-This directory contains architecture-related documentation for PRIS and projects built with PRIS.
+This directory contains architecture-related documentation for NEXUS and projects built with NEXUS.
 
 ## Contents
 
 - **Architecture Decision Records (ADRs)**: Document significant architectural decisions
-- **System Architecture**: Overall PRIS system design and component interactions
+- **System Architecture**: Overall NEXUS system design and component interactions
 - **Pattern Library**: Reusable architectural patterns identified across projects
 
 ## Using ADR Templates
 
-PRIS provides two ADR templates in `docs/_templates/`:
+NEXUS provides two ADR templates in `docs/_templates/`:
 
 1. **03-ADR-template.md**: Full Architecture Decision Record template
    - Use for significant architectural decisions
@@ -28,7 +28,7 @@ PRIS provides two ADR templates in `docs/_templates/`:
 4. Link related ADRs together
 5. Include diagrams when they clarify the architecture
 
-## PRIS Architecture Commands
+## NEXUS Architecture Commands
 
 - **07-construct**: Selects optimal architecture patterns based on requirements
 - **03-tyrell**: Implements the selected architecture with setup scripts
