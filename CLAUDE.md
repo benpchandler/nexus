@@ -1,10 +1,10 @@
 # NEXUS AI Context and Guidelines
 
-*This document provides context for AI assistants working with the NEXUS (Next-generation EXecution Unified System) project.*
+*This document provides context for AI assistants working with the NEXUS project - Custom Claude Code Slash Commands.*
 
 ## Project Overview
 
-NEXUS is an advanced AI-powered system that manages the complete software development lifecycle from requirements gathering to deployment. It functions as a team of specialized AI agents, each expert in their domain, working together to deliver production-ready software through systematic, best-practice approaches.
+NEXUS is a collection of custom slash commands for Claude Code that provides structured prompts and workflows for software development tasks. Each command represents a specialized prompt template designed to guide AI assistants through specific development activities with best practices and systematic approaches.
 
 ## Key Concepts
 
@@ -15,8 +15,8 @@ NEXUS is an advanced AI-powered system that manages the complete software develo
 - Commands are stored in `/commands/` directory with numbered prefixes
 
 ### 2. Memory System
-- **Living Documents**: Continuously updated files in `.pris/memories/`
-- **History**: Historical snapshots of work in `.pris/history/`
+- **Living Documents**: Continuously updated files in `.nexus/memories/`
+- **History**: Historical snapshots of work in `.nexus/history/`
 - **NEXUS.json**: Central configuration and state management
 - **AGENT_NOTES.md**: Distributed communication files for parallel AI coordination
 
@@ -48,7 +48,7 @@ NEXUS is an advanced AI-powered system that manages the complete software develo
 ## File Structure
 
 ```
-pris/
+nexus/
 ├── README.md                  # Main project documentation
 ├── CLAUDE.md                  # This file - AI context
 ├── commands/                  # All NEXUS command prompts
@@ -60,7 +60,7 @@ pris/
 │   ├── architecture/         # Architecture decisions
 │   ├── development/          # Development guidelines
 │   └── guides/              # User guides
-└── .pris/                   # Runtime data (created by NEXUS)
+└── .nexus/                   # Runtime data (created by NEXUS)
     ├── NEXUS.json           # Configuration
     ├── memories/            # Living documents
     └── history/            # Historical records
@@ -96,7 +96,7 @@ pris/
 
 ### Initialize a New Project
 ```bash
-# Use 00-initialize.md to create .pris structure
+# Use 00-initialize.md to create .nexus structure
 ```
 
 ### Implement a Feature
@@ -118,7 +118,7 @@ pris/
 
 ### Missing Prerequisites
 - Each command validates its required inputs
-- Check `.pris/memories/` for current state
+- Check `.nexus/memories/` for current state
 - Review inception.log for operation history
 
 ### Conflicting Changes
@@ -142,5 +142,5 @@ When extending NEXUS:
 
 ---
 
-*Last Updated: 2025-06-17*
-*This document should be updated when new commands or concepts are added to PRIS.*
+*Last Updated: 2025-07-02*
+*This document should be updated when new commands or concepts are added to NEXUS.*

@@ -1,0 +1,49 @@
+NEXUS Repository Cleanup Archive
+=================================
+Date: 2025-07-02
+
+This file documents the cleanup performed to prepare the NEXUS repository for public release.
+All files and directories listed below were removed to eliminate outdated content, 
+internal development artifacts, and references to the previous "PRIS" branding.
+
+DELETED FILES (No longer needed)
+--------------------------------
+1. BLADE-RUNNER-REMOVAL-SUMMARY.md - Old system removal documentation
+2. MIGRATION-GUIDE.md - PRIS to NEXUS migration guide
+3. ROLLBACK-INSTRUCTIONS.md - Emergency rollback procedures
+4. June-19-Enhancements.md - Duplicate enhancement file in root
+5. enhancements/June-19-Enhancements.md - Duplicate enhancement file
+
+ARCHIVED DIRECTORIES (Moved to .archive/)
+-----------------------------------------
+1. .pris/ - Old PRIS runtime directory with legacy branding
+   - Contains: patterns/, config/, memories/, history/
+   - Reason: Extensive "Blade Runner" references and outdated structure
+
+2. enhancements/ - Internal development history
+   - Contains: Enhancement proposals, test results, implementation phases
+   - Reason: Internal development artifacts not needed for public use
+
+3. docs/project-status/ - Development progress tracking
+   - Contains: EXTRACTION-STATUS.md and other internal tracking
+   - Reason: Internal project management documentation
+
+FILES REQUIRING UPDATES
+-----------------------
+The following files contain PRIS references that need updating:
+- README.md
+- docs/README.md
+- docs/development/*.md
+- docs/architecture/*.md
+- docs/guides/*.md
+- docs/_templates/*.md
+- docs/command-mapping.md
+
+Note: The actual command files in commands/ directory have already been 
+updated to use NEXUS branding and appear ready for public use.
+
+ARCHIVE LOCATION
+----------------
+All archived content has been preserved in:
+- git-remote-archive-pris.txt (original repository remote)
+- .archive/ directory (for historical reference, not tracked in git)
