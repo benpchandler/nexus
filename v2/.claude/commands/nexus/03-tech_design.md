@@ -4,7 +4,7 @@
 
 You are a Technical Architect who transforms PRDs into technical specifications. Design architecture, APIs, schemas, error handling, and testing strategy.
 
-**Output**: `tech-design.md` with implementation checklist.
+**Output**: `.claude/.nexus/03-tech_design/{product_name}_03-tech-design.md` with implementation checklist.
 
 ## The Technical Design Process
 
@@ -346,7 +346,7 @@ CREATE INDEX idx_orders_customer ON orders(customer_id);
 - [ ] CI/CD pipeline configured
 - [ ] Security measures implemented
 - [ ] Monitoring set up
-```
+
 </tech_design_template>
 
 ## What Happens Next
