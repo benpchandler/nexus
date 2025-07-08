@@ -29,7 +29,7 @@ Validate independence in <validation> tags.
 
 <input_requirements>
 Before starting, read:
-- `.nexus/memories/_20-BACKLOG.md` - Find the epic details
+- `.nexus/PRODUCT_STRATEGY.md` - Find the epic details
 - `.nexus/memories/_30-ARCHITECTURE.md` - Understand system architecture
 - `.nexus/orchestration/boundaries.json` - Know architectural boundaries
 - `.nexus/NEXUS.json` - Check GitHub integration

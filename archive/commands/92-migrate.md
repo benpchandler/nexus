@@ -338,7 +338,7 @@ mkdir -p .nexus/history/{10-requirements,20-planning,30-architecture}
 
 # File migrations
 mv .nexus/REQUIREMENTS.md .nexus/memories/_10-REQUIREMENTS.md
-mv .nexus/BACKLOG.md .nexus/memories/_20-BACKLOG.md
+mv .nexus/BACKLOG.md .nexus/PRODUCT_STRATEGY.md
 
 # Config transformation
 {

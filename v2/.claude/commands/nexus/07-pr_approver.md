@@ -1,0 +1,1 @@
+Goal: Verify CI passes, coverage meets thresholds, and benchmarks are satisfied. Check breaking changes and migration needs. Ensure documentation is updated. Validate against original requirements. Output: Merged PR or specific blockers.

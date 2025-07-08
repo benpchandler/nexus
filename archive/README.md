@@ -62,7 +62,7 @@ NEXUS provides numbered commands for each development phase:
 ### Setup & Discovery
 - `00-initialize` - Create project structure
 - `01-discover` - Interactive requirements gathering
-- `02-refine` - Refine and prioritize requirements
+- `02-productize` - Transform requirements into product strategy
 
 ### Development
 - `03-architecture` - Design technical architecture

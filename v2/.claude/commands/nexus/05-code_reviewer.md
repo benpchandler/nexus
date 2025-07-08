@@ -1,0 +1,1 @@
+Goal: Check code against design specs, test coverage, and style guide. Verify error handling, security practices, and performance. Ensure tests cover edge cases and failures. Validate documentation and type safety. Output: Review comments with required/suggested changes.

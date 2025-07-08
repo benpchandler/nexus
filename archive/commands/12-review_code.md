@@ -36,7 +36,7 @@ Always ask yourself: "Does this follow our established patterns?"
 <input_requirements>
 Before starting, read:
 - `.nexus/memories/_10-REQUIREMENTS.md` - System requirements
-- `.nexus/memories/_20-BACKLOG.md` - Feature specifications
+- `.nexus/PRODUCT_STRATEGY.md` - Feature specifications
 - `.nexus/memories/_30-ARCHITECTURE.md` - Architecture patterns
 - `.nexus/NEXUS.json` - Configuration with branch_name
 

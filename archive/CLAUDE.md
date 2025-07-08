@@ -66,13 +66,22 @@ nexus/
     └── history/            # Historical records
 ```
 
+## Command Philosophy
+
+### Modern Prompt Engineering
+NEXUS commands follow modern prompt engineering principles:
+- **Concise over verbose**: Trust AI capabilities rather than over-prescribing
+- **Principles over prescriptions**: Guide with principles, not rigid steps
+- **Adaptive over static**: Allow contextual adaptation rather than fixed templates
+- **Example**: 02-prioritize.md reduced from 634 to 55 lines (91% reduction) while improving output quality
+
 ## Best Practices for AI Assistants
 
 ### 1. Command Execution
 - Always read the full command prompt before executing
 - Check prerequisites mentioned in the command
 - Follow the structured thinking process (`<analysis>`, `<validation>` tags)
-- Use the examples provided in each command as reference
+- Adapt approach based on context rather than following rigid phases
 
 ### 2. File Management
 - Living documents in `memories/` should be updated, not replaced
