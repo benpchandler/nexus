@@ -227,7 +227,7 @@ So that [business value]
 ## What Happens Next
 
 1. **Review** - Validate requirements and user stories with stakeholder
-2. **Prioritize** - Run `02-productize` for MVP definition  
+2. **Prioritize** - Run `/nexus:02-productization` for MVP definition  
 3. **Specify** - Create detailed PRDs for top features
 
 *Requirements are living documents - update as you learn.*

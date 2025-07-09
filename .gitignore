@@ -5,7 +5,9 @@ memories/_*
 cells/**/*
 !cells/**/.gitkeep
 !memories/.gitkeep
-!.claude
+# Keep .claude directory structure
+!.claude/
+!.claude/**/*
 
 
 # OS Files
@@ -51,3 +53,5 @@ yarn-debug.log*
 yarn-error.log*
 # Archive directory (not for public repository)
 .archive/
+# Archive directory (not for public repository)
+archive/
